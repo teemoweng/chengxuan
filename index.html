@@ -583,13 +583,7 @@ html:not(.js) .mobile-menu{display:none}
 .bbs-build .bbs-source.bbs-added{background:#f5f9f8;border-color:#dbe9e3;box-shadow:none;cursor:default}
 .bbs-build .bbs-source.bbs-added .bbs-source-grip{opacity:.28}
 .bbs-build .bbs-source.bbs-dragging{opacity:.42;border-color:#9cbadc;background:#edf4fd;cursor:grabbing}
-.bbs-build .bbs-source .bbs-source-state{display:block;font-size:10px;line-height:1.65;color:#4e8a72;margin:3px 0 0}
-.bbs-build .bbs-duties .bbs-source-state{position:absolute;left:19px;top:29px;margin:0}
-.bbs-build .bbs-directories .bbs-source-state{position:absolute;right:8px;top:10px;margin:0}
-.bbs-build .bbs-source .bbs-source-state:empty{display:none}
-.bbs-build .bbs-step-body .bbs-interaction-hint{font-size:11px;line-height:1.7;color:#6b87a3;margin:0 0 9px}
-.bbs-build .bbs-labels+.bbs-interaction-hint{margin-top:13px}
-.bbs-build:not(.bbs-ready) .bbs-source-grip,.bbs-build:not(.bbs-ready) .bbs-interaction-hint{display:none}
+.bbs-build:not(.bbs-ready) .bbs-source-grip{display:none}
 .bbs-build:not(.bbs-ready) .bbs-source{cursor:default}
 .bbs-build .bbs-step-body .bbs-method-note{font-size:11px;line-height:1.8;color:#748496;margin-top:13px;margin-bottom:0}
 .bbs-build .bbs-manual-controls{display:none;margin:21px 0 0 35px}
@@ -653,21 +647,19 @@ html:not(.js) .mobile-menu{display:none}
 .bbs-build .bbs-preview-text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:11px;line-height:1.95;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:0;color:#5b7289;background:none;border:0;border-radius:0;max-width:100%}
 .bbs-build .bbs-frontmatter{padding:10px 12px;margin:0 0 17px;background:#edf4fc;border-left:2px solid #9bb9dc;border-radius:0 4px 4px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;line-height:1.9;color:#4e749d;white-space:pre-wrap;overflow-wrap:anywhere}
 .bbs-build .bbs-frontmatter>div{display:block}.bbs-build .bbs-frontmatter .bbs-fresh-label{color:#2c5e99;font-weight:600}
-.bbs-build .bbs-frontmatter:has(.bbs-scratch-surface){padding:0;border:0;background:none;white-space:normal}
-.bbs-build .bbs-scratch-surface{padding:7px;background:#edf4fc;border:1px solid #d7e5f5;border-radius:6px;touch-action:none;white-space:normal}
-.bbs-build .bbs-scratch-row{--bbs-reveal:0%;position:relative;display:block;width:100%;border:1px solid #dbe7f4;border-radius:4px;margin:0 0 5px;padding:0;overflow:hidden;background:#f9fbff;color:#41678e;text-align:left;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:12px;line-height:1.8;touch-action:none;cursor:ew-resize;user-select:none;-webkit-user-select:none}
-.bbs-build .bbs-scratch-row:last-of-type{margin-bottom:0}
-.bbs-build .bbs-scratch-value{display:block;min-height:35px;padding:7px 9px;white-space:pre-wrap;overflow-wrap:anywhere;clip-path:inset(0 calc(100% - var(--bbs-reveal,0%)) 0 0);pointer-events:none}
-.bbs-build .bbs-scratch-placeholder{position:absolute;inset:0;display:flex;align-items:center;padding:7px 9px;background:linear-gradient(100deg,#e2ebf8,#edf3fb);color:#7a94af;clip-path:inset(0 0 0 var(--bbs-reveal,0%));pointer-events:none}
-.bbs-build .bbs-scratch-row:hover{border-color:#b9cee6}
-.bbs-build .bbs-scratch-row.bbs-revealed{--bbs-reveal:100%!important;border-color:#ccdeee;background:#f5f9ff;cursor:default}
-.bbs-build .bbs-scratch-row.bbs-revealed .bbs-scratch-placeholder{visibility:hidden}
-.bbs-build .bbs-mark-progress{display:block;font-size:10px;font-family:inherit;line-height:1.8;color:#7c91a6;margin:8px 2px 0;white-space:normal}
+.bbs-build .bbs-frontmatter:has(.bbs-label-surface){padding:0;border:0;background:none;white-space:normal}
+.bbs-build .bbs-label-surface{padding:7px;background:#edf4fc;border:1px solid #d7e5f5;border-radius:6px;white-space:normal}
+.bbs-build .bbs-label-row{position:relative;display:block;width:100%;border:1px solid #dbe7f4;border-radius:4px;margin:0 0 5px;padding:0;overflow:hidden;background:#f9fbff;color:#41678e;text-align:left;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:12px;line-height:1.8;cursor:pointer;user-select:none;-webkit-user-select:none}
+.bbs-build .bbs-label-row:last-of-type{margin-bottom:0}
+.bbs-build .bbs-label-value{display:block;min-height:35px;padding:7px 9px;white-space:pre-wrap;overflow-wrap:anywhere;visibility:hidden;pointer-events:none}
+.bbs-build .bbs-label-key{position:absolute;inset:0;display:flex;align-items:center;padding:7px 9px;color:#7a94af;pointer-events:none}
+.bbs-build .bbs-label-row:hover{border-color:#b9cee6}
+.bbs-build .bbs-label-row.bbs-revealed{border-color:#ccdeee;background:#f5f9ff;cursor:default}
+.bbs-build .bbs-label-row.bbs-revealed .bbs-label-value{visibility:visible}
+.bbs-build .bbs-label-row.bbs-revealed .bbs-label-key{display:none}
 .bbs-build .bbs-finder-status{display:flex;gap:8px;align-items:center;min-height:32px;padding:7px 13px;border-top:1px solid #e3eaf1;background:#f8fafc;font-size:10px;line-height:1.6;color:#7b90a4;flex-wrap:wrap}
 .bbs-build .bbs-items-count{white-space:nowrap}
-.bbs-build .bbs-finder-hint{margin-left:auto;text-align:right}
 .bbs-build .bbs-open-folder{border:0;background:none;padding:0;color:#4774a5;font-size:10px;line-height:1.6}
-.bbs-build .bbs-caption{padding:13px 15px!important;min-height:53px!important;font-size:12px!important;line-height:1.8!important;color:#557391!important;margin:0!important;background:#f0f5fb;border-top:1px solid #e0e9f3}
 .bbs-build [hidden]{display:none!important}
 .bbs-build .bbs-static{margin-top:25px;min-width:0}
 .bbs-build.bbs-ready .bbs-static{display:none}
@@ -681,7 +673,7 @@ html:not(.js) .mobile-menu{display:none}
 html.bbs-is-dragging,html.bbs-is-dragging *{cursor:grabbing!important;user-select:none!important;-webkit-user-select:none!important}
 @keyframes bbs-file-arrive{from{opacity:0;transform:translateY(7px) scale(.97)}to{opacity:1;transform:none}}
 @media(max-width:760px){.bbs-build .bbs-layout{grid-template-columns:1fr;gap:22px}.bbs-build .bbs-title{font-size:19px;margin-bottom:20px}.bbs-build .bbs-step-body{margin-left:35px;max-width:460px}.bbs-build .bbs-duties>div{grid-template-columns:110px minmax(0,1fr)}.bbs-build .bbs-duties dt{font-size:12px}.bbs-build .bbs-duties dd span{display:inline;margin-left:13px}.bbs-build .bbs-manual-controls{max-width:460px;margin-top:17px}.bbs-build .bbs-file-grid{grid-template-columns:repeat(auto-fill,minmax(105px,1fr))}.bbs-build .bbs-preview-text{font-size:12px}.bbs-build .bbs-frontmatter{font-size:12px}}
-@media(max-width:440px){.bbs-build .bbs-finder-body{grid-template-columns:1fr;min-height:368px}.bbs-build .bbs-sidebar{display:none}.bbs-build .bbs-workspace,.bbs-build .bbs-file-grid{min-height:368px}.bbs-build .bbs-file-grid{padding:16px 8px;gap:6px 3px;grid-template-columns:repeat(auto-fill,minmax(94px,1fr))}.bbs-build .bbs-file{font-size:11px}.bbs-build .bbs-preview-heading{padding:14px}.bbs-build .bbs-preview-scroll{padding:14px}.bbs-build .bbs-windowbar{padding:0 11px}.bbs-build .bbs-toolbar{padding:8px}.bbs-build .bbs-caption{font-size:11px!important}.bbs-build .bbs-step-body{margin-left:35px}.bbs-build .bbs-duties>div{grid-template-columns:95px minmax(0,1fr)}.bbs-build .bbs-duties dd span{display:block;margin-left:0}.bbs-build .bbs-static pre{padding:10px;font-size:11px}}
+@media(max-width:440px){.bbs-build .bbs-finder-body{grid-template-columns:1fr;min-height:368px}.bbs-build .bbs-sidebar{display:none}.bbs-build .bbs-workspace,.bbs-build .bbs-file-grid{min-height:368px}.bbs-build .bbs-file-grid{padding:16px 8px;gap:6px 3px;grid-template-columns:repeat(auto-fill,minmax(94px,1fr))}.bbs-build .bbs-file{font-size:11px}.bbs-build .bbs-preview-heading{padding:14px}.bbs-build .bbs-preview-scroll{padding:14px}.bbs-build .bbs-windowbar{padding:0 11px}.bbs-build .bbs-toolbar{padding:8px}.bbs-build .bbs-step-body{margin-left:35px}.bbs-build .bbs-duties>div{grid-template-columns:95px minmax(0,1fr)}.bbs-build .bbs-duties dd span{display:block;margin-left:0}.bbs-build .bbs-static pre{padding:10px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){.bbs-build .bbs-file.bbs-appearing{animation:none}.bbs-build .bbs-source{transition:none}}
 .no-motion .bbs-build .bbs-file.bbs-appearing{animation:none}
 .no-motion .bbs-build .bbs-source{transition:none}
@@ -1350,13 +1342,12 @@ html.bbs-is-dragging,html.bbs-is-dragging *{cursor:grabbing!important;user-selec
           <button type="button" class="bbs-step-button" data-bbs-select="0" disabled><span class="bbs-step-number">1</span><span>Markdown 基础</span></button>
           <div class="bbs-step-body">
             <p>AI 便于直接读取的文本载体，写成工作手册，也记录工作过程</p>
-            <p class="bbs-interaction-hint">拖入右侧，也可点击放入</p>
             <dl class="bbs-duties">
-              <div class="bbs-source" data-bbs-duty="agents" data-bbs-source="agents" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 AGENTS.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>AGENTS.md</dt><dd>工作守则<span>角色与执行规则</span><span class="bbs-source-state"></span></dd></div>
-              <div class="bbs-source" data-bbs-duty="readme" data-bbs-source="readme" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 README.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>README.md</dt><dd>入口地图<span>目录和当前入口</span><span class="bbs-source-state"></span></dd></div>
-              <div class="bbs-source" data-bbs-duty="context" data-bbs-source="context" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 context.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>context.md</dt><dd>稳定背景<span>业务、目标与约束</span><span class="bbs-source-state"></span></dd></div>
-              <div class="bbs-source" data-bbs-duty="log" data-bbs-source="log" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 log.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>log.md</dt><dd>过程记录<span>变更与关键决定</span><span class="bbs-source-state"></span></dd></div>
-              <div class="bbs-source" data-bbs-duty="handoff" data-bbs-source="handoff" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 handoff.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>handoff.md</dt><dd>任务交接<span>当前进度与下一步</span><span class="bbs-source-state"></span></dd></div>
+              <div class="bbs-source" data-bbs-duty="agents" data-bbs-source="agents" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 AGENTS.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>AGENTS.md</dt><dd>工作守则<span>角色与执行规则</span></dd></div>
+              <div class="bbs-source" data-bbs-duty="readme" data-bbs-source="readme" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 README.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>README.md</dt><dd>入口地图<span>目录和当前入口</span></dd></div>
+              <div class="bbs-source" data-bbs-duty="context" data-bbs-source="context" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 context.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>context.md</dt><dd>稳定背景<span>业务、目标与约束</span></dd></div>
+              <div class="bbs-source" data-bbs-duty="log" data-bbs-source="log" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 log.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>log.md</dt><dd>过程记录<span>变更与关键决定</span></dd></div>
+              <div class="bbs-source" data-bbs-duty="handoff" data-bbs-source="handoff" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 handoff.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>handoff.md</dt><dd>任务交接<span>当前进度与下一步</span></dd></div>
             </dl>
           </div>
         </li>
@@ -1370,18 +1361,16 @@ html.bbs-is-dragging,html.bbs-is-dragging *{cursor:grabbing!important;user-selec
               <div data-bbs-label="updated"><dt>updated</dt><dd>何时维护过</dd></div>
               <div data-bbs-label="tags"><dt>tags</dt><dd>主题与关联关键词</dd></div>
             </dl>
-            <p class="bbs-interaction-hint">按住右侧文件头，划过每行标签</p>
             <p class="bbs-method-note">标签用于知识文件，不要求五类基础文件都使用同一套标签</p>
           </div>
         </li>
         <li class="bbs-step" data-bbs-step="2">
           <button type="button" class="bbs-step-button" data-bbs-select="2" disabled><span class="bbs-step-number">3</span><span>分类目录</span></button>
           <div class="bbs-step-body">
-            <p class="bbs-interaction-hint">拖入右侧，也可点击放入</p>
             <dl class="bbs-directories">
-              <div class="bbs-source" data-bbs-directory="knowledge" data-bbs-source="knowledge" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入岗位与业务知识"><dt><span class="bbs-source-grip" aria-hidden="true"></span>岗位与业务知识</dt><dd>岗位职责、业务流程、组织认知<span class="bbs-source-state"></span></dd></div>
-              <div class="bbs-source" data-bbs-directory="projects" data-bbs-source="projects" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入项目与需求"><dt><span class="bbs-source-grip" aria-hidden="true"></span>项目与需求</dt><dd>目标、方案、产出、当前版本<span class="bbs-source-state"></span></dd></div>
-              <div class="bbs-source" data-bbs-directory="meetings" data-bbs-source="meetings" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入会议记录"><dt><span class="bbs-source-grip" aria-hidden="true"></span>会议记录</dt><dd>原文、结论、待办<span class="bbs-source-state"></span></dd></div>
+              <div class="bbs-source" data-bbs-directory="knowledge" data-bbs-source="knowledge" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入岗位与业务知识"><dt><span class="bbs-source-grip" aria-hidden="true"></span>岗位与业务知识</dt><dd>岗位职责、业务流程、组织认知</dd></div>
+              <div class="bbs-source" data-bbs-directory="projects" data-bbs-source="projects" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入项目与需求"><dt><span class="bbs-source-grip" aria-hidden="true"></span>项目与需求</dt><dd>目标、方案、产出、当前版本</dd></div>
+              <div class="bbs-source" data-bbs-directory="meetings" data-bbs-source="meetings" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入会议记录"><dt><span class="bbs-source-grip" aria-hidden="true"></span>会议记录</dt><dd>原文、结论、待办</dd></div>
             </dl>
             <p class="bbs-method-note">从这三个工作面起步，再按真实任务扩展</p>
           </div>
@@ -1400,12 +1389,11 @@ html.bbs-is-dragging,html.bbs-is-dragging *{cursor:grabbing!important;user-selec
         <aside class="bbs-sidebar" aria-label="模拟桌面位置"><span class="bbs-sidebar-heading">位置</span><button type="button" data-bbs-path="desktop"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3" width="15" height="10.5" rx="1.4"/><path d="M6.5 17h7M10 13.5V17"/></svg><span>桌面</span></button><button type="button" data-bbs-path="root"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6V4.5A1.5 1.5 0 0 1 3.5 3H8l2 2h6.5A1.5 1.5 0 0 1 18 6.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 2 15.5V6Z"/><path d="M2 7h16"/></svg><span>第二大脑</span></button><div class="bbs-sidebar-folders"></div></aside>
         <div class="bbs-workspace">
           <div class="bbs-file-grid" aria-label="模拟文件列表"></div>
-          <div class="bbs-empty" hidden><svg viewBox="0 0 64 52" aria-hidden="true"><path d="M7 14V9a3 3 0 0 1 3-3h15l6 6h23a3 3 0 0 1 3 3v29a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3V14Z"/><path d="M7 17h50"/></svg><strong>一个空的工作面</strong><span>先放入五类 Markdown 文件</span></div>
+          <div class="bbs-empty" hidden><svg viewBox="0 0 64 52" aria-hidden="true"><path d="M7 14V9a3 3 0 0 1 3-3h15l6 6h23a3 3 0 0 1 3 3v29a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3V14Z"/><path d="M7 17h50"/></svg></div>
           <section class="bbs-preview" aria-label="文件示例预览" hidden><div class="bbs-preview-heading"><div><span class="bbs-preview-name"></span><span class="bbs-preview-kind">Markdown · 示例</span></div><button type="button" class="bbs-preview-close" aria-label="关闭文件示例"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div><div class="bbs-preview-scroll" tabindex="0" role="region" aria-label="示例文件内容"><div class="bbs-frontmatter" hidden></div><pre class="bbs-preview-text"></pre></div></section>
         </div>
       </div>
-      <div class="bbs-finder-status"><span class="bbs-items-count">1 个项目</span><button type="button" class="bbs-open-folder" hidden>打开文件夹 <span aria-hidden="true">↵</span></button><span class="bbs-finder-hint">从左侧拖入 · 点击查看示例</span></div>
-      <p class="bbs-caption" aria-live="polite" aria-atomic="true">将左侧 Markdown 拖入“第二大脑”文件夹，也可点击放入；添加后点击文件查看示例</p>
+      <div class="bbs-finder-status"><span class="bbs-items-count">1 个项目</span><button type="button" class="bbs-open-folder" hidden>打开文件夹 <span aria-hidden="true">↵</span></button></div>
     </div>
   </div>
   <div class="bbs-static">
@@ -2461,9 +2449,8 @@ tags: [园区运营, 业务流程]
     const fieldValues = Object.fromEntries(fields.map(key => [key,knowledgeHeader.find(line => line.startsWith(key + ':'))]));
     const files = [...basic.map(item => ({...item,example:item.id})),...folders.map(item => ({id:item.id+'-doc',name:item.file,purpose:item.purpose,example:item.id}))];
     const createdFiles = new Set(), createdFolders = new Set(), labels = new Set();
-    const coverage = Object.fromEntries(fields.map(key => [key,new Set()]));
     const grid = root.querySelector('.bbs-file-grid'), workspace = root.querySelector('.bbs-workspace');
-    const preview = root.querySelector('.bbs-preview'), caption = root.querySelector('.bbs-caption');
+    const preview = root.querySelector('.bbs-preview');
     const back = root.querySelector('.bbs-back'), openSelected = root.querySelector('.bbs-open-folder');
     const frontmatter = root.querySelector('.bbs-frontmatter');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -2471,17 +2458,12 @@ tags: [园区运营, 业务流程]
     const smallFolderSvg = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6V4.5A1.5 1.5 0 0 1 3.5 3H8l2 2h6.5A1.5 1.5 0 0 1 18 6.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 2 15.5V6Z"/><path d="M2 7h16"/></svg>';
     const fileSvg = '<svg viewBox="0 0 64 52" aria-hidden="true"><path d="M17 3h21l10 10v34a2 2 0 0 1-2 2H17a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" fill="#fdfefe" stroke="#c3d1df"/><path d="M38 3v10h10" fill="#edf3f9" stroke="#c3d1df"/><path d="M22 21h19M22 26h15M22 31h19" stroke="#bdccdc" stroke-linecap="round"/><rect x="20" y="36" width="23" height="9" rx="2" fill="#e5eef8"/><text x="31.5" y="42.5" text-anchor="middle" font-size="6.7" font-family="system-ui,sans-serif" font-weight="600" fill="#6484a7">MD</text></svg>';
     let stage = 0, path = 'desktop', selected = null, opened = null;
-    let drag = null, scratch = null, suppressClick = false, scrollFrame = null;
+    let drag = null, suppressClick = false, scrollFrame = null;
     const motionAllowed = () => !reduced.matches && !document.documentElement.classList.contains('no-motion');
     const sourceById = id => [...basic,...folders].find(item => item.id === id);
     const isAdded = id => createdFiles.has(id) || createdFolders.has(id);
     const counts = () => [createdFiles.size,labels.size,createdFolders.size];
     const totals = [5,4,3];
-    const stageHints = [
-      '把左侧 Markdown 拖进“第二大脑”；放入后点击文件可查看内容',
-      '打开“业务流程.md”，按住划过文件头，逐行补上知识标签',
-      '把左侧分类拖进“第二大脑”；进入文件夹可查看预置模板'
-    ];
 
     function controls() {
       root.querySelectorAll('[data-bbs-select]').forEach(button => {
@@ -2496,8 +2478,6 @@ tags: [园区运营, 业务流程]
         node.classList.toggle('bbs-added',added);
         node.dataset.bbsAdded = String(added);
         node.setAttribute('aria-disabled',String(added));
-        const state = node.querySelector('.bbs-source-state');
-        if (state) state.textContent = added ? '已放入' : '';
       });
       root.querySelectorAll('[data-bbs-label]').forEach(node => node.classList.toggle('bbs-highlight',labels.has(node.dataset.bbsLabel)));
       root.querySelector('[data-bbs-action="previous"]').disabled = stage === 0;
@@ -2522,16 +2502,13 @@ tags: [园区运营, 业务流程]
       return items;
     }
 
-    function revealAmount(key) { return labels.has(key) ? 100 : Math.min(99,Math.round(coverage[key].size / 15 * 100)); }
     function updateMarks() {
       frontmatter.querySelectorAll('[data-bbs-mark]').forEach(row => {
         const key = row.dataset.bbsMark, done = labels.has(key);
-        row.style.setProperty('--bbs-reveal',revealAmount(key)+'%');
         row.classList.toggle('bbs-revealed',done);
-        row.setAttribute('aria-label',done ? fieldValues[key] : '划过显示 '+key+'；也可点击或按回车显示');
+        row.setAttribute('aria-label',done ? fieldValues[key] : key);
+        row.setAttribute('aria-expanded',String(done));
       });
-      const markProgress = frontmatter.querySelector('.bbs-mark-progress');
-      if (markProgress) markProgress.textContent = labels.size === 4 ? '知识标签已补齐' : '按住划过标签行 · ' + labels.size + ' / 4';
       controls();
     }
 
@@ -2546,13 +2523,12 @@ tags: [园区运营, 业务流程]
       frontmatter.hidden = file.example !== 'knowledge' || (!tagging && labels.size === 0);
       if (frontmatter.hidden) return;
       if (tagging) {
-        const hint = document.createElement('div');hint.className = 'bbs-mark-progress';frontmatter.append(hint);
-        const surface = document.createElement('div');surface.className = 'bbs-scratch-surface';
-        surface.setAttribute('aria-label','划过补充知识标签');
+        const surface = document.createElement('div');surface.className = 'bbs-label-surface';
+        surface.setAttribute('aria-label','知识标签');
         fields.forEach(key => {
-          const row = document.createElement('button');row.type='button';row.className='bbs-scratch-row';row.dataset.bbsMark=key;
-          const value = document.createElement('span');value.className='bbs-scratch-value';value.textContent=fieldValues[key];value.setAttribute('aria-hidden','true');
-          const placeholder = document.createElement('span');placeholder.className='bbs-scratch-placeholder';placeholder.textContent=key+'   划过显现';placeholder.setAttribute('aria-hidden','true');
+          const row = document.createElement('button');row.type='button';row.className='bbs-label-row';row.dataset.bbsMark=key;
+          const value = document.createElement('span');value.className='bbs-label-value';value.textContent=fieldValues[key];value.setAttribute('aria-hidden','true');
+          const placeholder = document.createElement('span');placeholder.className='bbs-label-key';placeholder.textContent=key;placeholder.setAttribute('aria-hidden','true');
           row.append(value,placeholder);surface.append(row);
         });
         frontmatter.append(surface);updateMarks();
@@ -2597,55 +2573,49 @@ tags: [园区运营, 业务流程]
         button.append(name,type);grid.append(button);
       });
       root.querySelector('.bbs-empty').hidden=items.length>0 || Boolean(opened);
-      root.querySelector('.bbs-empty strong').textContent='一个空的工作面';
-      root.querySelector('.bbs-empty span').textContent=stage===2?'把左侧分类拖到这里':'把左侧 Markdown 拖到这里';
       root.querySelector('.bbs-items-count').textContent=items.length+' 个项目';
       back.disabled=path==='desktop' && !opened;
       openSelected.hidden=!selected || Boolean(opened) || !items.some(item => item.id===selected && item.folder);
-      root.querySelector('.bbs-finder-hint').textContent=opened?'示例内容':path==='desktop'?'拖到文件夹，或双击打开':'点击文件查看 · 双击文件夹进入';
       renderPreview();
     }
 
     function moveTo(next,focus=true) {
       cancelGesture();
       if(next!=='desktop' && next!=='root' && !createdFolders.has(next)) return;
-      path=next;opened=null;selected=null;caption.textContent=stageHints[stage];render();
+      path=next;opened=null;selected=null;render();
       if(focus) (grid.querySelector('button')||back).focus({preventScroll:true});
     }
     function openFile(id) {
       if(!files.some(file => file.id===id)) return;
-      opened=id;selected=id;caption.textContent=id==='knowledge-doc' && stage===1?'按住划过上方标签区；标签会随着你的笔迹显现':'这是文件里的预置内容，可以慢慢阅读';
+      opened=id;selected=id;
       render();root.querySelector('.bbs-preview-close').focus({preventScroll:true});
     }
     function closeFile() {
-      cancelGesture();const previous=opened;opened=null;caption.textContent=stageHints[stage];render();
+      cancelGesture();const previous=opened;opened=null;render();
       [...grid.querySelectorAll('[data-bbs-item]')].find(button => button.dataset.bbsItem===previous)?.focus({preventScroll:true});
     }
     function chooseStage(next) {
       cancelGesture();stage=next;opened=null;selected=null;
       path=stage===1 && createdFolders.has('knowledge')?'knowledge':'root';
-      caption.textContent=stageHints[stage];render();
+      render();
     }
     function addSource(id) {
       const source=sourceById(id);if(!source) return;
-      if(isAdded(id)) {caption.textContent=source.name+' 已放入，可以在右侧打开查看';return;}
+      if(isAdded(id)) return;
       (basic.some(item => item.id===id)?createdFiles:createdFolders).add(id);
       path='root';opened=null;selected=id;
-      caption.textContent=source.name+' 已放入'+(createdFolders.has(id)?'，打开文件夹查看示例模板':'，点击文件查看内容');
       render(id);
     }
     function resetStage() {
       cancelGesture();
       if(stage===0) createdFiles.clear();
-      if(stage===1) {labels.clear();fields.forEach(key => coverage[key].clear());}
+      if(stage===1) labels.clear();
       if(stage===2) createdFolders.clear();
       chooseStage(stage);
-      caption.textContent='本节已重置。'+stageHints[stage];
     }
     function markComplete(key) {
       if(labels.has(key)) return;
       labels.add(key);updateMarks();
-      caption.textContent=labels.size===4?'类型、状态、更新时间和主题标签已补齐；重新打开文件时仍会保留':key+' 已补充，继续划过其他标签行';
     }
 
     function dropTarget(x,y) {
@@ -2666,14 +2636,13 @@ tags: [园区运营, 业务流程]
       scrollFrame=requestAnimationFrame(dragScroll);
     }
     function cancelGesture() {
-      const previousDrag=drag,previousScratch=scratch;
-      drag=null;scratch=null;
+      const previousDrag=drag;
+      drag=null;
       if(previousDrag) {
         previousDrag.source.classList.remove('bbs-dragging');
         previousDrag.ghost?.remove();
         if(previousDrag.source.hasPointerCapture(previousDrag.pointer)) previousDrag.source.releasePointerCapture(previousDrag.pointer);
       }
-      if(previousScratch?.surface.hasPointerCapture(previousScratch.pointer)) previousScratch.surface.releasePointerCapture(previousScratch.pointer);
       cancelAnimationFrame(scrollFrame);scrollFrame=null;
       clearDrop();document.documentElement.classList.remove('bbs-is-dragging');
     }
@@ -2698,39 +2667,13 @@ tags: [园区运营, 业务流程]
       drag.ghost.style.left=drag.x+14+'px';drag.ghost.style.top=drag.y+12+'px';
       clearDrop();dropTarget(drag.x,drag.y)?.classList.add('bbs-drop-ready');
     }
-    function beginScratch(event,surface) {
-      if(event.button!==0) return;
-      suppressClick=false;
-      scratch={surface,pointer:event.pointerId,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false,key:event.target.closest('[data-bbs-mark]')?.dataset.bbsMark};
-      surface.setPointerCapture(event.pointerId);
-    }
-    function moveScratch(event) {
-      if(!scratch || scratch.pointer!==event.pointerId) return;
-      const current={x:event.clientX,y:event.clientY};
-      if(!scratch.moved && Math.hypot(current.x-scratch.startX,current.y-scratch.startY)<4) return;
-      scratch.moved=true;suppressClick=true;event.preventDefault();
-      const distance=Math.hypot(current.x-scratch.x,current.y-scratch.y), samples=Math.max(1,Math.ceil(distance/3));
-      const rows=[...scratch.surface.querySelectorAll('[data-bbs-mark]')].map(row => ({key:row.dataset.bbsMark,box:row.getBoundingClientRect()}));
-      for(let i=0;i<=samples;i++) {
-        const x=scratch.x+(current.x-scratch.x)*i/samples,y=scratch.y+(current.y-scratch.y)*i/samples;
-        rows.forEach(({key,box}) => {
-          if(labels.has(key)||x<box.left||x>=box.right||y<box.top||y>box.bottom) return;
-          coverage[key].add(Math.min(23,Math.floor((x-box.left)/box.width*24)));
-          if(coverage[key].size>=15) markComplete(key);
-        });
-      }
-      scratch.x=current.x;scratch.y=current.y;updateMarks();
-    }
-
     root.addEventListener('pointerdown',event => {
-      if(!event.isPrimary || drag || scratch) return;
+      if(!event.isPrimary || drag) return;
       suppressClick=false;
       const source=event.target.closest('[data-bbs-source]');
       if(source && root.contains(source)) {beginDrag(event,source);return;}
-      const surface=event.target.closest('.bbs-scratch-surface');
-      if(surface && root.contains(surface)) beginScratch(event,surface);
     });
-    root.addEventListener('pointermove',event => {moveDrag(event);moveScratch(event);});
+    root.addEventListener('pointermove',moveDrag);
     root.addEventListener('pointerup',event => {
       if(drag?.pointer===event.pointerId) {
         const id=drag.id,started=drag.started,target=started && dropTarget(event.clientX,event.clientY);
@@ -2738,16 +2681,11 @@ tags: [园区运营, 业务流程]
         if(started) {
           suppressClick=true;
           if(target) addSource(id);
-          else caption.textContent='还未放入。把它拖到右侧“第二大脑”文件夹或空白工作面';
         }
-      } else if(scratch?.pointer===event.pointerId) {
-        const moved=scratch.moved,key=scratch.key;cancelGesture();
-        if(!moved && key) markComplete(key);
-        suppressClick=true;
       }
     });
     root.addEventListener('pointercancel',() => {suppressClick=true;cancelGesture();});
-    root.addEventListener('lostpointercapture',() => {if(drag||scratch) cancelGesture();});
+    root.addEventListener('lostpointercapture',() => {if(drag) cancelGesture();});
     root.addEventListener('dragstart',event => {if(event.target.closest('[data-bbs-source]')) event.preventDefault();});
 
     root.addEventListener('click',event => {
@@ -2782,7 +2720,7 @@ tags: [园区运营, 业务流程]
     });
     root.addEventListener('keydown',event => {
       if(event.key==='Escape') {
-        if(drag||scratch) {event.preventDefault();event.stopPropagation();cancelGesture();suppressClick=true;return;}
+        if(drag) {event.preventDefault();event.stopPropagation();cancelGesture();suppressClick=true;return;}
         if(opened) {event.preventDefault();event.stopPropagation();closeFile();}return;
       }
       const source=event.target.closest('[data-bbs-source]');
@@ -2796,7 +2734,7 @@ tags: [园区运营, 业务流程]
     window.addEventListener('blur',cancelGesture);
     window.addEventListener('beforeprint',cancelGesture);
     root.dataset.bbsReady='true';root.dataset.bbsActive='false';root.classList.add('bbs-ready');
-    caption.textContent=stageHints[0];render();
+    render();
   });
 })();
 
