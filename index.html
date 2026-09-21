@@ -680,97 +680,105 @@ html.bbs-is-dragging,html.bbs-is-dragging *{cursor:grabbing!important;user-selec
 .bbs-build[data-bbs-active="false"] .bbs-file.bbs-appearing{animation-play-state:paused}
 @media print{.bbs-drag-ghost,.bbs-build .bbs-source-grip,.bbs-build .bbs-source-state,.bbs-build .bbs-interaction-hint{display:none!important}.bbs-build .bbs-source{background:none!important;border-color:transparent;box-shadow:none;cursor:default}.bbs-build .bbs-layout{display:block}.bbs-build .bbs-title{font-size:18px}.bbs-build.bbs-ready .bbs-step .bbs-step-body{display:block!important}.bbs-build .bbs-step{break-inside:avoid}.bbs-build .bbs-step-button,.bbs-build.bbs-ready .bbs-step-button{color:#283b4e}.bbs-build .bbs-step-number{background:white!important;color:#466689!important;border-color:#c8d5e3!important}.bbs-build .bbs-step-body{margin-left:35px;max-width:none}.bbs-build .bbs-finder,.bbs-build.bbs-ready .bbs-finder,.bbs-build .bbs-manual-controls{display:none!important}.bbs-build.bbs-ready .bbs-static{display:block!important}.bbs-build .bbs-static details::details-content{content-visibility:visible!important}.bbs-build .bbs-static details>pre{display:block!important}.bbs-build .bbs-duties .bbs-highlight{background:none;box-shadow:none}.bbs-build .bbs-static pre{font-size:11px;background:white}.bbs-build .bbs-static details{break-inside:avoid}}
 
-.bus-demo{--bus-ink:#30485f;--bus-muted:#72869a;--bus-line:#dce5ef;--bus-blue:#3d76bd;min-width:0;max-width:100%;color:var(--bus-ink)}
-.bus-demo button{font:inherit;cursor:pointer}
-.bus-demo button:disabled{cursor:default}
-.bus-demo button:focus-visible,.bus-demo [tabindex="0"]:focus-visible,.bus-demo [tabindex="-1"]:focus-visible{outline:2px solid #6997cc;outline-offset:3px}
+.bus-demo{--bus-ink:#34485a;--bus-muted:#74879a;--bus-line:#e0e6ee;min-width:0;max-width:100%;color:var(--bus-ink)}
+.bus-demo button,.bus-demo textarea{font:inherit}
+.bus-demo button{cursor:pointer}.bus-demo button:disabled{cursor:default}
+.bus-demo button:focus-visible,.bus-demo textarea:focus-visible,.bus-demo [tabindex="0"]:focus-visible,.bus-demo [tabindex="-1"]:focus-visible{outline:2px solid #739bc9;outline-offset:3px}
 .bus-demo [hidden]{display:none!important}
-.bus-demo .bus-layout{display:grid;grid-template-columns:246px minmax(0,1fr);gap:24px;align-items:start}
+.bus-demo .bus-layout{display:grid;grid-template-columns:242px minmax(0,1fr);gap:24px;align-items:start}
 .bus-demo .bus-guide{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .bus-demo .bus-guide>li{margin:0;padding:0;min-width:0}
-.bus-demo .bus-guide-button{display:flex;gap:11px;width:100%;text-align:left;align-items:flex-start;border:1px solid transparent;border-radius:7px;padding:13px 11px;background:none;color:var(--bus-muted);transition:background .18s,border-color .18s}
+.bus-demo .bus-guide-button{display:flex;gap:11px;width:100%;text-align:left;align-items:flex-start;border:1px solid transparent;border-radius:7px;padding:14px 11px;background:none;color:var(--bus-muted);transition:background .18s,border-color .18s}
 .bus-demo .bus-guide-button>span:last-child{min-width:0}
 .bus-demo .bus-guide-button:hover:not(:disabled){background:#f7f9fc}
-.bus-demo .bus-guide-button[aria-pressed="true"]{background:#f1f6fd;border-color:#d7e4f4;color:#3b6390}
-.bus-demo .bus-step-num{display:grid;place-items:center;flex:none;width:23px;height:23px;border:1px solid #cfdae6;border-radius:50%;font-size:11px;line-height:1;background:#fff;color:#7a91a8;margin-top:1px}
-.bus-demo .bus-guide-button[aria-pressed="true"] .bus-step-num{color:#fff;background:var(--bus-blue);border-color:var(--bus-blue)}
-.bus-demo .bus-guide-button[data-complete="true"]:not([aria-pressed="true"]) .bus-step-num{color:#537f6e;background:#edf7f2;border-color:#c4ddd1}
-.bus-demo .bus-guide-title{display:block;font-size:14px;font-weight:600;line-height:1.8;color:#465f78}
-.bus-demo .bus-guide-button[aria-pressed="true"] .bus-guide-title{color:#315e91}
-.bus-demo .bus-guide-copy{display:block;font-size:12px;font-weight:400;line-height:1.9;margin-top:7px;color:#788b9d}
-.bus-demo .bus-agent{display:flex;flex-direction:column;position:relative;height:575px;min-width:0;border:1px solid #d6e1ed;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 9px 26px #32587b0b,0 1px 3px #32587b06}
-.bus-demo .bus-agent-bar{display:flex;align-items:center;gap:9px;min-height:41px;padding:10px 15px;border-bottom:1px solid #e0e7f0;background:linear-gradient(#fbfcfe,#f5f7fa);color:#47617c;font-size:12px;font-weight:600;flex:none}
-.bus-demo .bus-agent-mark{display:flex;color:#5c80a6}
-.bus-demo .bus-agent-mark svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
-.bus-demo .bus-project-version{margin-left:auto;color:#718da8;font-size:10px;font-weight:400;line-height:1.6;white-space:nowrap;padding:2px 7px;border:1px solid #dde7f1;border-radius:4px;background:#fff}
-.bus-demo .bus-workspace-path{display:flex;align-items:center;gap:7px;flex:none;padding:9px 14px;min-height:37px;border-bottom:1px solid #e7edf4;background:#fcfdff;font-size:10px;line-height:1.6;color:#7590a9;overflow-wrap:anywhere}
-.bus-demo .bus-workspace-path svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
-.bus-demo .bus-session-tabs{display:flex;align-items:center;gap:4px;flex:none;padding:7px 13px;border-bottom:1px solid #e1e9f2;background:#f8fafc}
-.bus-demo .bus-session{border:1px solid transparent;border-radius:5px;padding:6px 12px;background:none;color:#7a8d9f;font-size:11px;line-height:1.6;transition:background .18s,color .18s,border-color .18s}
-.bus-demo .bus-session:hover:not(:disabled){background:#eef3f9;color:#476d96}
-.bus-demo .bus-session[aria-pressed="true"]{border-color:#d5e2f0;background:#fff;color:#386b9e;box-shadow:0 1px 3px #3e618812}
-.bus-demo .bus-session:disabled{color:#a7b3bf;background:none;box-shadow:none}
-.bus-demo .bus-session[aria-pressed="true"]:disabled{border-color:#dce6ef;background:#fff;color:#6b859e}
-.bus-demo .bus-agent-main{position:relative;display:grid;grid-template-columns:164px minmax(0,1fr);flex:1;min-height:0;min-width:0;overflow:hidden}
-.bus-demo .bus-file-pane{min-width:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;border-right:1px solid #e5ecf3;background:#f9fbfd;padding:15px 9px 12px}
-.bus-demo .bus-files-heading{font-size:10px;color:#8a9bad;line-height:1.6;padding:0 5px;margin-bottom:10px}
-.bus-demo .bus-files{display:flex;flex-direction:column;gap:5px;min-width:0}
-.bus-demo .bus-file{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;min-width:0;padding:7px 6px;border:1px solid transparent;border-radius:5px;background:transparent;text-align:left;color:#65809b;transition:background .15s,border-color .15s}
-.bus-demo .bus-file:hover{background:#edf4fc;border-color:#dce7f3}
-.bus-demo .bus-file[aria-expanded="true"]{background:#e8f1fc;border-color:#c4d8ef}
-.bus-demo .bus-file-name{display:flex;align-items:flex-start;gap:6px;max-width:100%;min-width:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:10px;line-height:1.7;overflow-wrap:anywhere}
-.bus-demo .bus-file-name svg{width:12px;height:15px;flex:none;margin-top:1px;fill:none;stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round}
-.bus-demo .bus-file-name>span{min-width:0}
-.bus-demo .bus-file-state{font-size:9px;line-height:1.5;color:#89a0b6;padding-left:18px}
-.bus-demo .bus-chat{display:flex;flex-direction:column;min-width:0;min-height:0;background:#fff}
-.bus-demo .bus-session-heading{display:flex;align-items:center;gap:12px;padding:13px 16px 11px;flex:none;border-bottom:1px solid #eff3f7}
-.bus-demo .bus-session-title{margin:0;font-size:12px;font-weight:500;line-height:1.7;color:#637c95}
-.bus-demo .bus-control-status{margin-left:auto;font-size:10px;line-height:1.7;color:#9caaba;font-variant-numeric:tabular-nums;white-space:nowrap}
-.bus-demo .bus-chat-scroll{position:relative;flex:1;min-height:0;min-width:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:17px 16px 21px;outline-offset:-3px}
+.bus-demo .bus-guide-button[aria-pressed="true"]{background:#f2f6fb;border-color:#dce6f2;color:#416488}
+.bus-demo .bus-step-num{display:grid;place-items:center;flex:none;width:23px;height:23px;border:1px solid #ccd8e5;border-radius:50%;font-size:11px;line-height:1;background:#fff;color:#7890a7;margin-top:1px}
+.bus-demo .bus-guide-button[aria-pressed="true"] .bus-step-num{color:#fff;background:#467bb7;border-color:#467bb7}
+.bus-demo .bus-guide-button[data-complete="true"]:not([aria-pressed="true"]) .bus-step-num{color:#597e70;background:#f0f7f3;border-color:#c9ddd3}
+.bus-demo .bus-guide-title{display:block;font-size:14px;font-weight:600;line-height:1.8;color:#435e79}
+.bus-demo .bus-guide-copy{display:block;font-size:12px;font-weight:400;line-height:1.9;margin-top:7px;color:#778b9e}
+.bus-demo .bus-guide-button:disabled .bus-guide-title{color:#8799aa}
+.bus-demo .bus-workstation{min-width:0}
+.bus-demo .bus-agent{display:flex;flex-direction:column;position:relative;height:640px;min-width:0;border:1px solid #dce3eb;border-radius:11px;overflow:hidden;background:#fff;box-shadow:0 9px 28px #32587b08}
+.bus-demo .bus-agent-bar{display:flex;align-items:center;gap:8px;min-height:42px;flex:none;padding:12px 17px 7px;color:#3e5164;font-size:12px;font-weight:600}
+.bus-demo .bus-agent-mark{display:flex;color:#6a7e91}.bus-demo .bus-agent-mark svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.bus-demo .bus-demo-badge{font-size:9px;font-weight:400;color:#9aa8b7;border:1px solid #e2e8ef;border-radius:3px;line-height:1.4;padding:1px 4px}
+.bus-demo .bus-project-version{margin-left:auto;flex:none;color:#8b9baa;font-size:10px;font-weight:400;line-height:1.6;white-space:nowrap}
+.bus-demo .bus-workspace-path{flex:none;padding:0 17px 11px;color:#93a0ad;font-size:10px;line-height:1.7;overflow-wrap:anywhere;border-bottom:1px solid #edf0f4}
+.bus-demo .bus-session-tabs{display:flex;align-items:center;gap:16px;flex:none;padding:0 17px;border-bottom:1px solid #e7ecf2;background:#fff}
+.bus-demo .bus-session{border:0;border-bottom:2px solid transparent;padding:11px 1px 10px;background:none;color:#8998a7;font-size:11px;line-height:1.6;transition:color .18s,border-color .18s}
+.bus-demo .bus-session:hover:not(:disabled){color:#4d6e8d}
+.bus-demo .bus-session[aria-pressed="true"]{border-bottom-color:#7c99b8;color:#3f5c79}
+.bus-demo .bus-session:disabled{color:#b6c0c9}
+.bus-demo .bus-session[aria-pressed="true"]:disabled{color:#708599}
+.bus-demo .bus-agent-main{position:relative;flex:1;min-height:0;min-width:0;overflow:hidden}
+.bus-demo .bus-chat-scroll{position:relative;height:100%;min-width:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:22px 21px 24px;outline-offset:-3px}
 .bus-demo .bus-thread{min-height:100%}
-.bus-demo .bus-turn{min-width:0;animation:bus-turn-in .24s ease-out both}
-.bus-demo .bus-turn+.bus-turn{margin-top:22px;padding-top:21px;border-top:1px solid #e9eff6}
-.bus-demo .bus-message{min-width:0;font-size:12px;line-height:1.9;color:#4e6983}
-.bus-demo .bus-message p{font-size:12px;line-height:1.9;margin:0!important;min-height:0;overflow-wrap:anywhere}
-.bus-demo .bus-message-label{display:flex;align-items:center;gap:5px;font-size:10px;line-height:1.7;font-weight:500;color:#7d95ad;margin:0 0 6px}
-.bus-demo .bus-message-label svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
-.bus-demo .bus-user{margin:0 0 15px 18px;padding:10px 12px;border:1px solid #dce8f6;border-radius:8px 8px 3px 8px;background:#f0f6ff;color:#466c93}
-.bus-demo .bus-user .bus-message-label{color:#7494b5}
-.bus-demo .bus-assistant{margin:14px 0 0;padding:0 2px}
-.bus-demo .bus-assistant .bus-message-label{color:#5b7b9b}
-.bus-demo .bus-read-paths{margin:13px 3px 0;padding:0 0 0 10px;border-left:2px solid #dbe8f5;color:#8399b0}
-.bus-demo .bus-read-paths ul{list-style:none;margin:0;padding:0}
-.bus-demo .bus-read-paths li{margin:4px 0 0;padding:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:10px;line-height:1.8;overflow-wrap:anywhere}
-.bus-demo .bus-read-paths li:before{content:none}
-.bus-demo .bus-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:210px;height:100%;padding:20px;text-align:center;color:#a6b8c9;font-size:12px;line-height:1.8}
-.bus-demo .bus-empty svg{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
-.bus-demo .bus-action-panel{display:flex;align-items:center;justify-content:space-between;gap:15px;flex:none;min-height:69px;padding:14px 16px;border-top:1px solid #dfe8f2;background:#fbfcfe}
-.bus-demo .bus-action-description{min-width:0;flex:1}
-.bus-demo .bus-action-title{display:block;font-size:11px;font-weight:500;line-height:1.8;color:#788fa6;overflow-wrap:anywhere}
-.bus-demo .bus-action-copy{display:none}
-.bus-demo .bus-action{display:flex;align-items:center;justify-content:center;flex:none;max-width:100%;padding:8px 13px;border:1px solid #bcd2ed;border-radius:5px;background:#eef5ff;color:#386ca8;font-size:12px;line-height:1.65;text-align:center;transition:border-color .18s,background .18s}
-.bus-demo .bus-action:hover:not(:disabled){border-color:#91b4dc;background:#e5effd}
-.bus-demo .bus-action:disabled{color:#99abba;background:#f3f6fa;border-color:#dde6ef}
+.bus-demo .bus-turn{min-width:0;animation:bus-turn-in .22s ease-out both}
+.bus-demo .bus-turn+.bus-turn{margin-top:28px;padding-top:22px;border-top:1px solid #eef1f5}
+.bus-demo .bus-message{min-width:0;font-size:14px;line-height:1.85;color:#3f566c}
+.bus-demo .bus-message p{font-size:14px;line-height:1.85;margin:0!important;min-height:0;overflow-wrap:anywhere}
+.bus-demo .bus-message-label{display:block;font-size:10px;line-height:1.6;font-weight:500;color:#93a2b0;margin:0 0 5px}
+.bus-demo .bus-user{max-width:94%;margin:0 0 18px auto;padding:11px 14px;border-radius:10px 10px 3px 10px;background:#f3f5f7;color:#45596b}
+.bus-demo .bus-user .bus-message-label{display:none}
+.bus-demo .bus-assistant{margin:13px 0 0;padding:0 2px}
+.bus-demo .bus-assistant .bus-message-label{color:#7a8c9e}
+.bus-demo .bus-tool-records{display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin:14px 0;padding:0 2px}
+.bus-demo .bus-tool-record{display:flex;align-items:flex-start;gap:7px;max-width:100%;padding:4px 0;border:0;border-radius:3px;background:none;color:#8395a6;text-align:left;font-size:11px;line-height:1.7}
+.bus-demo .bus-tool-record:hover{color:#4e7499}
+.bus-demo .bus-tool-record:before{content:"✓";font-size:10px;line-height:1.9;color:#8ba69b;flex:none}
+.bus-demo .bus-tool-record[aria-expanded="true"]{color:#416e9c}
+.bus-demo .bus-tool-record span{overflow-wrap:anywhere}
+.bus-demo .bus-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:220px;height:100%;padding:20px;text-align:center;color:#b1bdc8;font-size:13px;line-height:1.8}
+.bus-demo .bus-empty svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+.bus-demo .bus-composer{flex:none;margin:0 16px 15px;padding:12px 13px 10px;border:1px solid #dce3eb;border-radius:13px;background:#fff;box-shadow:0 2px 5px #35537006}
+.bus-demo .bus-prompt{display:block;width:100%;min-height:48px;max-height:85px;resize:none;border:0;border-radius:0;outline:none;padding:0;margin:0;background:none;color:#4a5b6c;font-size:14px;line-height:1.7;overflow:auto;scrollbar-width:thin}
+.bus-demo .bus-prompt:focus-visible{outline-offset:4px}
+.bus-demo .bus-composer-actions{display:flex;justify-content:flex-end;margin-top:4px}
+.bus-demo .bus-send{display:grid;place-items:center;flex:none;width:31px;height:31px;padding:0;border:1px solid #252b31;border-radius:50%;background:#252b31;color:#fff;transition:background .15s,opacity .15s}
+.bus-demo .bus-send:hover:not(:disabled){background:#46515c}
+.bus-demo .bus-send:disabled{background:#e8ecf0;border-color:#e8ecf0;color:#a9b3bc}
+.bus-demo .bus-send svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.bus-demo .bus-flow-nav{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:39px;margin-top:12px}
+.bus-demo .bus-control-status{font-size:11px;line-height:1.7;color:#93a3b4;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bus-demo .bus-next-step{margin-left:auto;padding:8px 11px;border:1px solid #d2e0f0;border-radius:5px;background:#f7faff;color:#4776a6;font-size:12px;line-height:1.6;text-align:right}
+.bus-demo .bus-next-step:hover{border-color:#b3cbe5;background:#f0f6ff}
 .bus-demo .bus-file-preview{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;min-width:0;background:#fff;outline-offset:-3px}
-.bus-demo .bus-preview-header{display:flex;align-items:center;gap:12px;flex:none;padding:13px 16px;border-bottom:1px solid #e2eaf3;background:#f8fbff}
-.bus-demo .bus-preview-title{flex:1;min-width:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:12px;line-height:1.7;color:#4b6e91;overflow-wrap:anywhere}
-.bus-demo .bus-preview-close{flex:none;padding:4px 1px;border:0;background:none;font-size:11px;line-height:1.5;color:#7a90a5}
+.bus-demo .bus-preview-header{display:flex;align-items:center;gap:12px;flex:none;padding:15px 19px;border-bottom:1px solid #e7edf3;background:#fafcff}
+.bus-demo .bus-preview-title{flex:1;min-width:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.7;color:#506b84;overflow-wrap:anywhere}
+.bus-demo .bus-preview-close{flex:none;padding:4px 1px;border:0;background:none;font-size:11px;line-height:1.5;color:#899bac}
 .bus-demo .bus-preview-close span{font-size:15px;margin-left:3px}
-.bus-demo .bus-preview-code{flex:1;min-height:0;max-width:100%;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px;border:0;border-radius:0;background:#fff;color:#52708b;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:11px;line-height:1.95}
+.bus-demo .bus-preview-code{flex:1;min-height:0;max-width:100%;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:22px;border:0;border-radius:0;background:#fff;color:#57718a;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:12px;line-height:2}
+.bus-demo .bus-prototype{margin:17px 0 2px;border:1px solid #e0e7ef;border-radius:6px;overflow:hidden;background:#fcfdff}
+.bus-demo .bus-mini-bar{display:flex;align-items:center;gap:8px;min-height:28px;padding:7px 10px;border-bottom:1px solid #e6edf4;font-size:9px;line-height:1.5;color:#8297ac;background:#f6f9fc}
+.bus-demo .bus-mini-bar span:last-child{margin-left:auto;color:#a6b4c2}
+.bus-demo .bus-mini-main{position:relative;min-height:147px;overflow:hidden;background:#fafcfe}
+.bus-demo .bus-mini-summary{padding:15px 12px;width:48%;min-width:0}
+.bus-demo .bus-mini-summary h6{font-size:11px;line-height:1.8;font-weight:500;color:#627f9b;margin:0 0 10px}
+.bus-demo .bus-mini-summary p{font-size:9px;line-height:1.8;color:#a0b0bf;margin:0 0 10px!important;min-height:0}
+.bus-demo .bus-drawer-open{padding:5px 8px;border:1px solid #ccdded;border-radius:4px;background:#f3f8fd;color:#6385a8;font-size:9px;line-height:1.5}
+.bus-demo .bus-drawer{position:absolute;top:0;bottom:0;right:0;width:52%;padding:13px 12px;border-left:1px solid #dce5ef;background:#fff;box-shadow:-5px 0 15px #42658706}
+.bus-demo .bus-prototype[data-bus-color="blue"] .bus-drawer{background:#eef5ff}
+.bus-demo .bus-drawer-header{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;font-weight:500;line-height:1.7;color:#567593;margin-bottom:13px}
+.bus-demo .bus-drawer-close{display:grid;place-items:center;width:19px;height:19px;border:0;background:none;color:#8a9fb3;padding:0;font-size:15px;line-height:1}
+.bus-demo .bus-drawer dl{margin:0;padding:0}
+.bus-demo .bus-drawer dl>div{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:9px;font-size:9px;line-height:1.7}
+.bus-demo .bus-drawer dt{color:#91a5b8;font-weight:400}.bus-demo .bus-drawer dd{margin:0;color:#607f9e}
 .bus-demo .bus-static-flow,.bus-demo .bus-static-examples{display:none}
 .bus-demo .bus-static-flow>section{margin:24px 0;padding-bottom:24px;border-bottom:1px solid #e4ebf3}
 .bus-demo .bus-static-flow h6,.bus-demo .bus-static-examples h6{font-size:14px;line-height:1.8;margin:0 0 12px;color:#476583}
 .bus-demo .bus-static-flow>section>p{font-size:13px;line-height:1.9;color:#6a8095;margin:0 0 18px}
+.bus-demo .bus-static-flow .bus-static-tools{font-size:11px;color:#8a9fb1;line-height:1.8;margin:12px 0}
+.bus-demo .bus-static-flow .bus-static-session{margin-top:20px}
 .bus-demo .bus-static-examples h5{font-size:15px;line-height:1.8;margin:25px 0 15px;color:#476583}
 .bus-demo .bus-static-examples>section{margin:0 0 18px;break-inside:avoid}
 .bus-demo .bus-static-examples pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:12px;line-height:1.9;color:#59748c;white-space:pre-wrap;overflow-wrap:anywhere;background:#f8fafc;border:1px solid #e3ebf4;border-radius:5px;padding:16px;max-width:100%}
-@keyframes bus-turn-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-@media(max-width:1050px){.bus-demo .bus-layout{grid-template-columns:222px minmax(0,1fr);gap:18px}.bus-demo .bus-guide-button{padding:12px 9px;gap:9px}.bus-demo .bus-agent-main{grid-template-columns:145px minmax(0,1fr)}.bus-demo .bus-chat-scroll{padding:15px 13px 18px}.bus-demo .bus-session-heading{padding-left:13px;padding-right:13px}}
-@media(max-width:760px){.bus-demo .bus-layout{grid-template-columns:1fr;gap:18px}.bus-demo .bus-guide{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bus-demo .bus-guide-button{height:100%;padding:11px}.bus-demo .bus-guide-title{font-size:13px}.bus-demo .bus-guide-copy{font-size:11px;line-height:1.8}.bus-demo .bus-guide-button:not([aria-pressed="true"]) .bus-guide-copy{display:none}.bus-demo .bus-agent{height:600px}.bus-demo .bus-agent-main{grid-template-columns:155px minmax(0,1fr)}}
-@media(max-width:500px){.bus-demo .bus-guide-button{padding:10px 8px;gap:7px}.bus-demo .bus-step-num{width:21px;height:21px;font-size:10px}.bus-demo .bus-guide-title{font-size:12px}.bus-demo .bus-guide-copy{font-size:11px;margin-top:5px}.bus-demo .bus-agent{height:650px}.bus-demo .bus-agent-bar{padding:10px 12px}.bus-demo .bus-workspace-path{padding:9px 11px}.bus-demo .bus-session-tabs{padding-left:10px;padding-right:10px}.bus-demo .bus-agent-main{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.bus-demo .bus-file-pane{border-right:0;border-bottom:1px solid #e5ecf3;padding:10px;max-height:127px}.bus-demo .bus-files-heading{padding:0;margin-bottom:7px}.bus-demo .bus-files{flex-direction:row;flex-wrap:wrap;gap:5px}.bus-demo .bus-file{width:auto;max-width:100%;padding:5px 7px;border-color:#e0e8f1;background:#fff;gap:2px}.bus-demo .bus-file-name{font-size:9px}.bus-demo .bus-file-name svg{width:10px;height:13px}.bus-demo .bus-file-state{font-size:8px;padding-left:16px}.bus-demo .bus-session-heading{padding:10px 12px}.bus-demo .bus-chat-scroll{padding:14px 12px 17px}.bus-demo .bus-user{margin-left:10px;padding:9px 10px}.bus-demo .bus-message,.bus-demo .bus-message p{font-size:11px}.bus-demo .bus-action-panel{padding:11px 12px;flex-wrap:wrap;gap:9px}.bus-demo .bus-action-description{flex-basis:100%}.bus-demo .bus-action-title{font-size:10px}.bus-demo .bus-action{margin-left:auto;padding:7px 11px;font-size:11px}.bus-demo .bus-preview-header{padding:12px}.bus-demo .bus-preview-code{padding:14px;font-size:11px}.bus-demo .bus-preview-title{font-size:11px}}
-@media(prefers-reduced-motion:reduce){.bus-demo .bus-turn{animation:none}.bus-demo .bus-guide-button,.bus-demo .bus-session,.bus-demo .bus-file,.bus-demo .bus-action{transition:none}}
-.no-motion .bus-demo .bus-turn{animation:none}
-.no-motion .bus-demo .bus-guide-button,.no-motion .bus-demo .bus-session,.no-motion .bus-demo .bus-file,.no-motion .bus-demo .bus-action{transition:none}
+@keyframes bus-turn-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(max-width:1050px){.bus-demo .bus-layout{grid-template-columns:220px minmax(0,1fr);gap:18px}.bus-demo .bus-guide-button{padding:12px 9px;gap:9px}.bus-demo .bus-chat-scroll{padding:20px 17px 22px}}
+@media(max-width:760px){.bus-demo .bus-layout{grid-template-columns:1fr;gap:18px}.bus-demo .bus-guide{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bus-demo .bus-guide-button{height:100%;padding:11px}.bus-demo .bus-guide-title{font-size:13px}.bus-demo .bus-guide-copy{font-size:11px;line-height:1.8}.bus-demo .bus-guide-button:not([aria-pressed="true"]) .bus-guide-copy{display:none}.bus-demo .bus-agent{height:620px}}
+@media(max-width:500px){.bus-demo .bus-guide-button{padding:10px 8px;gap:7px}.bus-demo .bus-step-num{width:21px;height:21px;font-size:10px}.bus-demo .bus-guide-title{font-size:12px}.bus-demo .bus-guide-copy{font-size:11px;margin-top:5px}.bus-demo .bus-agent{height:640px}.bus-demo .bus-agent-bar{padding:12px 12px 7px;font-size:11px}.bus-demo .bus-project-version{font-size:9px}.bus-demo .bus-workspace-path{padding:0 12px 10px;font-size:9px}.bus-demo .bus-session-tabs{padding:0 12px}.bus-demo .bus-chat-scroll{padding:18px 13px 20px}.bus-demo .bus-user{max-width:98%;padding:10px 12px}.bus-demo .bus-message,.bus-demo .bus-message p{font-size:14px;line-height:1.85}.bus-demo .bus-tool-record{font-size:10px}.bus-demo .bus-composer{margin:0 10px 11px;padding:11px 11px 9px}.bus-demo .bus-prompt{font-size:13px}.bus-demo .bus-next-step{font-size:11px}.bus-demo .bus-preview-header{padding:13px}.bus-demo .bus-preview-code{padding:17px;font-size:11px}.bus-demo .bus-mini-summary{padding:13px 10px}.bus-demo .bus-drawer{padding:12px 9px}.bus-demo .bus-drawer-header{font-size:10px}.bus-demo .bus-drawer dl>div{font-size:8px;gap:5px}}
+@media(prefers-reduced-motion:reduce){.bus-demo .bus-turn{animation:none}.bus-demo .bus-guide-button,.bus-demo .bus-session,.bus-demo .bus-send{transition:none}}
+.no-motion .bus-demo .bus-turn{animation:none}.no-motion .bus-demo .bus-guide-button,.no-motion .bus-demo .bus-session,.no-motion .bus-demo .bus-send{transition:none}
 @media print{.bus-demo .bus-layout{display:none!important}.bus-demo .bus-static-flow,.bus-demo .bus-static-examples{display:block!important}.bus-demo .bus-static-flow>section{break-inside:avoid}.bus-demo .bus-turn{animation:none}.bus-demo .bus-user{margin-left:0}.bus-demo .bus-static-examples pre{background:#fff}}
 
 .growth-section{margin-top:66px;scroll-margin-top:84px}
@@ -1480,64 +1488,49 @@ tags: [园区运营, 业务流程]
 <div id="brain-use-detail" class="brain-detail" data-brain-detail="use"><div class="brain-detail-nav"><button type="button" class="brain-back">← 搭建与使用</button><button type="button" class="brain-cross" data-brain-open="build"><span aria-hidden="true">←</span> 回看搭建过程</button></div><h4 id="brain-use" class="brain-demo-title" tabindex="-1">围绕任务文件夹持续迭代</h4><section class="bus-demo" data-brain-demo="use" aria-label="围绕任务文件夹持续迭代示例">
   <div class="bus-layout">
     <ol class="bus-guide" aria-label="持续工作的四个步骤">
-      <li><button class="bus-guide-button" type="button" data-bus-step="0" aria-pressed="true" disabled><span class="bus-step-num">1</span><span><span class="bus-guide-title">定位工作区与读取上下文</span><span class="bus-guide-copy">先在“第二大脑”中定位项目，按 AGENTS.md 和 README.md 的入口指引，只读取本次任务需要的背景、交接和当前版本。</span></span></button></li>
-      <li><button class="bus-guide-button" type="button" data-bus-step="1" aria-pressed="false" disabled><span class="bus-step-num">2</span><span><span class="bus-guide-title">围绕文件夹工作</span><span class="bus-guide-copy">把整理过程、方案取舍和中间稿留在项目内。按需引入资料，产出位置偏离时及时纠正。</span></span></button></li>
-      <li><button class="bus-guide-button" type="button" data-bus-step="2" aria-pressed="false" disabled><span class="bus-step-num">3</span><span><span class="bus-guide-title">落盘并维护记录</span><span class="bus-guide-copy">保存产出并标记当前版本，维护入口、过程与交接。规则和背景发生变化时，再更新对应文件。</span></span></button></li>
-      <li><button class="bus-guide-button" type="button" data-bus-step="3" aria-pressed="false" disabled><span class="bus-step-num">4</span><span><span class="bus-guide-title">换会话接力</span><span class="bus-guide-copy">换会话后仍从文件夹接续：先读最新入口和交接，再围绕当前版本继续积累。</span></span></button></li>
+      <li><button class="bus-guide-button" type="button" data-bus-step="0" aria-pressed="true" disabled><span class="bus-step-num">1</span><span><span class="bus-guide-title">定位项目</span><span class="bus-guide-copy">定位到项目文件夹，沿着规则和入口，只读取本次任务需要的 Markdown。</span></span></button></li>
+      <li><button class="bus-guide-button" type="button" data-bus-step="1" aria-pressed="false" disabled><span class="bus-step-num">2</span><span><span class="bus-guide-title">围绕任务工作</span><span class="bus-guide-copy">直接围绕项目提出任务。修改原型的同时，把做了什么记录在项目里。</span></span></button></li>
+      <li><button class="bus-guide-button" type="button" data-bus-step="2" aria-pressed="false" disabled><span class="bus-step-num">3</span><span><span class="bus-guide-title">修改并维护记录</span><span class="bus-guide-copy">继续迭代同一个产出。按实际变化更新背景和过程，当前入口保持清楚。</span></span></button></li>
+      <li><button class="bus-guide-button" type="button" data-bus-step="3" aria-pressed="false" disabled><span class="bus-step-num">4</span><span><span class="bus-guide-title">换会话接力</span><span class="bus-guide-copy">换会话前写好 handoff.md。新会话读取保存的背景和交接，接着同一个任务往下做。</span></span></button></li>
     </ol>
-    <div class="bus-agent">
-      <div class="bus-agent-bar"><span class="bus-agent-mark"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 2 7 4v8l-7 4-7-4V6z"/><path d="m6.5 8 3.5 2 3.5-2M10 10v4"/></svg></span><span>Agent · 示例工作区</span><span class="bus-project-version">v1 草稿</span></div>
-      <div class="bus-workspace-path"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 5.5h6l1.6 2h7.4v8.5h-15z"/><path d="M2.5 8h15"/></svg><span>第二大脑 / 项目与需求 / 园区运营周报</span></div>
-      <div class="bus-session-tabs" aria-label="项目会话"><button type="button" class="bus-session" data-bus-session="current" aria-pressed="true" aria-controls="bus-thread-current" disabled>本轮工作</button><button type="button" class="bus-session" data-bus-session="next" aria-pressed="false" aria-controls="bus-thread-next" disabled>新会话</button></div>
-      <div class="bus-agent-main">
-        <aside class="bus-file-pane" aria-label="项目文件"><div class="bus-files-heading">项目文件</div><div class="bus-files"></div></aside>
-        <div class="bus-chat">
-          <div class="bus-session-heading"><h6 class="bus-session-title">本轮工作</h6><span class="bus-control-status" role="status" aria-live="polite">1 / 4</span></div>
+    <div class="bus-workstation">
+      <div class="bus-agent">
+        <div class="bus-agent-bar"><span class="bus-agent-mark"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 2 7 4v8l-7 4-7-4V6z"/><path d="m6.5 8 3.5 2 3.5-2M10 10v4"/></svg></span><span class="bus-project-name">智慧资管工作台</span><span class="bus-demo-badge">模拟</span><span class="bus-project-version">初始原型</span></div>
+        <div class="bus-workspace-path">第二大脑 / 项目与需求 / 智慧资管工作台</div>
+        <div class="bus-session-tabs" aria-label="项目会话"><button type="button" class="bus-session" data-bus-session="current" aria-pressed="true" aria-controls="bus-thread-current" disabled>本轮工作</button><button type="button" class="bus-session" data-bus-session="next" aria-pressed="false" aria-controls="bus-thread-next" disabled>＋ 新会话</button></div>
+        <div class="bus-agent-main">
           <div class="bus-chat-scroll" tabindex="0" role="region" aria-label="项目会话记录">
             <div class="bus-thread" id="bus-thread-current" data-bus-thread="current" role="log" aria-label="本轮工作会话" aria-live="polite" aria-relevant="additions text"></div>
             <div class="bus-thread" id="bus-thread-next" data-bus-thread="next" role="log" aria-label="新会话" aria-live="polite" aria-relevant="additions text" hidden></div>
           </div>
+          <section class="bus-file-preview" id="bus-file-preview" aria-labelledby="bus-preview-title" tabindex="-1" hidden><div class="bus-preview-header"><span class="bus-preview-title" id="bus-preview-title"></span><button type="button" class="bus-preview-close" aria-label="关闭文件预览">关闭 <span aria-hidden="true">×</span></button></div><pre class="bus-preview-code"></pre></section>
         </div>
-        <section class="bus-file-preview" id="bus-file-preview" aria-labelledby="bus-preview-title" tabindex="-1" hidden><div class="bus-preview-header"><span class="bus-preview-title" id="bus-preview-title"></span><button type="button" class="bus-preview-close" aria-label="关闭文件预览">关闭 <span aria-hidden="true">×</span></button></div><pre class="bus-preview-code"></pre></section>
+        <div class="bus-composer"><textarea class="bus-prompt" aria-label="示例消息" rows="2" readonly spellcheck="false">继续做智慧资管工作台，先看一下这个项目的背景和当前原型。</textarea><div class="bus-composer-actions"><button type="button" class="bus-send" aria-label="发送示例消息" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 15V5m-4 4 4-4 4 4"/></svg></button></div></div>
       </div>
-      <div class="bus-action-panel"><div class="bus-action-description"><span class="bus-action-title">定位工作区与读取上下文</span><p class="bus-action-copy">先在“第二大脑”中定位项目，按 AGENTS.md 和 README.md 的入口指引，只读取本次任务需要的背景、交接和当前版本。</p></div><button type="button" class="bus-action" disabled>读取项目上下文</button></div>
+      <div class="bus-flow-nav"><span class="bus-control-status" role="status" aria-live="polite">1 / 4</span><button type="button" class="bus-next-step" hidden></button></div>
     </div>
   </div>
   <div class="bus-static-flow">
-    <section><h6>1. 定位工作区与读取上下文</h6><p>先在“第二大脑”中定位项目，按 AGENTS.md 和 README.md 的入口指引，只读取本次任务需要的背景、交接和当前版本。</p><div class="bus-message bus-user"><span class="bus-message-label">任务</span><p>在第二大脑里，沿用上轮结构继续准备“园区运营周报”。先确认当前版本和产出位置。</p></div><div class="bus-read-paths"><span class="bus-message-label">读取与处理</span><ul><li>第二大脑/AGENTS.md</li><li>第二大脑/README.md → 项目与需求/园区运营周报</li><li>项目 README.md → context.md → handoff.md</li><li>产出/园区运营周报-v1.md</li></ul></div><div class="bus-message bus-assistant"><span class="bus-message-label">Agent</span><p>已按入口定位到“园区运营周报”项目，当前版本为 v1。目标是形成例会草稿，内容保留来源，待确认事项单独列出；过程和产出放回本项目。</p></div></section>
-    <section><h6>2. 围绕文件夹工作</h6><p>把整理过程、方案取舍和中间稿留在项目内。按需引入资料，产出位置偏离时及时纠正。</p><div class="bus-message bus-user"><span class="bus-message-label">任务</span><p>把已确认事项、正在推进的事项和待确认内容分开呈现。</p></div><div class="bus-read-paths"><span class="bus-message-label">读取与处理</span><ul><li>整理项目已有记录</li><li>形成中间稿与变更说明</li></ul></div><div class="bus-message bus-assistant"><span class="bus-message-label">Agent</span><p>草稿已按三类事项组织。过程记录保留了本轮结构调整，未确认的信息没有写成已完成。</p></div></section>
-    <section><h6>3. 落盘并维护记录</h6><p>保存产出并标记当前版本，维护入口、过程与交接。规则和背景发生变化时，再更新对应文件。</p><div class="bus-message bus-user"><span class="bus-message-label">任务</span><p>这轮确认：以后周报保留“待确认事项”栏。把这条项目规则和当前进展一起写回。</p></div><div class="bus-read-paths"><span class="bus-message-label">读取与处理</span><ul><li>保存产出/园区运营周报-v2.md</li><li>维护项目内五类 Markdown</li></ul></div><div class="bus-message bus-assistant"><span class="bus-message-label">Agent</span><p>v2 已落盘并标为当前待审阅版。入口、背景、过程与交接已同步；本轮确认的新栏目规则写入项目 AGENTS.md。</p></div></section>
-    <section><h6>4. 换会话接力</h6><p>换会话后仍从文件夹接续：先读最新入口和交接，再围绕当前版本继续积累。</p><div class="bus-message bus-user"><span class="bus-message-label">任务</span><p>继续这个周报项目，先告诉我当前做到哪里了。</p></div><div class="bus-read-paths"><span class="bus-message-label">读取与处理</span><ul><li>README.md：当前为 v2</li><li>handoff.md：待审阅，下一步补充进展</li></ul></div><div class="bus-message bus-assistant"><span class="bus-message-label">Agent</span><p>当前 v2 已形成，等待审阅。接下来补充本周实际进展，再按已确认的栏目继续整理；上轮的背景、取舍和进度都能从文件中回查。</p></div></section>
+    <section><h6>1. 定位项目</h6><p>定位到项目文件夹，沿着规则和入口，只读取本次任务需要的 Markdown。</p><div class="bus-message bus-user"><span class="bus-message-label">你</span><p>继续做智慧资管工作台，先看一下这个项目的背景和当前原型。</p></div><p class="bus-static-tools">已读取 AGENTS.md · 已读取 README.md · 已读取 context.md</p><div class="bus-message bus-assistant"><span class="bus-message-label">Agent</span><p>项目入口是原型/index.html。当前只有园区列表，还没有详情抽屉；这次围绕这个原型继续修改。</p></div></section>
+    <section><h6>2. 围绕任务工作</h6><p>直接围绕项目提出任务。修改原型的同时，把做了什么记录在项目里。</p><div class="bus-message bus-user"><span class="bus-message-label">你</span><p>帮我加一个园区详情抽屉，点击“园区详情”打开，也可以关闭。</p></div><p class="bus-static-tools">已更新 log.md · 新增园区详情抽屉</p><div class="bus-message bus-assistant"><span class="bus-message-label">Agent</span><p>已加上园区详情抽屉，支持打开和关闭。这次修改已记入 log.md。</p></div></section>
+    <section><h6>3. 修改并维护记录</h6><p>继续迭代同一个产出。按实际变化更新背景和过程，当前入口保持清楚。</p><div class="bus-message bus-user"><span class="bus-message-label">你</span><p>把抽屉背景改成浅蓝色，并把这次修改记下来。</p></div><p class="bus-static-tools">已更新 context.md · 浅蓝抽屉当前状态 · 已更新 log.md · 抽屉背景改为浅蓝色 · 已核对 README.md</p><div class="bus-message bus-assistant"><span class="bus-message-label">Agent</span><p>抽屉已改为浅蓝色。当前样式写入 context.md，修改过程写入 log.md；原型入口没变，README.md 沿用。</p></div></section>
+    <section><h6>4. 换会话接力</h6><p>换会话前写好 handoff.md。新会话读取保存的背景和交接，接着同一个任务往下做。</p><div class="bus-message bus-user"><span class="bus-message-label">你</span><p>接下来换一个会话继续，帮我写好 handoff.md。</p></div><p class="bus-static-tools">已生成 handoff.md · 当前状态与下一步</p><div class="bus-message bus-assistant"><span class="bus-message-label">Agent</span><p>已写好 handoff.md：保留当前浅蓝抽屉、原型入口和下一步要补充的联系信息。</p></div><h6 class="bus-static-session">新会话</h6><div class="bus-message bus-user"><span class="bus-message-label">你</span><p>继续完善这个抽屉。</p></div><p class="bus-static-tools">已读取 context.md · 已读取 handoff.md</p><div class="bus-message bus-assistant"><span class="bus-message-label">Agent</span><p>已从 context.md 和 handoff.md 接上：当前是浅蓝背景的园区详情抽屉，打开和关闭已完成。下一步补充联系人与联系方式，继续沿用现有原型。</p></div></section>
   </div>
-  <div class="bus-static-examples"><h5>落盘与交接例文</h5>
-    <section><h6>产出 / 园区运营周报-v2.md</h6><pre># 园区运营周报 v2
-
-状态：当前待审阅版
-说明：此处为流程演示例文
-
-## 已确认事项
-按确认后的记录整理，并保留来源
-
-## 推进中事项
-补充本周实际进度和下一步
-
-## 待确认事项
-将待核实的信息、负责人及待补来源列清</pre></section>
+  <div class="bus-static-examples"><h5>项目背景与交接例文</h5>
+    <section><h6>context.md</h6><pre># 项目背景
+当前页面：园区运营工作台
+已完成：园区详情抽屉，可打开和关闭
+抽屉背景：浅蓝色 #EEF5FF
+下一步：补充联系人与联系方式</pre></section>
     <section><h6>handoff.md</h6><pre># 任务交接
-
-当前：v2 草稿已形成，待审阅
-入口：产出/园区运营周报-v2.md
-
-已确定
-- 保留三类事项结构
-- 后续周报保留“待确认事项”栏目
-
-下一步
-- 补充本周实际进展及来源
-- 请用户审阅，再确认后续交付安排</pre></section>
+当前：园区详情抽屉已完成基础交互
+入口：原型/index.html
+样式：浅蓝背景 #EEF5FF
+已记录：context.md、log.md
+下一步：补充联系人与联系方式</pre></section>
   </div>
-  <noscript><style>.bus-demo .bus-agent{display:none}.bus-demo .bus-guide-button{cursor:default}.bus-demo .bus-static-flow,.bus-demo .bus-static-examples{display:block}</style></noscript>
-  <script type="application/json" class="bus-data">{"kind": "fictional_workflow_demo", "source_revision": 444, "method_source": "../../图源/个人第二大脑上下文环境/内容源.md", "title": "围绕任务文件夹持续迭代", "workspace": "第二大脑 / 项目与需求 / 园区运营周报", "notice": "流程演示 · 示例工作区，不执行真实任务", "stages": [{"title": "定位工作区与读取上下文", "guide": "先在“第二大脑”中定位项目，按 AGENTS.md 和 README.md 的入口指引，只读取本次任务需要的背景、交接和当前版本。", "user": "在第二大脑里，沿用上轮结构继续准备“园区运营周报”。先确认当前版本和产出位置。", "reads": ["第二大脑/AGENTS.md", "第二大脑/README.md → 项目与需求/园区运营周报", "项目 README.md → context.md → handoff.md", "产出/园区运营周报-v1.md"], "reply": "已按入口定位到“园区运营周报”项目，当前版本为 v1。目标是形成例会草稿，内容保留来源，待确认事项单独列出；过程和产出放回本项目。", "files": [{"key": "root-agents", "name": "第二大脑 / AGENTS.md", "state": "读取"}, {"key": "root-readme", "name": "第二大脑 / README.md", "state": "定位"}, {"key": "context-before", "name": "context.md", "state": "读取"}, {"key": "handoff-before", "name": "handoff.md", "state": "接续"}, {"key": "report-v1", "name": "产出 / 园区运营周报-v1.md", "state": "当前版"}], "action": "读取项目上下文"}, {"title": "围绕文件夹工作", "guide": "把整理过程、方案取舍和中间稿留在项目内。按需引入资料，产出位置偏离时及时纠正。", "user": "把已确认事项、正在推进的事项和待确认内容分开呈现。", "reads": ["整理项目已有记录", "形成中间稿与变更说明"], "reply": "草稿已按三类事项组织。过程记录保留了本轮结构调整，未确认的信息没有写成已完成。", "files": [{"key": "draft", "name": "过程 / 本轮整理稿.md", "state": "新增"}, {"key": "log-draft", "name": "log.md", "state": "记录"}], "action": "整理本轮工作"}, {"title": "落盘并维护记录", "guide": "保存产出并标记当前版本，维护入口、过程与交接。规则和背景发生变化时，再更新对应文件。", "user": "这轮确认：以后周报保留“待确认事项”栏。把这条项目规则和当前进展一起写回。", "reads": ["保存产出/园区运营周报-v2.md", "维护项目内五类 Markdown"], "reply": "v2 已落盘并标为当前待审阅版。入口、背景、过程与交接已同步；本轮确认的新栏目规则写入项目 AGENTS.md。", "files": [{"key": "report-v2", "name": "产出 / 园区运营周报-v2.md", "state": "新增"}, {"key": "project-agents", "name": "AGENTS.md", "state": "规则变化"}, {"key": "project-readme", "name": "README.md", "state": "当前入口"}, {"key": "project-context", "name": "context.md", "state": "新背景"}, {"key": "project-log", "name": "log.md", "state": "过程记录"}, {"key": "project-handoff", "name": "handoff.md", "state": "下轮交接"}], "action": "保存并更新记录"}, {"title": "换会话接力", "guide": "换会话后仍从文件夹接续：先读最新入口和交接，再围绕当前版本继续积累。", "user": "继续这个周报项目，先告诉我当前做到哪里了。", "reads": ["README.md：当前为 v2", "handoff.md：待审阅，下一步补充进展"], "reply": "当前 v2 已形成，等待审阅。接下来补充本周实际进展，再按已确认的栏目继续整理；上轮的背景、取舍和进度都能从文件中回查。", "files": [{"key": "project-readme", "name": "README.md", "state": "读取"}, {"key": "project-handoff", "name": "handoff.md", "state": "接续"}, {"key": "report-v2", "name": "产出 / 园区运营周报-v2.md", "state": "当前版"}], "action": "继续本项目"}], "examples": {"root-agents": {"name": "第二大脑 / AGENTS.md", "body": "# 第二大脑工作规则\n\n- 先从 README.md 找到本次任务的项目入口\n- 再按项目内的指引读取所需资料\n- 过程和产出回到对应项目文件夹\n- 不把未经确认的信息写成事实"}, "root-readme": {"name": "第二大脑 / README.md", "body": "# 第二大脑入口\n\n## 三个工作面\n- 岗位与业务知识\n- 项目与需求\n- 会议记录\n\n## 当前项目\n园区运营周报 → 项目与需求/园区运营周报/README.md"}, "project-agents": {"name": "AGENTS.md", "body": "# 园区运营周报 · 项目规则\n\n- 先读 README.md 的当前入口，再读 context.md 与 handoff.md\n- 草稿与最终产出留在本项目\n- 区分已确认、推进中、待确认事项\n- 本轮用户确认：后续周报保留“待确认事项”栏目\n\n适用范围：仅本示例项目"}, "project-readme": {"name": "README.md", "body": "# 园区运营周报\n\n当前入口：产出/园区运营周报-v2.md\n状态：待审阅\n\n背景：context.md\n过程：log.md\n接续：handoff.md\n\n历史版本：产出/园区运营周报-v1.md"}, "project-context": {"name": "context.md", "body": "# 项目背景\n\n目标：形成园区运营例会使用的周报草稿\n\n已确认\n- 沿用既有周报结构\n- 区分已确认、推进中和待确认事项\n- 本轮补充：周报用于例会讨论，待确认内容需要清楚列出\n\n边界：这里只呈现流程示例，业务内容须由真实记录补齐"}, "project-log": {"name": "log.md", "body": "# 本轮过程\n\n1. 回读项目入口、背景与上轮交接\n2. 将已有事项整理为三类，保存中间稿\n3. 用户确认后续保留“待确认事项”栏目\n4. 形成 v2，标记为当前待审阅版\n5. 更新入口、必要背景与下一步交接"}, "project-handoff": {"name": "handoff.md", "body": "# 任务交接\n\n当前：v2 草稿已形成，待审阅\n入口：产出/园区运营周报-v2.md\n\n已确定\n- 保留三类事项结构\n- 后续周报保留“待确认事项”栏目\n\n下一步\n- 补充本周实际进展及来源\n- 请用户审阅，再确认后续交付安排"}, "draft": {"name": "过程 / 本轮整理稿.md", "body": "# 本轮整理稿\n\n已确认事项 → 对照原记录整理\n推进中事项 → 写清当前进度\n待确认事项 → 保留问题与待补来源\n\n本轮取舍\n- 不把待办写成已完成\n- 不覆盖上一版\n- 审阅稿回到本项目的产出目录"}, "report-v1": {"name": "产出 / 园区运营周报-v1.md", "body": "# 园区运营周报 v1\n\n状态：本轮开始时的当前参考版本\n用途：沿用已有结构，补充本轮进展\n\n## 已确认事项\n待按本周记录更新\n\n## 推进中事项\n待按本周记录更新"}, "report-v2": {"name": "产出 / 园区运营周报-v2.md", "body": "# 园区运营周报 v2\n\n状态：当前待审阅版\n说明：此处为流程演示例文\n\n## 已确认事项\n按确认后的记录整理，并保留来源\n\n## 推进中事项\n补充本周实际进度和下一步\n\n## 待确认事项\n将待核实的信息、负责人及待补来源列清"}, "context-before": {"name": "context.md", "body": "# 项目背景\n\n目标：形成园区运营例会使用的周报草稿\n当前版本：v1\n\n约束\n- 以项目内的实际记录为依据\n- 保留来源和未确认事项\n- 本轮具体进展待补齐"}, "handoff-before": {"name": "handoff.md", "body": "# 上轮交接\n\n当前：v1 已有基础结构\n入口：产出/园区运营周报-v1.md\n\n下一步\n- 回读本轮项目记录\n- 沿用已有结构形成待审阅草稿\n- 将待确认内容单独列出"}, "log-draft": {"name": "log.md", "body": "# 本轮过程\n\n1. 回读项目入口、背景与上轮交接\n2. 按已确认、推进中、待确认整理事项\n3. 保存过程/本轮整理稿.md\n\n当前：中间稿已形成，准备进一步审阅"}}, "maintenance_boundary": "根据实际变化维护相关文件；本例恰好涉及五类 Markdown，并不表示每次任务都要修改规则和全部背景。", "interaction": {"mode": "manual_persistent_sessions", "enter_autoplay": false, "sessions": ["current", "next"], "action_scope": "selected_stage"}}</script>
+  <noscript><style>.bus-demo .bus-layout{display:none}.bus-demo .bus-static-flow,.bus-demo .bus-static-examples{display:block}</style></noscript>
+  <script type="application/json" class="bus-data">{"kind": "fictional_workflow_demo", "method_source": "../../图源/个人第二大脑上下文环境/内容源.md", "title": "围绕任务文件夹持续迭代", "workspace": "第二大脑 / 项目与需求 / 智慧资管工作台", "project": "智慧资管工作台", "stages": [{"title": "定位项目", "guide": "定位到项目文件夹，沿着规则和入口，只读取本次任务需要的 Markdown。", "user": "继续做智慧资管工作台，先看一下这个项目的背景和当前原型。", "reply": "项目入口是原型/index.html。当前只有园区列表，还没有详情抽屉；这次围绕这个原型继续修改。", "tools": [{"key": "agents", "label": "已读取 AGENTS.md"}, {"key": "readme", "label": "已读取 README.md"}, {"key": "context-initial", "label": "已读取 context.md"}]}, {"title": "围绕任务工作", "guide": "直接围绕项目提出任务。修改原型的同时，把做了什么记录在项目里。", "user": "帮我加一个园区详情抽屉，点击“园区详情”打开，也可以关闭。", "reply": "已加上园区详情抽屉，支持打开和关闭。这次修改已记入 log.md。", "tools": [{"key": "log-drawer", "label": "已更新 log.md · 新增园区详情抽屉"}], "preview": "white"}, {"title": "修改并维护记录", "guide": "继续迭代同一个产出。按实际变化更新背景和过程，当前入口保持清楚。", "user": "把抽屉背景改成浅蓝色，并把这次修改记下来。", "reply": "抽屉已改为浅蓝色。当前样式写入 context.md，修改过程写入 log.md；原型入口没变，README.md 沿用。", "tools": [{"key": "context-current", "label": "已更新 context.md · 浅蓝抽屉当前状态"}, {"key": "log-current", "label": "已更新 log.md · 抽屉背景改为浅蓝色"}, {"key": "readme", "label": "已核对 README.md"}], "preview": "blue"}, {"title": "换会话接力", "guide": "换会话前写好 handoff.md。新会话读取保存的背景和交接，接着同一个任务往下做。", "user": "接下来换一个会话继续，帮我写好 handoff.md。", "reply": "已写好 handoff.md：保留当前浅蓝抽屉、原型入口和下一步要补充的联系信息。", "tools": [{"key": "handoff", "label": "已生成 handoff.md · 当前状态与下一步"}]}], "resume": {"user": "继续完善这个抽屉。", "reply": "已从 context.md 和 handoff.md 接上：当前是浅蓝背景的园区详情抽屉，打开和关闭已完成。下一步补充联系人与联系方式，继续沿用现有原型。", "tools": [{"key": "context-current", "label": "已读取 context.md"}, {"key": "handoff", "label": "已读取 handoff.md"}], "preview": "blue"}, "examples": {"agents": {"name": "AGENTS.md", "body": "# 项目规则\n先按 README.md 找到当前入口\n只读取本次任务需要的资料\n修改原型后记录变化，换会话前写好交接"}, "readme": {"name": "README.md", "body": "# 智慧资管工作台\n当前原型：原型/index.html\n项目背景：context.md\n修改过程：log.md"}, "context-initial": {"name": "context.md", "body": "# 项目背景\n页面：园区运营工作台\n当前原型：园区列表，尚无详情抽屉\n本轮范围：只调整原型交互"}, "log-drawer": {"name": "log.md", "body": "# 过程记录\n新增园区详情抽屉，初始为白色背景\n点击“园区详情”打开，点击关闭按钮收起\n产出保存在原型/index.html"}, "context-current": {"name": "context.md", "body": "# 项目背景\n当前页面：园区运营工作台\n已完成：园区详情抽屉，可打开和关闭\n抽屉背景：浅蓝色 #EEF5FF\n下一步：补充联系人与联系方式"}, "log-current": {"name": "log.md", "body": "# 过程记录\n新增园区详情抽屉\n将抽屉背景改为浅蓝色 #EEF5FF\n保留点击打开与关闭交互\n本轮只修改演示原型"}, "handoff": {"name": "handoff.md", "body": "# 任务交接\n当前：园区详情抽屉已完成基础交互\n入口：原型/index.html\n样式：浅蓝背景 #EEF5FF\n已记录：context.md、log.md\n下一步：补充联系人与联系方式"}}, "interaction": {"mode": "manual_codex_sessions", "enter_autoplay": false, "handoff_stage": 3, "unlock_next_session": "handoff_saved", "resume_reads": ["context-current", "handoff"], "editable_prompt": false}}</script>
 </section>
 </div>
 </div></section><section class="brain-panel" id="brain-panel-2" role="tabpanel" aria-labelledby="brain-tab-2" tabindex="0"><h4 class="brain-fallback-heading" id="brain-promotion">推广与迭代</h4><div class="callout brain-promotion"><span class="callout-icon" aria-hidden="true">👍</span><div class="callout-body"><h5 class="brain-callout-heading">从个人到团队的推广</h5><p>已完成个人“第二大脑”的搭建，在团队双周会上分享了这套工作方法，并将搭建框架打包成 Skill，方便团队快速上手。目前身边已有同事围绕真实业务开始试用，并在使用中持续迭代优化</p><p><b>这本质上是一次面向 AI Native 的个人工作方式转型，我们仍在探索最佳实践。未来无论为 AI 提供上下文、打造数字员工的方式怎样变化，这个过程中积累的上下文管理（Context 管理）能力、个人工作方法和专家经验，都能持续发挥价值</b></p></div></div></section></div>
@@ -2772,14 +2765,17 @@ tags: [园区运营, 业务流程]
     const data = JSON.parse(root.querySelector('.bus-data').textContent);
     const guides = [...root.querySelectorAll('[data-bus-step]')];
     const sessions = [...root.querySelectorAll('[data-bus-session]')];
-    const threads = Object.fromEntries([...root.querySelectorAll('[data-bus-thread]')].map(el => [el.dataset.busThread, el]));
-    const files = root.querySelector('.bus-files');
-    const action = root.querySelector('.bus-action');
-    const preview = root.querySelector('.bus-file-preview');
+    const threads = Object.fromEntries([...root.querySelectorAll('[data-bus-thread]')].map(node => [node.dataset.busThread, node]));
     const scroll = root.querySelector('.bus-chat-scroll');
+    const prompt = root.querySelector('.bus-prompt');
+    const send = root.querySelector('.bus-send');
+    const next = root.querySelector('.bus-next-step');
+    const preview = root.querySelector('.bus-file-preview');
     const completed = new Set();
+    const saved = new Set();
     const scrollPositions = {current:0, next:0};
-    let step = 0, session = 'current', nextOpened = false, lastCurrentStep = 0, lastFile;
+    let step = 0, session = 'current', lastCurrentStep = 0;
+    let handoffSaved = false, resumed = false, nextOpened = false, lastFile;
 
     function element(tag, className, text) {
       const node = document.createElement(tag);
@@ -2788,155 +2784,177 @@ tags: [园区运营, 业务流程]
       return node;
     }
     function firstPending() {
-      return data.stages.findIndex((_, index) => !completed.has(index));
+      const index = data.stages.findIndex((_, i) => !completed.has(i));
+      return index === -1 ? 3 : index;
+    }
+    function canResume() {
+      return handoffSaved && saved.has('context-current') && saved.has('handoff');
+    }
+    function canSend() {
+      if (session === 'next') return canResume() && !resumed;
+      return step === firstPending() && !completed.has(step) && !(step === 3 && handoffSaved);
     }
     function updateControls() {
       root.dataset.busState = String(step);
       root.dataset.busSession = session;
       root.dataset.busPlayback = 'manual';
       root.dataset.busCompleted = [...completed].join(',');
+      root.dataset.busHandoff = handoffSaved ? 'saved' : 'pending';
+      root.dataset.busResume = resumed ? 'complete' : 'pending';
+      root.dataset.busSaved = [...saved].join(',');
       guides.forEach((button, index) => {
-        button.disabled = false;
+        button.disabled = index > firstPending();
         button.setAttribute('aria-pressed', String(index === step));
         button.dataset.complete = String(completed.has(index));
       });
       sessions.forEach(button => {
         const isNext = button.dataset.busSession === 'next';
-        button.disabled = isNext && !completed.has(2);
+        button.disabled = isNext && !canResume();
         button.setAttribute('aria-pressed', String(button.dataset.busSession === session));
-        if (isNext) button.textContent = nextOpened ? '下一轮接力' : '＋ 新会话';
+        if (isNext) button.textContent = nextOpened ? '接力会话' : '＋ 新会话';
       });
+      prompt.value = session === 'next' ? data.resume.user : data.stages[step].user;
+      send.disabled = !canSend();
       root.querySelector('.bus-control-status').textContent = `${step + 1} / 4`;
-      root.querySelector('.bus-action-title').textContent = data.stages[step].title;
-      root.querySelector('.bus-action-copy').textContent = data.stages[step].guide;
-      root.querySelector('.bus-session-title').textContent = session === 'current' ? '本轮工作' : '下一轮接力';
-      root.querySelector('.bus-project-version').textContent = completed.has(2) ? 'v2 · 待审阅' : completed.has(1) ? '本轮整理稿' : 'v1 · 当前参考';
-      const pending = firstPending();
-      if (completed.has(step)) {
-        action.textContent = step === 3 ? '回看本轮工作' : `下一步：${data.stages[step + 1].title}`;
-      } else if (pending < step) {
-        action.textContent = data.stages[pending].action;
-      } else if (step === 3 && session !== 'next') {
-        action.textContent = '打开下一轮会话';
-      } else {
-        action.textContent = data.stages[step].action;
+      root.querySelector('.bus-project-version').textContent = handoffSaved ? '交接已保存' : completed.has(2) ? '浅蓝抽屉' : completed.has(1) ? '已添加抽屉' : '初始原型';
+      next.hidden = true;
+      if (session === 'current' && step < 3 && completed.has(step)) {
+        next.textContent = `下一步：${data.stages[step + 1].title} →`;
+        next.dataset.busNext = 'step';
+        next.hidden = false;
+      } else if (session === 'current' && step === 3 && handoffSaved) {
+        next.textContent = nextOpened ? '查看接力会话 →' : '打开新会话 →';
+        next.dataset.busNext = 'session';
+        next.hidden = false;
       }
-      action.disabled = false;
-      const agentStatus = root.querySelector('.bus-agent-status');
-      if (agentStatus) agentStatus.textContent = completed.has(2) ? '项目记录已更新' : '园区运营周报';
     }
     function closePreview(restoreFocus = false) {
       preview.hidden = true;
       root.removeAttribute('data-bus-file-open');
-      files.querySelectorAll('[data-bus-file]').forEach(button => button.setAttribute('aria-expanded', 'false'));
-      if (restoreFocus && lastFile?.isConnected) lastFile.focus({preventScroll:true});
+      root.querySelectorAll('[data-bus-file]').forEach(button => button.setAttribute('aria-expanded', 'false'));
+      if (restoreFocus && lastFile?.isConnected && !lastFile.closest('[hidden]')) lastFile.focus({preventScroll:true});
     }
     function switchSession(name) {
-      if (name === 'next' && !completed.has(2)) return false;
+      if (!threads[name] || (name === 'next' && !canResume())) return false;
       closePreview();
       if (name !== session) {
         scrollPositions[session] = scroll.scrollTop;
         session = name;
-        Object.entries(threads).forEach(([key, thread]) => { thread.hidden = key !== session; });
+        Object.entries(threads).forEach(([key, thread]) => {
+          thread.hidden = key !== session;
+          thread.inert = key !== session;
+        });
         scroll.scrollTop = scrollPositions[session];
       }
       if (name === 'next') { nextOpened = true; step = 3; }
-      else { step = lastCurrentStep; }
+      else step = lastCurrentStep;
       updateControls();
       return true;
     }
     function showStep(index) {
+      if (index < 0 || index > 3 || index > firstPending()) return;
       closePreview();
       if (index < 3) {
         lastCurrentStep = index;
         switchSession('current');
-      } else if (nextOpened) {
-        switchSession('next');
-      }
+      } else if (session === 'current') lastCurrentStep = 3;
       step = index;
       updateControls();
-      const turn = threads[session].querySelector(`[data-bus-turn="${step}"]`);
+      const turn = threads[session].querySelector(`[data-bus-turn="${index}"]`);
       if (turn) scroll.scrollTop += turn.getBoundingClientRect().top - scroll.getBoundingClientRect().top - 18;
+      scrollPositions[session] = scroll.scrollTop;
     }
-    function updateFiles() {
-      let entries;
-      if (completed.has(2)) entries = [
-        ...data.stages[0].files.filter(file => file.key.startsWith('root-')),
-        ...data.stages[2].files,
-        {...data.stages[0].files.find(file => file.key === 'report-v1'), state:'历史版本'},
-        data.stages[1].files.find(file => file.key === 'draft')
-      ];
-      else if (completed.has(1)) entries = [...data.stages[0].files, ...data.stages[1].files];
-      else entries = data.stages[0].files;
-      const current = new Map([...files.querySelectorAll('[data-bus-file]')].map(button => [button.dataset.busFile, button]));
-      const keys = new Set(entries.map(file => file.key));
-      for (const [key, button] of current) if (!keys.has(key)) button.remove();
-      entries.forEach(file => {
-        let button = current.get(file.key);
-        if (!button) {
-          button = element('button', 'bus-file');
-          button.type = 'button';
-          button.dataset.busFile = file.key;
-          button.setAttribute('aria-controls', 'bus-file-preview');
-          button.setAttribute('aria-expanded', 'false');
-          button.append(element('span', 'bus-file-name', file.name), element('span', 'bus-file-state', file.state));
-        }
-        button.querySelector('.bus-file-name').textContent = file.name;
-        button.querySelector('.bus-file-state').textContent = file.state;
-        files.append(button);
-      });
+    function prototype(color, key) {
+      const node = element('div', 'bus-prototype');
+      node.dataset.busColor = color;
+      node.setAttribute('role', 'group');
+      node.setAttribute('aria-label', color === 'blue' ? '浅蓝背景的园区详情抽屉原型' : '白色背景的园区详情抽屉原型');
+      const id = `bus-drawer-${key}`;
+      node.innerHTML = `<div class="bus-mini-bar"><span>智慧资管工作台</span><span>原型</span></div><div class="bus-mini-main"><div class="bus-mini-summary"><h6>园区运营</h6><p>园区 A</p><button type="button" class="bus-drawer-open" data-bus-drawer-open aria-controls="${id}" aria-expanded="true">园区详情</button></div><section class="bus-drawer" id="${id}" aria-label="园区详情"><div class="bus-drawer-header"><span>园区详情</span><button type="button" class="bus-drawer-close" data-bus-drawer-close aria-label="关闭园区详情抽屉">×</button></div><dl><div><dt>园区</dt><dd>园区 A</dd></div><div><dt>联系人</dt><dd>待补充</dd></div><div><dt>联系方式</dt><dd>待补充</dd></div></dl></section></div>`;
+      return node;
     }
-    function appendTurn(index) {
-      if (completed.has(index)) return;
-      const stage = data.stages[index];
-      const thread = threads[index === 3 ? 'next' : 'current'];
+    function appendTurn(item, index, kind) {
+      const thread = threads[session];
+      if (thread.querySelector(`[data-bus-turn-kind="${kind}"]`)) return;
       thread.querySelector('.bus-empty')?.remove();
       const turn = element('section', 'bus-turn');
       turn.dataset.busTurn = String(index);
-      turn.setAttribute('aria-label', stage.title);
+      turn.dataset.busTurnKind = kind;
+      turn.setAttribute('aria-label', kind === 'resume' ? '新会话接力' : data.stages[index].title);
       const user = element('div', 'bus-message bus-user');
-      user.append(element('span', 'bus-message-label', '你'), element('p', '', stage.user));
-      const reads = element('div', 'bus-read-paths');
-      const list = element('ul');
-      stage.reads.forEach(path => list.append(element('li', '', path)));
-      reads.append(list);
+      user.append(element('span', 'bus-message-label', '你'), element('p', '', item.user));
+      const tools = element('div', 'bus-tool-records');
+      item.tools.forEach(record => {
+        const button = element('button', 'bus-tool-record');
+        button.type = 'button';
+        button.dataset.busFile = record.key;
+        button.setAttribute('aria-controls', 'bus-file-preview');
+        button.setAttribute('aria-expanded', 'false');
+        button.append(element('span', '', record.label));
+        tools.append(button);
+      });
       const reply = element('div', 'bus-message bus-assistant');
-      reply.append(element('span', 'bus-message-label', 'Agent'), element('p', '', stage.reply));
-      turn.append(user, reads, reply);
+      reply.append(element('span', 'bus-message-label', 'Agent'), element('p', '', item.reply));
+      if (item.preview) reply.append(prototype(item.preview, kind));
+      turn.append(user, tools, reply);
       thread.append(turn);
-      completed.add(index);
-      updateFiles();
+    }
+    function sendMessage() {
+      if (!canSend()) return;
+      closePreview();
+      if (session === 'next') {
+        if (!data.resume.tools.every(record => saved.has(record.key))) return;
+        appendTurn(data.resume, 3, 'resume');
+        resumed = true;
+        completed.add(3);
+      } else {
+        appendTurn(data.stages[step], step, `stage-${step}`);
+        if (step === 1) saved.add('log-drawer');
+        if (step === 2) { saved.add('context-current'); saved.add('log-current'); }
+        if (step === 3) { saved.add('handoff'); handoffSaved = true; }
+        else completed.add(step);
+        lastCurrentStep = step;
+      }
       updateControls();
-      // Scroll only the conversation viewport; keep the document in place.
-      scroll.scrollTop += turn.getBoundingClientRect().top - scroll.getBoundingClientRect().top - 18;
+      scroll.scrollTop = scroll.scrollHeight;
       scrollPositions[session] = scroll.scrollTop;
     }
     guides.forEach((button, index) => button.addEventListener('click', () => showStep(index)));
     sessions.forEach(button => button.addEventListener('click', () => switchSession(button.dataset.busSession)));
-    action.addEventListener('click', () => {
-      closePreview();
-      if (completed.has(step)) {
-        if (step === 3) { lastCurrentStep = 2; switchSession('current'); }
-        else showStep(step + 1);
+    send.addEventListener('click', sendMessage);
+    prompt.addEventListener('keydown', event => {
+      if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+    next.addEventListener('click', () => {
+      if (next.dataset.busNext === 'session') switchSession('next');
+      else showStep(step + 1);
+    });
+    root.addEventListener('click', event => {
+      const file = event.target.closest('[data-bus-file]');
+      if (file && root.contains(file)) {
+        const example = data.examples[file.dataset.busFile];
+        if (!example) return;
+        closePreview();
+        lastFile = file;
+        file.setAttribute('aria-expanded', 'true');
+        root.dataset.busFileOpen = file.dataset.busFile;
+        preview.querySelector('.bus-preview-title').textContent = example.name;
+        preview.querySelector('.bus-preview-code').textContent = example.body;
+        preview.hidden = false;
+        preview.focus({preventScroll:true});
         return;
       }
-      const pending = firstPending();
-      if (pending < step) showStep(pending);
-      if (step === 3 && session !== 'next') { switchSession('next'); return; }
-      appendTurn(step);
-    });
-    files.addEventListener('click', event => {
-      const button = event.target.closest('[data-bus-file]');
-      if (!button || !files.contains(button)) return;
-      const example = data.examples[button.dataset.busFile];
-      if (!example) return;
-      closePreview(); lastFile = button;
-      root.dataset.busFileOpen = button.dataset.busFile;
-      button.setAttribute('aria-expanded', 'true');
-      preview.querySelector('.bus-preview-title').textContent = example.name;
-      preview.querySelector('.bus-preview-code').textContent = example.body;
-      preview.hidden = false;
-      preview.focus({preventScroll:true});
+      const drawerButton = event.target.closest('[data-bus-drawer-open],[data-bus-drawer-close]');
+      if (!drawerButton || !root.contains(drawerButton)) return;
+      const card = drawerButton.closest('.bus-prototype');
+      const drawer = card.querySelector('.bus-drawer');
+      const open = card.querySelector('[data-bus-drawer-open]');
+      drawer.hidden = drawerButton.hasAttribute('data-bus-drawer-close');
+      open.setAttribute('aria-expanded', String(!drawer.hidden));
+      if (drawer.hidden) open.focus({preventScroll:true});
     });
     root.querySelector('.bus-preview-close').addEventListener('click', () => closePreview(true));
     preview.addEventListener('keydown', event => {
@@ -2945,15 +2963,17 @@ tags: [园区运营, 业务流程]
     document.addEventListener('brain:demo', event => {
       if (!(event.detail?.active === true && event.detail?.view === 'use')) closePreview();
     });
-    root.dataset.busReady = 'true';
-    root.classList.add('bus-ready');
-    Object.entries(threads).forEach(([key, thread]) => { thread.hidden = key !== session; });
     Object.entries(threads).forEach(([key, thread]) => {
+      thread.hidden = key !== session;
+      thread.inert = key !== session;
       const empty = element('div', 'bus-empty');
-      empty.append(element('span', '', key === 'current' ? '园区运营周报' : '下一轮接力'));
+      empty.innerHTML = '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 9h9l3 4h10v13H5z"/><path d="M5 13h22"/></svg>';
+      empty.append(element('span', '', data.project));
       thread.append(empty);
     });
-    updateFiles(); updateControls();
+    root.dataset.busReady = 'true';
+    root.classList.add('bus-ready');
+    updateControls();
   });
 })();
 
