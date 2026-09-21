@@ -731,9 +731,20 @@ html.bbs-is-dragging,html.bbs-is-dragging *{cursor:grabbing!important;user-selec
 .bus-demo .bus-tool-record span{overflow-wrap:anywhere}
 .bus-demo .bus-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:220px;height:100%;padding:20px;text-align:center;color:#b1bdc8;font-size:13px;line-height:1.8}
 .bus-demo .bus-empty svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
-.bus-demo .bus-composer{flex:none;margin:0 16px 15px;padding:12px 13px 10px;border:1px solid #dce3eb;border-radius:13px;background:#fff;box-shadow:0 2px 5px #35537006}
-.bus-demo .bus-prompt{display:block;width:100%;min-height:48px;max-height:85px;resize:none;border:0;border-radius:0;outline:none;padding:0;margin:0;background:none;color:#4a5b6c;font-size:14px;line-height:1.7;overflow:auto;scrollbar-width:thin}
-.bus-demo .bus-prompt:focus-visible{outline-offset:4px}
+.bus-demo .bus-composer{flex:none;margin:0 16px 15px;padding:12px 13px 10px;border:1px solid #dce3eb;border-radius:13px;background:#fff;box-shadow:0 2px 5px #35537006;transition:border-color .16s,box-shadow .16s;cursor:text}
+.bus-demo .bus-composer:hover{border-color:#b9c5d2}
+.bus-demo .bus-composer:focus-within{border-color:#91a8c1;box-shadow:0 0 0 3px #6a89ab12,0 2px 6px #35537008}
+.bus-demo .bus-prompt-shell{position:relative;overflow:hidden;font-size:14px;line-height:1.7}
+.bus-demo .bus-prompt{display:block;width:100%;min-height:48px;max-height:85px;resize:none;border:0;border-radius:0;outline:none;padding:0;margin:0;background:none;color:#4a5b6c;font:inherit;line-height:inherit;overflow:auto;scrollbar-width:thin;cursor:text;caret-color:transparent}
+.bus-demo .bus-prompt:focus-visible{outline:none}
+.bus-demo .bus-prompt-mirror{position:absolute;inset:0;pointer-events:none;white-space:pre-wrap;overflow-wrap:break-word;word-break:normal;font:inherit;line-height:inherit;color:transparent;text-align:left}
+.bus-demo .bus-caret{display:inline-block;vertical-align:-.18em;width:0;height:1.15em;margin-right:-1.5px;border-left:1.5px solid #52677d;animation:bus-caret-blink 1.1s steps(1,end) infinite}
+.bus-demo .bus-prompt-mirror[data-selection="true"] .bus-caret{visibility:hidden}
+.bus-demo .bus-composer:focus-within .bus-caret{border-color:#2d465f}
+@keyframes bus-caret-blink{0%,55%{opacity:1}56%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.bus-demo .bus-caret{animation:none}.bus-demo .bus-composer{transition:none}}
+.no-motion .bus-demo .bus-caret{animation:none}
+.no-motion .bus-demo .bus-composer{transition:none}
 .bus-demo .bus-composer-actions{display:flex;justify-content:flex-end;margin-top:4px}
 .bus-demo .bus-send{display:grid;place-items:center;flex:none;width:31px;height:31px;padding:0;border:1px solid #252b31;border-radius:50%;background:#252b31;color:#fff;transition:background .15s,opacity .15s}
 .bus-demo .bus-send:hover:not(:disabled){background:#46515c}
@@ -776,7 +787,7 @@ html.bbs-is-dragging,html.bbs-is-dragging *{cursor:grabbing!important;user-selec
 @keyframes bus-turn-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 @media(max-width:1050px){.bus-demo .bus-layout{grid-template-columns:220px minmax(0,1fr);gap:18px}.bus-demo .bus-guide-button{padding:12px 9px;gap:9px}.bus-demo .bus-chat-scroll{padding:20px 17px 22px}}
 @media(max-width:760px){.bus-demo .bus-layout{grid-template-columns:1fr;gap:18px}.bus-demo .bus-guide{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bus-demo .bus-guide-button{height:100%;padding:11px}.bus-demo .bus-guide-title{font-size:13px}.bus-demo .bus-guide-copy{font-size:11px;line-height:1.8}.bus-demo .bus-guide-button:not([aria-pressed="true"]) .bus-guide-copy{display:none}.bus-demo .bus-agent{height:620px}}
-@media(max-width:500px){.bus-demo .bus-guide-button{padding:10px 8px;gap:7px}.bus-demo .bus-step-num{width:21px;height:21px;font-size:10px}.bus-demo .bus-guide-title{font-size:12px}.bus-demo .bus-guide-copy{font-size:11px;margin-top:5px}.bus-demo .bus-agent{height:640px}.bus-demo .bus-agent-bar{padding:12px 12px 7px;font-size:11px}.bus-demo .bus-project-version{font-size:9px}.bus-demo .bus-workspace-path{padding:0 12px 10px;font-size:9px}.bus-demo .bus-session-tabs{padding:0 12px}.bus-demo .bus-chat-scroll{padding:18px 13px 20px}.bus-demo .bus-user{max-width:98%;padding:10px 12px}.bus-demo .bus-message,.bus-demo .bus-message p{font-size:14px;line-height:1.85}.bus-demo .bus-tool-record{font-size:10px}.bus-demo .bus-composer{margin:0 10px 11px;padding:11px 11px 9px}.bus-demo .bus-prompt{font-size:13px}.bus-demo .bus-next-step{font-size:11px}.bus-demo .bus-preview-header{padding:13px}.bus-demo .bus-preview-code{padding:17px;font-size:11px}.bus-demo .bus-mini-summary{padding:13px 10px}.bus-demo .bus-drawer{padding:12px 9px}.bus-demo .bus-drawer-header{font-size:10px}.bus-demo .bus-drawer dl>div{font-size:8px;gap:5px}}
+@media(max-width:500px){.bus-demo .bus-guide-button{padding:10px 8px;gap:7px}.bus-demo .bus-step-num{width:21px;height:21px;font-size:10px}.bus-demo .bus-guide-title{font-size:12px}.bus-demo .bus-guide-copy{font-size:11px;margin-top:5px}.bus-demo .bus-agent{height:640px}.bus-demo .bus-agent-bar{padding:12px 12px 7px;font-size:11px}.bus-demo .bus-project-version{font-size:9px}.bus-demo .bus-workspace-path{padding:0 12px 10px;font-size:9px}.bus-demo .bus-session-tabs{padding:0 12px}.bus-demo .bus-chat-scroll{padding:18px 13px 20px}.bus-demo .bus-user{max-width:98%;padding:10px 12px}.bus-demo .bus-message,.bus-demo .bus-message p{font-size:14px;line-height:1.85}.bus-demo .bus-tool-record{font-size:10px}.bus-demo .bus-composer{margin:0 10px 11px;padding:11px 11px 9px}.bus-demo .bus-prompt-shell{font-size:13px}.bus-demo .bus-next-step{font-size:11px}.bus-demo .bus-preview-header{padding:13px}.bus-demo .bus-preview-code{padding:17px;font-size:11px}.bus-demo .bus-mini-summary{padding:13px 10px}.bus-demo .bus-drawer{padding:12px 9px}.bus-demo .bus-drawer-header{font-size:10px}.bus-demo .bus-drawer dl>div{font-size:8px;gap:5px}}
 @media(prefers-reduced-motion:reduce){.bus-demo .bus-turn{animation:none}.bus-demo .bus-guide-button,.bus-demo .bus-session,.bus-demo .bus-send{transition:none}}
 .no-motion .bus-demo .bus-turn{animation:none}.no-motion .bus-demo .bus-guide-button,.no-motion .bus-demo .bus-session,.no-motion .bus-demo .bus-send{transition:none}
 @media print{.bus-demo .bus-layout{display:none!important}.bus-demo .bus-static-flow,.bus-demo .bus-static-examples{display:block!important}.bus-demo .bus-static-flow>section{break-inside:avoid}.bus-demo .bus-turn{animation:none}.bus-demo .bus-user{margin-left:0}.bus-demo .bus-static-examples pre{background:#fff}}
@@ -1505,7 +1516,7 @@ tags: [园区运营, 业务流程]
           </div>
           <section class="bus-file-preview" id="bus-file-preview" aria-labelledby="bus-preview-title" tabindex="-1" hidden><div class="bus-preview-header"><span class="bus-preview-title" id="bus-preview-title"></span><button type="button" class="bus-preview-close" aria-label="关闭文件预览">关闭 <span aria-hidden="true">×</span></button></div><pre class="bus-preview-code"></pre></section>
         </div>
-        <div class="bus-composer"><textarea class="bus-prompt" aria-label="示例消息" rows="2" readonly spellcheck="false">继续做智慧资管工作台，先看一下这个项目的背景和当前原型。</textarea><div class="bus-composer-actions"><button type="button" class="bus-send" aria-label="发送示例消息" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 15V5m-4 4 4-4 4 4"/></svg></button></div></div>
+        <div class="bus-composer"><div class="bus-prompt-shell"><textarea class="bus-prompt" aria-label="示例消息" rows="2" readonly spellcheck="false">继续做智慧资管工作台，先看一下这个项目的背景和当前原型。</textarea><div class="bus-prompt-mirror" aria-hidden="true"><span class="bus-mirror-before"></span><span class="bus-caret"></span><span class="bus-mirror-after"></span></div></div><div class="bus-composer-actions"><button type="button" class="bus-send" aria-label="发送示例消息" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 15V5m-4 4 4-4 4 4"/></svg></button></div></div>
       </div>
       <div class="bus-flow-nav"><span class="bus-control-status" role="status" aria-live="polite">1 / 4</span><button type="button" class="bus-next-step" hidden></button></div>
     </div>
@@ -2768,6 +2779,8 @@ tags: [园区运营, 业务流程]
     const threads = Object.fromEntries([...root.querySelectorAll('[data-bus-thread]')].map(node => [node.dataset.busThread, node]));
     const scroll = root.querySelector('.bus-chat-scroll');
     const prompt = root.querySelector('.bus-prompt');
+    const composer = root.querySelector('.bus-composer');
+    const mirror = root.querySelector('.bus-prompt-mirror');
     const send = root.querySelector('.bus-send');
     const next = root.querySelector('.bus-next-step');
     const preview = root.querySelector('.bus-file-preview');
@@ -2794,6 +2807,30 @@ tags: [园区运营, 业务流程]
       if (session === 'next') return canResume() && !resumed;
       return step === firstPending() && !completed.has(step) && !(step === 3 && handoffSaved);
     }
+    function syncCaret() {
+      const position = prompt.selectionEnd ?? prompt.value.length;
+      mirror.querySelector('.bus-mirror-before').textContent = prompt.value.slice(0, position);
+      mirror.querySelector('.bus-mirror-after').textContent = prompt.value.slice(position);
+      mirror.dataset.selection = String(prompt.selectionStart !== prompt.selectionEnd);
+      mirror.style.transform = `translate(${-prompt.scrollLeft}px, ${-prompt.scrollTop}px)`;
+    }
+    function fitPrompt() {
+      if (!prompt.getClientRects().length) return;
+      prompt.style.height = '48px';
+      prompt.style.height = `${Math.min(85, Math.max(48, prompt.scrollHeight))}px`;
+      syncCaret();
+    }
+    function updatePrompt() {
+      const value = canSend() ? (session === 'next' ? data.resume.user : data.stages[step].user) : '';
+      if (prompt.value !== value || !mirror.dataset.ready) {
+        prompt.value = value;
+        prompt.setSelectionRange(value.length, value.length);
+        prompt.scrollTop = 0;
+        mirror.dataset.ready = 'true';
+      }
+      fitPrompt();
+      syncCaret();
+    }
     function updateControls() {
       root.dataset.busState = String(step);
       root.dataset.busSession = session;
@@ -2813,7 +2850,7 @@ tags: [园区运营, 业务流程]
         button.setAttribute('aria-pressed', String(button.dataset.busSession === session));
         if (isNext) button.textContent = nextOpened ? '接力会话' : '＋ 新会话';
       });
-      prompt.value = session === 'next' ? data.resume.user : data.stages[step].user;
+      updatePrompt();
       send.disabled = !canSend();
       root.querySelector('.bus-control-status').textContent = `${step + 1} / 4`;
       root.querySelector('.bus-project-version').textContent = handoffSaved ? '交接已保存' : completed.has(2) ? '浅蓝抽屉' : completed.has(1) ? '已添加抽屉' : '初始原型';
@@ -2928,6 +2965,20 @@ tags: [园区运营, 业务流程]
         sendMessage();
       }
     });
+    ['click', 'keyup', 'select', 'focus', 'scroll'].forEach(type => prompt.addEventListener(type, syncCaret));
+    ['beforeinput', 'paste', 'cut', 'drop'].forEach(type => prompt.addEventListener(type, event => event.preventDefault()));
+    composer.addEventListener('click', event => {
+      if (event.target.closest('button') || event.target === prompt) return;
+      prompt.focus({preventScroll:true});
+      syncCaret();
+    });
+    let promptWidth = 0;
+    new ResizeObserver(entries => {
+      const width = entries[0].contentRect.width;
+      if (width === promptWidth) return;
+      promptWidth = width;
+      fitPrompt();
+    }).observe(root.querySelector('.bus-prompt-shell'));
     next.addEventListener('click', () => {
       if (next.dataset.busNext === 'session') switchSession('next');
       else showStep(step + 1);
@@ -2962,6 +3013,7 @@ tags: [园区运营, 业务流程]
     });
     document.addEventListener('brain:demo', event => {
       if (!(event.detail?.active === true && event.detail?.view === 'use')) closePreview();
+      else fitPrompt();
     });
     Object.entries(threads).forEach(([key, thread]) => {
       thread.hidden = key !== session;
