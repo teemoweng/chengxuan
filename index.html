@@ -185,20 +185,20 @@ html:not(.js) .mobile-menu{display:none}
 .work-controls>span{align-self:center}
 .work-controls>button:first-child{white-space:nowrap}
 
-.work-theory-figure{--theory-label:128px;--theory-blue:#769ab8;--theory-gold:#b69b75;width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;border:1px solid #dfe7ef;border-radius:8px;background:#fff;color:#304b62;isolation:isolate}
+.work-theory-figure{--theory-label:158px;--theory-blue:#769ab8;--theory-gold:#b69b75;width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;border:1px solid #dfe7ef;border-radius:8px;background:#fff;color:#304b62;isolation:isolate}
 .work-theory-figure .theory-defs{position:absolute;overflow:hidden;pointer-events:none}
 .work-theory-figure .theory-board{min-width:748px;padding:20px 22px 18px 16px}
 .work-theory-figure p{margin:0;min-height:0}
-.work-theory-figure .theory-phases,.work-theory-figure .theory-lane,.work-theory-figure .theory-values,.work-theory-figure .theory-artifacts{display:grid;grid-template-columns:var(--theory-label) repeat(3,minmax(0,1fr));position:relative}
-.work-theory-figure .theory-phases{padding-bottom:13px;align-items:center}
-.work-theory-figure .theory-phase{text-align:center;position:relative;font-size:19px;font-weight:600;line-height:1.6;letter-spacing:.08em;color:#3b607f}
-.work-theory-figure .theory-phase:not(:last-child)::after{content:"";position:absolute;width:5px;height:5px;border-top:1.5px solid #b7c8d7;border-right:1.5px solid #b7c8d7;transform:rotate(45deg);right:-2px;top:12px}
+.work-theory-figure .theory-phases,.work-theory-figure .theory-lane,.work-theory-figure .theory-artifacts{display:grid;grid-template-columns:var(--theory-label) repeat(3,minmax(0,1fr));position:relative}
+.work-theory-figure .theory-phases{padding-bottom:18px;align-items:center}
+.work-theory-figure .theory-phase{text-align:center;position:relative;margin:0 10px;padding:8px 12px;border:1px solid #d7e4f2;border-radius:6px;background:#eef4fe;font-size:18px;font-weight:600;line-height:1.6;color:#2d6095}
+.work-theory-figure .theory-phase:nth-child(3){background:#eff6f6;border-color:#d7e7e6;color:#367778}
+.work-theory-figure .theory-phase:nth-child(4){background:#f7f2e9;border-color:#e9dfcd;color:#926d34}
+.work-theory-figure .theory-phase:not(:last-child)::after{content:"";position:absolute;width:5px;height:5px;border-top:1.5px solid #a9bac9;border-right:1.5px solid #a9bac9;transform:rotate(45deg);right:-13px;top:calc(50% - 3px)}
 .work-theory-figure .theory-lane{border-radius:5px;isolation:isolate}
 .work-theory-figure .theory-role-lane{background:#f5f9fc;padding:16px 0 31px}
-.work-theory-figure .theory-ai-lane{background:#fcfaf6;margin-top:12px;padding:21px 0 35px}
-.work-theory-figure .theory-row-label{align-self:center;font-size:14px;font-weight:500;line-height:1.65;color:#637c91;padding:0 0 0 16px;letter-spacing:.02em}
-.work-theory-figure .theory-row-label span,.work-theory-figure .theory-row-label strong{display:block}
-.work-theory-figure .theory-row-label strong{font-weight:600}
+.work-theory-figure .theory-ai-lane{background:#fcfaf6;margin-top:12px;padding:23px 0 36px}
+.work-theory-figure .theory-row-label{align-self:center;font-size:14px;font-weight:600;line-height:1.65;color:#637c91;padding:0 0 0 16px;white-space:nowrap}
 .work-theory-figure .theory-role-lane .theory-row-label{color:#426986}
 .work-theory-figure .theory-ai-lane .theory-row-label{color:#8d744f}
 .work-theory-figure .theory-cell{min-width:0;display:flex;align-items:center;flex-direction:column;justify-content:center;text-align:center;padding-inline:6px}
@@ -212,16 +212,16 @@ html:not(.js) .mobile-menu{display:none}
 .work-theory-figure .theory-ai-lane .theory-track{background:linear-gradient(90deg,#e3d8c7,var(--theory-gold))}
 .work-theory-figure .theory-ai-lane .theory-track::after{border-color:var(--theory-gold)}
 .work-theory-figure .theory-ai-lane .theory-track i{background:var(--theory-gold);box-shadow:0 0 0 4px #fcfaf6}
-.work-theory-figure .theory-action{justify-content:flex-start;min-height:51px}
-.work-theory-figure .theory-action .theory-title{font-weight:500}
-.work-theory-figure .theory-values{padding:18px 0 17px;border-bottom:1px solid #e9eef3}
-.work-theory-figure .theory-value .theory-title{font-size:15px;font-weight:600}
-.work-theory-figure .theory-artifacts{padding:15px 0 0}
+.work-theory-figure .theory-action{justify-content:flex-start;min-height:76px}
+.work-theory-figure .theory-action .theory-title{font-weight:600}
+.work-theory-figure .theory-action .theory-caption{font-size:13px;margin-top:5px;color:#647c8d}
+.work-theory-figure .theory-note{font-size:12px;line-height:1.65;color:#788b9a;margin-top:1px;white-space:nowrap}
+.work-theory-figure .theory-artifacts{margin-top:18px;padding:16px 0 0;border-top:1px solid #e9eef3}
 .work-theory-figure .theory-artifact .theory-scene{width:81px;height:54px;margin-bottom:5px}
 .work-theory-figure .theory-artifact .theory-title{font-size:15px;font-weight:500}
 .work-theory-figure .theory-artifact .theory-caption{font-size:12px}
 @media(max-width:650px){.work-theory-figure .theory-board{padding:16px 18px 16px 10px}}
-@media print{.work-theory-figure{--theory-label:92px;break-inside:avoid;overflow:visible;-webkit-print-color-adjust:exact;print-color-adjust:exact}.work-theory-figure .theory-board{min-width:0;padding:12px}.work-theory-figure .theory-title{font-size:13px;white-space:normal}.work-theory-figure .theory-caption{font-size:10px;white-space:normal}.work-theory-figure .theory-row-label{font-size:12px;padding-left:8px}.work-theory-figure .theory-value .theory-title,.work-theory-figure .theory-artifact .theory-title{font-size:12px}.work-theory-figure .theory-artifact .theory-caption{font-size:10px}.work-theory-figure .theory-phase{font-size:16px}}
+@media print{.work-theory-figure{--theory-label:134px;break-inside:avoid;overflow:visible;-webkit-print-color-adjust:exact;print-color-adjust:exact}.work-theory-figure .theory-board{min-width:0;padding:12px}.work-theory-figure .theory-title{font-size:13px;white-space:normal}.work-theory-figure .theory-caption,.work-theory-figure .theory-action .theory-caption,.work-theory-figure .theory-note{font-size:10px;white-space:normal}.work-theory-figure .theory-row-label{font-size:12px;padding-left:8px}.work-theory-figure .theory-artifact .theory-title{font-size:12px}.work-theory-figure .theory-artifact .theory-caption{font-size:10px}.work-theory-figure .theory-phase{font-size:16px}}
 
 .case-ledger{scroll-margin-top:88px}
 .case-section{margin-top:64px}
@@ -939,14 +939,14 @@ html:not(.js) .mobile-menu{display:none}
 <div class="work-tabs" role="tablist" aria-label="工作内容与产出展示步骤"><button type="button" role="tab" id="work-tab-0" aria-controls="work-panel-0" aria-selected="true" tabindex="0" data-work-step="0"><span class="work-step-number" aria-hidden="true">1</span>零散任务</button><button type="button" role="tab" id="work-tab-1" aria-controls="work-panel-1" aria-selected="false" tabindex="-1" data-work-step="1"><span class="work-step-number" aria-hidden="true">2</span>产品主线</button><button type="button" role="tab" id="work-tab-2" aria-controls="work-panel-2" aria-selected="false" tabindex="-1" data-work-step="2"><span class="work-step-number" aria-hidden="true">3</span>主线归整</button></div>
 <div class="work-stage">
 <section class="work-panel is-active" id="work-panel-0" role="tabpanel" aria-labelledby="work-tab-0" tabindex="0"><h3 class="work-fallback-heading">零散任务</h3><div class="work-constellation"><svg class="work-stardust" viewBox="0 0 840 550" preserveAspectRatio="none" aria-hidden="true"><g fill="#6d93bd"><circle cx="23" cy="31" r="0.65" opacity="0.15"/><circle cx="160" cy="120" r="1.0" opacity="0.215"/><circle cx="297" cy="209" r="1.35" opacity="0.28"/><circle cx="434" cy="298" r="0.65" opacity="0.345"/><circle cx="571" cy="387" r="1.0" opacity="0.41000000000000003"/><circle cx="708" cy="476" r="1.35" opacity="0.15"/><circle cx="5" cy="15" r="0.65" opacity="0.215"/><circle cx="142" cy="104" r="1.0" opacity="0.28"/><circle cx="279" cy="193" r="1.35" opacity="0.345"/><circle cx="416" cy="282" r="0.65" opacity="0.41000000000000003"/><circle cx="553" cy="371" r="1.0" opacity="0.15"/><circle cx="690" cy="460" r="1.35" opacity="0.215"/><circle cx="827" cy="549" r="0.65" opacity="0.28"/><circle cx="124" cy="88" r="1.0" opacity="0.345"/><circle cx="261" cy="177" r="1.35" opacity="0.41000000000000003"/><circle cx="398" cy="266" r="0.65" opacity="0.15"/><circle cx="535" cy="355" r="1.0" opacity="0.215"/><circle cx="672" cy="444" r="1.35" opacity="0.28"/><circle cx="809" cy="533" r="0.65" opacity="0.345"/><circle cx="106" cy="72" r="1.0" opacity="0.41000000000000003"/><circle cx="243" cy="161" r="1.35" opacity="0.15"/><circle cx="380" cy="250" r="0.65" opacity="0.215"/><circle cx="517" cy="339" r="1.0" opacity="0.28"/><circle cx="654" cy="428" r="1.35" opacity="0.345"/><circle cx="791" cy="517" r="0.65" opacity="0.41000000000000003"/><circle cx="88" cy="56" r="1.0" opacity="0.15"/><circle cx="225" cy="145" r="1.35" opacity="0.215"/><circle cx="362" cy="234" r="0.65" opacity="0.28"/><circle cx="499" cy="323" r="1.0" opacity="0.345"/><circle cx="636" cy="412" r="1.35" opacity="0.41000000000000003"/><circle cx="773" cy="501" r="0.65" opacity="0.15"/><circle cx="70" cy="40" r="1.0" opacity="0.215"/><circle cx="207" cy="129" r="1.35" opacity="0.28"/><circle cx="344" cy="218" r="0.65" opacity="0.345"/><circle cx="481" cy="307" r="1.0" opacity="0.41000000000000003"/><circle cx="618" cy="396" r="1.35" opacity="0.15"/><circle cx="755" cy="485" r="0.65" opacity="0.215"/><circle cx="52" cy="24" r="1.0" opacity="0.28"/><circle cx="189" cy="113" r="1.35" opacity="0.345"/><circle cx="326" cy="202" r="0.65" opacity="0.41000000000000003"/><circle cx="463" cy="291" r="1.0" opacity="0.15"/><circle cx="600" cy="380" r="1.35" opacity="0.215"/><circle cx="737" cy="469" r="0.65" opacity="0.28"/><circle cx="34" cy="8" r="1.0" opacity="0.345"/><circle cx="171" cy="97" r="1.35" opacity="0.41000000000000003"/><circle cx="308" cy="186" r="0.65" opacity="0.15"/><circle cx="445" cy="275" r="1.0" opacity="0.215"/><circle cx="582" cy="364" r="1.35" opacity="0.28"/><circle cx="719" cy="453" r="0.65" opacity="0.345"/><circle cx="16" cy="542" r="1.0" opacity="0.41000000000000003"/><circle cx="153" cy="81" r="1.35" opacity="0.15"/><circle cx="290" cy="170" r="0.65" opacity="0.215"/><circle cx="427" cy="259" r="1.0" opacity="0.28"/><circle cx="564" cy="348" r="1.35" opacity="0.345"/><circle cx="701" cy="437" r="0.65" opacity="0.41000000000000003"/><circle cx="838" cy="526" r="1.0" opacity="0.15"/><circle cx="135" cy="65" r="1.35" opacity="0.215"/><circle cx="272" cy="154" r="0.65" opacity="0.28"/><circle cx="409" cy="243" r="1.0" opacity="0.345"/><circle cx="546" cy="332" r="1.35" opacity="0.41000000000000003"/><circle cx="683" cy="421" r="0.65" opacity="0.15"/><circle cx="820" cy="510" r="1.0" opacity="0.215"/><circle cx="117" cy="49" r="1.35" opacity="0.28"/><circle cx="254" cy="138" r="0.65" opacity="0.345"/><circle cx="391" cy="227" r="1.0" opacity="0.41000000000000003"/><circle cx="528" cy="316" r="1.35" opacity="0.15"/><circle cx="665" cy="405" r="0.65" opacity="0.215"/><circle cx="802" cy="494" r="1.0" opacity="0.28"/><circle cx="99" cy="33" r="1.35" opacity="0.345"/><circle cx="236" cy="122" r="0.65" opacity="0.41000000000000003"/><circle cx="373" cy="211" r="1.0" opacity="0.15"/><circle cx="510" cy="300" r="1.35" opacity="0.215"/><circle cx="647" cy="389" r="0.65" opacity="0.28"/><circle cx="784" cy="478" r="1.0" opacity="0.345"/><circle cx="81" cy="17" r="1.35" opacity="0.41000000000000003"/><circle cx="218" cy="106" r="0.65" opacity="0.15"/><circle cx="355" cy="195" r="1.0" opacity="0.215"/><circle cx="492" cy="284" r="1.35" opacity="0.28"/><circle cx="629" cy="373" r="0.65" opacity="0.345"/><circle cx="766" cy="462" r="1.0" opacity="0.41000000000000003"/><circle cx="63" cy="1" r="1.35" opacity="0.15"/><circle cx="200" cy="90" r="0.65" opacity="0.215"/><circle cx="337" cy="179" r="1.0" opacity="0.28"/><circle cx="474" cy="268" r="1.35" opacity="0.345"/><circle cx="611" cy="357" r="0.65" opacity="0.41000000000000003"/><circle cx="748" cy="446" r="1.0" opacity="0.15"/><circle cx="45" cy="535" r="1.35" opacity="0.215"/><circle cx="182" cy="74" r="0.65" opacity="0.28"/><circle cx="319" cy="163" r="1.0" opacity="0.345"/><circle cx="456" cy="252" r="1.35" opacity="0.41000000000000003"/><circle cx="593" cy="341" r="0.65" opacity="0.15"/><circle cx="730" cy="430" r="1.0" opacity="0.215"/><circle cx="27" cy="519" r="1.35" opacity="0.28"/><circle cx="164" cy="58" r="0.65" opacity="0.345"/><circle cx="301" cy="147" r="1.0" opacity="0.41000000000000003"/><circle cx="438" cy="236" r="1.35" opacity="0.15"/><circle cx="575" cy="325" r="0.65" opacity="0.215"/><circle cx="712" cy="414" r="1.0" opacity="0.28"/><circle cx="9" cy="503" r="1.35" opacity="0.345"/><circle cx="146" cy="42" r="0.65" opacity="0.41000000000000003"/><circle cx="283" cy="131" r="1.0" opacity="0.15"/><circle cx="420" cy="220" r="1.35" opacity="0.215"/><circle cx="557" cy="309" r="0.65" opacity="0.28"/><circle cx="694" cy="398" r="1.0" opacity="0.345"/><circle cx="831" cy="487" r="1.35" opacity="0.41000000000000003"/></g></svg><ul class="work-stars" aria-label="实习期间的项目与任务"><li class="work-star" data-task="task-19" data-work-row="7" style="--x:48%;--y:5%;--star-size:12px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">空间租赁数据字典梳理</span></li><li class="work-star" data-task="task-4" data-work-row="2" style="--x:18%;--y:8%;--star-size:13px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">滨江二期园区岗位调研</span></li><li class="work-star" data-task="task-3" data-work-row="1" style="--x:73%;--y:10%;--star-size:13px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">深圳后海一号位看板拆解</span></li><li class="work-star" data-task="task-14" data-work-row="5" style="--x:36%;--y:15%;--star-size:13px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">GridDone 原型与视觉升级</span></li><li class="work-star" data-task="task-15" data-work-row="5" style="--x:80%;--y:22%;--star-size:12px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">ALIBABA 会员门户双端原型</span></li><li class="work-star is-major" data-task="task-0" data-work-row="0" style="--x:32%;--y:27%;--star-size:24px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">园区账务管家 Skill</span></li><li class="work-star" data-task="task-8" data-work-row="2" style="--x:75%;--y:32%;--star-size:14px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">招商岗岗位调研</span></li><li class="work-star" data-task="task-21" data-work-row="7" style="--x:50%;--y:36%;--star-size:14px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">Skill 评测方法探索</span></li><li class="work-star" data-task="task-5" data-work-row="2" style="--x:17%;--y:44%;--star-size:14px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">工作台收件箱产品设计</span></li><li class="work-star is-major" data-task="task-1" data-work-row="2" style="--x:70%;--y:47%;--star-size:25px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">智慧资管工作台</span></li><li class="work-star" data-task="task-6" data-work-row="2" style="--x:43%;--y:48%;--star-size:13px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">VTS 与 EliseAI 竞品研究</span></li><li class="work-star" data-task="task-13" data-work-row="4" style="--x:79%;--y:58%;--star-size:14px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">资管数字实习生建议</span></li><li class="work-star" data-task="task-17" data-work-row="7" style="--x:39%;--y:59%;--star-size:13px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">资管业务认知梳理</span></li><li class="work-star" data-task="task-16" data-work-row="6" style="--x:17%;--y:60%;--star-size:13px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">云栖大会配图与视频脚本</span></li><li class="work-star" data-task="task-9" data-work-row="2" style="--x:56%;--y:62%;--star-size:14px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">招商移动工作台设计</span></li><li class="work-star" data-task="task-10" data-work-row="2" style="--x:83%;--y:71%;--star-size:13px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">招商桌面工作台原型</span></li><li class="work-star is-major" data-task="task-2" data-work-row="3" style="--x:33%;--y:74%;--star-size:23px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">个人 AI 第二大脑创意</span></li><li class="work-star" data-task="task-20" data-work-row="7" style="--x:79%;--y:82%;--star-size:12px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">亲橙 AI 平台架构与能力研究</span></li><li class="work-star" data-task="task-12" data-work-row="3" style="--x:53%;--y:84%;--star-size:13px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">第二大脑 Skill 封装与分享</span></li><li class="work-star" data-task="task-11" data-work-row="2" style="--x:17%;--y:91%;--star-size:14px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">招商 BD 问卷分析</span></li><li class="work-star" data-task="task-7" data-work-row="2" style="--x:70%;--y:93%;--star-size:12px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">workbench-builder Skill 封装</span></li><li class="work-star" data-task="task-18" data-work-row="7" style="--x:40%;--y:95%;--star-size:12px"><span class="work-star-dot" aria-hidden="true"></span><span class="work-star-label">产品心智模型梳理</span></li></ul></div></section>
-<section class="work-panel" id="work-panel-1" role="tabpanel" aria-labelledby="work-tab-1" tabindex="0"><h3 class="work-fallback-heading">产品主线</h3><div class="work-theory-figure" role="group" aria-label="从点到链再到结果：产品经理角色升级、AI 能力演进、价值落点与阶段产物" tabindex="0">
+<section class="work-panel" id="work-panel-1" role="tabpanel" aria-labelledby="work-tab-1" tabindex="0"><h3 class="work-fallback-heading">产品主线</h3><div class="work-theory-figure" role="group" aria-label="从点到链再到结果：产品经理角色升级、AI 应用演进与阶段产物" tabindex="0">
 <svg class="theory-defs" aria-hidden="true" width="0" height="0"><defs>
-    <linearGradient id="theory-porcelain" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#ffffff" /><stop offset="1" stop-color="#edf3f8" /></linearGradient>
-    <linearGradient id="theory-frost" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3f8fc" /><stop offset="1" stop-color="#ccdeed" /></linearGradient>
-    <linearGradient id="theory-slate" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#93b0c9" /><stop offset="1" stop-color="#4d769b" /></linearGradient>
-    <linearGradient id="theory-deep" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6089ac" /><stop offset="1" stop-color="#345b7d" /></linearGradient>
-    <linearGradient id="theory-gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e2d2b9" /><stop offset="1" stop-color="#b99665" /></linearGradient>
-    <linearGradient id="theory-edge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".9" /><stop offset="1" stop-color="#ffffff" stop-opacity=".15" /></linearGradient>
+    <linearGradient id="theory-porcelain" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#ffffff"></stop><stop offset="1" stop-color="#edf3f8"></stop></linearGradient>
+    <linearGradient id="theory-frost" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3f8fc"></stop><stop offset="1" stop-color="#ccdeed"></stop></linearGradient>
+    <linearGradient id="theory-slate" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#93b0c9"></stop><stop offset="1" stop-color="#4d769b"></stop></linearGradient>
+    <linearGradient id="theory-deep" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6089ac"></stop><stop offset="1" stop-color="#345b7d"></stop></linearGradient>
+    <linearGradient id="theory-gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e2d2b9"></stop><stop offset="1" stop-color="#b99665"></stop></linearGradient>
+    <linearGradient id="theory-edge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff" stop-opacity=".9"></stop><stop offset="1" stop-color="#ffffff" stop-opacity=".15"></stop></linearGradient>
   </defs></svg>
   
 <div class="theory-board">
@@ -955,118 +955,108 @@ html:not(.js) .mobile-menu{display:none}
 <div class="theory-phase"><span>链</span></div>
 <div class="theory-phase"><span>结果</span></div>
 </div>
-<section class="theory-lane theory-role-lane" aria-label="产品经理角色升级"><div class="theory-row-label"><span>产品经理</span><strong>角色升级</strong></div>
-<div class="theory-cell theory-role"><p class="theory-title">技能专家</p><svg class="theory-scene" viewBox="0 0 180 120" aria-hidden="true">
-        <ellipse cx="91" cy="108" rx="45" ry="5" fill="#8ba8bd" opacity=".12" />
-        <rect x="79" y="12" width="48" height="69" rx="8" fill="url(#theory-frost)" stroke="#b1c8db" transform="rotate(8 103 47)" />
-        <path d="M94 28h20m-20 8h14m-14 9h17" fill="none" stroke="#a5bfd3" stroke-width="2" stroke-linecap="round" />
-        <rect x="48" y="21" width="62" height="80" rx="10" fill="url(#theory-porcelain)" stroke="#8caac2" stroke-width="1.25" />
-        <rect x="52" y="25" width="54" height="72" rx="7" fill="none" stroke="url(#theory-edge)" />
-        <circle cx="79" cy="47" r="16" fill="#e2edf5" stroke="#c6d8e6" />
-        <circle cx="79" cy="43" r="5" fill="url(#theory-slate)" />
-        <path d="M69 57v-3a10 7 0 0 1 20 0v3" fill="url(#theory-slate)" />
-        <path d="M65 74h28" stroke="#6589a8" stroke-width="3" stroke-linecap="round" />
-        <path d="M66 82h26m-22 6h18" stroke="#c0d2e0" stroke-width="2" stroke-linecap="round" />
-        <circle cx="112" cy="85" r="17" fill="url(#theory-porcelain)" stroke="#c4ab85" stroke-width="1.35" />
-        <circle cx="112" cy="85" r="13" fill="none" stroke="#e5dac8" />
-        <path d="m105 85 5 5 9-10" fill="none" stroke="#8f744f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<section class="theory-lane theory-role-lane" aria-label="产品经理角色升级"><div class="theory-row-label">产品经理角色升级</div><div class="theory-cell theory-role"><p class="theory-title">技能专家</p><svg class="theory-scene" viewBox="0 0 180 120" aria-hidden="true">
+        <ellipse cx="91" cy="108" rx="45" ry="5" fill="#8ba8bd" opacity=".12"></ellipse>
+        <rect x="79" y="12" width="48" height="69" rx="8" fill="url(#theory-frost)" stroke="#b1c8db" transform="rotate(8 103 47)"></rect>
+        <path d="M94 28h20m-20 8h14m-14 9h17" fill="none" stroke="#a5bfd3" stroke-width="2" stroke-linecap="round"></path>
+        <rect x="48" y="21" width="62" height="80" rx="10" fill="url(#theory-porcelain)" stroke="#8caac2" stroke-width="1.25"></rect>
+        <rect x="52" y="25" width="54" height="72" rx="7" fill="none" stroke="url(#theory-edge)"></rect>
+        <circle cx="79" cy="47" r="16" fill="#e2edf5" stroke="#c6d8e6"></circle>
+        <circle cx="79" cy="43" r="5" fill="url(#theory-slate)"></circle>
+        <path d="M69 57v-3a10 7 0 0 1 20 0v3" fill="url(#theory-slate)"></path>
+        <path d="M65 74h28" stroke="#6589a8" stroke-width="3" stroke-linecap="round"></path>
+        <path d="M66 82h26m-22 6h18" stroke="#c0d2e0" stroke-width="2" stroke-linecap="round"></path>
+        <circle cx="112" cy="85" r="17" fill="url(#theory-porcelain)" stroke="#c4ab85" stroke-width="1.35"></circle>
+        <circle cx="112" cy="85" r="13" fill="none" stroke="#e5dac8"></circle>
+        <path d="m105 85 5 5 9-10" fill="none" stroke="#8f744f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </div>
 <div class="theory-cell theory-role"><p class="theory-title">垂域解决方案专家</p><svg class="theory-scene" viewBox="0 0 180 120" aria-hidden="true">
-        <ellipse cx="90" cy="109" rx="58" ry="5" fill="#8ba8bd" opacity=".12" />
-        <path d="M49 74V43h82v31M90 42V27" fill="none" stroke="#b7cbdc" stroke-width="1.5" stroke-linecap="round" />
-        <rect x="67" y="9" width="46" height="35" rx="8" fill="url(#theory-porcelain)" stroke="#91adc4" stroke-width="1.25" />
-        <path d="m90 17 12 7-12 7-12-7z" fill="url(#theory-frost)" stroke="#87a8c4" stroke-width="1.1" stroke-linejoin="round" />
-        <path d="m78 24 12 7 12-7v8l-12 7-12-7z" fill="#e4edf5" stroke="#87a8c4" stroke-width="1.1" stroke-linejoin="round" />
-        <path d="M90 31v8" stroke="#87a8c4" stroke-width="1.1" />
-        <rect x="28" y="66" width="43" height="35" rx="8" fill="url(#theory-porcelain)" stroke="#a6bfd2" stroke-width="1.2" />
-        <path d="M38 76h22m-22 7h16m-16 7h19" stroke="#a0bad0" stroke-width="2" stroke-linecap="round" />
-        <rect x="71" y="61" width="38" height="42" rx="8" fill="url(#theory-slate)" stroke="#6085a4" stroke-width="1.2" />
-        <path d="M80 91V76h20v15m-22 0h24m-17-10v2m5-2v2m5-2v2m-10 4v2m5-2v2m5-2v2" fill="none" stroke="#f1f6fa" stroke-width="1.5" stroke-linecap="round" />
-        <rect x="111" y="66" width="43" height="35" rx="8" fill="url(#theory-porcelain)" stroke="#a6bfd2" stroke-width="1.2" />
-        <path d="M120 88V78m7 10V75m7 13V81m7 7V73" stroke="#98b2c9" stroke-width="3" stroke-linecap="round" />
-        <circle cx="49" cy="52" r="3" fill="#fff" stroke="#a6bfd2" />
-        <circle cx="131" cy="52" r="3" fill="#fff" stroke="#a6bfd2" />
-        <path d="M90 45v14" stroke="#bda078" stroke-width="1.5" stroke-linecap="round" />
+        <ellipse cx="90" cy="109" rx="58" ry="5" fill="#8ba8bd" opacity=".12"></ellipse>
+        <path d="M49 74V43h82v31M90 42V27" fill="none" stroke="#b7cbdc" stroke-width="1.5" stroke-linecap="round"></path>
+        <rect x="67" y="9" width="46" height="35" rx="8" fill="url(#theory-porcelain)" stroke="#91adc4" stroke-width="1.25"></rect>
+        <path d="m90 17 12 7-12 7-12-7z" fill="url(#theory-frost)" stroke="#87a8c4" stroke-width="1.1" stroke-linejoin="round"></path>
+        <path d="m78 24 12 7 12-7v8l-12 7-12-7z" fill="#e4edf5" stroke="#87a8c4" stroke-width="1.1" stroke-linejoin="round"></path>
+        <path d="M90 31v8" stroke="#87a8c4" stroke-width="1.1"></path>
+        <rect x="28" y="66" width="43" height="35" rx="8" fill="url(#theory-porcelain)" stroke="#a6bfd2" stroke-width="1.2"></rect>
+        <path d="M38 76h22m-22 7h16m-16 7h19" stroke="#a0bad0" stroke-width="2" stroke-linecap="round"></path>
+        <rect x="71" y="61" width="38" height="42" rx="8" fill="url(#theory-slate)" stroke="#6085a4" stroke-width="1.2"></rect>
+        <path d="M80 91V76h20v15m-22 0h24m-17-10v2m5-2v2m5-2v2m-10 4v2m5-2v2m5-2v2" fill="none" stroke="#f1f6fa" stroke-width="1.5" stroke-linecap="round"></path>
+        <rect x="111" y="66" width="43" height="35" rx="8" fill="url(#theory-porcelain)" stroke="#a6bfd2" stroke-width="1.2"></rect>
+        <path d="M120 88V78m7 10V75m7 13V81m7 7V73" stroke="#98b2c9" stroke-width="3" stroke-linecap="round"></path>
+        <circle cx="49" cy="52" r="3" fill="#fff" stroke="#a6bfd2"></circle>
+        <circle cx="131" cy="52" r="3" fill="#fff" stroke="#a6bfd2"></circle>
+        <path d="M90 45v14" stroke="#bda078" stroke-width="1.5" stroke-linecap="round"></path>
       </svg>
     </div>
 <div class="theory-cell theory-role"><p class="theory-title">业务 BP</p><svg class="theory-scene" viewBox="0 0 180 120" aria-hidden="true">
-        <ellipse cx="90" cy="109" rx="56" ry="5" fill="#8ba8bd" opacity=".12" />
-        <rect x="54" y="10" width="74" height="52" rx="8" fill="url(#theory-porcelain)" stroke="#abc1d4" stroke-width="1.2" />
-        <path d="M67 48h45" stroke="#d1dfea" stroke-width="1.2" />
-        <rect x="68" y="38" width="7" height="10" rx="1.5" fill="#c4d7e6" /><rect x="80" y="32" width="7" height="16" rx="1.5" fill="#9fbcd3" /><rect x="92" y="23" width="7" height="25" rx="1.5" fill="#7199b9" />
-        <path d="m69 29 15-8 13 2 15-9m-7 0h7v7" fill="none" stroke="#b89b74" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-        <rect x="30" y="53" width="47" height="50" rx="9" fill="url(#theory-porcelain)" stroke="#91aec5" stroke-width="1.25" />
-        <rect x="104" y="53" width="47" height="50" rx="9" fill="url(#theory-porcelain)" stroke="#91aec5" stroke-width="1.25" />
-        <circle cx="53.5" cy="69" r="6" fill="url(#theory-slate)" /><path d="M43 86v-3c0-10 21-10 21 0v3" fill="url(#theory-slate)" />
-        <circle cx="127.5" cy="69" r="6" fill="url(#theory-slate)" /><path d="M117 86v-3c0-10 21-10 21 0v3" fill="url(#theory-slate)" />
-        <path d="M43 94h21m53 0h21" stroke="#c4d5e2" stroke-width="2" stroke-linecap="round" />
-        <circle cx="90.5" cy="80" r="17" fill="url(#theory-porcelain)" stroke="#c1a67f" stroke-width="1.25" />
-        <path d="m83 84 4-4m7-1 4-4m-11 2 3-3a5 5 0 0 1 7 7l-3 3m-8-5-3 3a5 5 0 0 0 7 7l3-3" transform="translate(0 -3)" fill="none" stroke="#9c7e54" stroke-width="1.65" stroke-linecap="round" />
+        <ellipse cx="90" cy="109" rx="56" ry="5" fill="#8ba8bd" opacity=".12"></ellipse>
+        <rect x="54" y="10" width="74" height="52" rx="8" fill="url(#theory-porcelain)" stroke="#abc1d4" stroke-width="1.2"></rect>
+        <path d="M67 48h45" stroke="#d1dfea" stroke-width="1.2"></path>
+        <rect x="68" y="38" width="7" height="10" rx="1.5" fill="#c4d7e6"></rect><rect x="80" y="32" width="7" height="16" rx="1.5" fill="#9fbcd3"></rect><rect x="92" y="23" width="7" height="25" rx="1.5" fill="#7199b9"></rect>
+        <path d="m69 29 15-8 13 2 15-9m-7 0h7v7" fill="none" stroke="#b89b74" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+        <rect x="30" y="53" width="47" height="50" rx="9" fill="url(#theory-porcelain)" stroke="#91aec5" stroke-width="1.25"></rect>
+        <rect x="104" y="53" width="47" height="50" rx="9" fill="url(#theory-porcelain)" stroke="#91aec5" stroke-width="1.25"></rect>
+        <circle cx="53.5" cy="69" r="6" fill="url(#theory-slate)"></circle><path d="M43 86v-3c0-10 21-10 21 0v3" fill="url(#theory-slate)"></path>
+        <circle cx="127.5" cy="69" r="6" fill="url(#theory-slate)"></circle><path d="M117 86v-3c0-10 21-10 21 0v3" fill="url(#theory-slate)"></path>
+        <path d="M43 94h21m53 0h21" stroke="#c4d5e2" stroke-width="2" stroke-linecap="round"></path>
+        <circle cx="90.5" cy="80" r="17" fill="url(#theory-porcelain)" stroke="#c1a67f" stroke-width="1.25"></circle>
+        <path d="m83 84 4-4m7-1 4-4m-11 2 3-3a5 5 0 0 1 7 7l-3 3m-8-5-3 3a5 5 0 0 0 7 7l3-3" transform="translate(0 -3)" fill="none" stroke="#9c7e54" stroke-width="1.65" stroke-linecap="round"></path>
       </svg>
     </div>
 <div class="theory-track" aria-hidden="true"><i></i><i></i><i></i></div>
 </section>
-<section class="theory-lane theory-ai-lane" aria-label="AI 能力演进：角色在做什么"><div class="theory-row-label"><span>AI 能力</span><strong>演进</strong></div>
-<div class="theory-cell theory-action"><p class="theory-title">数据能力释放</p><p class="theory-caption">从看数到具体动作</p></div>
-<div class="theory-cell theory-action"><p class="theory-title">串联业务链路</p></div>
-<div class="theory-cell theory-action"><p class="theory-title">连接经营结果</p></div>
-<div class="theory-track" aria-hidden="true"><i></i><i></i><i></i></div>
-</section>
-<section class="theory-values" aria-label="价值落点"><div class="theory-row-label">价值落点</div>
-<div class="theory-cell theory-value"><p class="theory-title">单点场景提效</p></div>
-<div class="theory-cell theory-value"><p class="theory-title">垂直解决方案</p></div>
-<div class="theory-cell theory-value"><p class="theory-title">打造 AI 组织</p></div>
+<section class="theory-lane theory-ai-lane" aria-label="AI 应用演进：应用方向与价值"><div class="theory-row-label">AI 应用演进</div><div class="theory-cell theory-action"><p class="theory-title">单点场景提效</p><p class="theory-caption">数据能力释放</p><p class="theory-note">从看数到具体动作</p></div><div class="theory-cell theory-action"><p class="theory-title">垂直解决方案</p><p class="theory-caption">串联业务链路</p></div><div class="theory-cell theory-action"><p class="theory-title">打造 AI 组织</p><p class="theory-caption">连接经营结果</p></div><div class="theory-track" aria-hidden="true"><i></i><i></i><i></i></div>
 </section>
 <section class="theory-artifacts" aria-label="阶段沉淀出的产物"><div class="theory-row-label">阶段产物</div>
 <div class="theory-cell theory-artifact"><svg class="theory-scene" viewBox="0 0 180 120" aria-hidden="true">
-        <ellipse cx="89" cy="110" rx="45" ry="5" fill="#8ba8bd" opacity=".12" />
-        <path d="m58 25 61-8v80l-61 8z" fill="#d9e5ee" stroke="#9db7cc" stroke-width="1.2" stroke-linejoin="round" />
-        <path d="m53 18 61-8v80l-61 8z" fill="url(#theory-frost)" stroke="#9db7cc" stroke-width="1.2" stroke-linejoin="round" />
-        <rect x="60" y="23" width="61" height="82" rx="7" fill="url(#theory-porcelain)" stroke="#88a6bf" stroke-width="1.3" />
-        <path d="M68 24v80" stroke="#c3d5e3" stroke-width="1.2" />
-        <rect x="80" y="15" width="24" height="14" rx="4" fill="url(#theory-slate)" stroke="#7797b1" stroke-width="1.2" />
-        <path d="M87 22h10" stroke="#ecf4fa" stroke-width="1.5" stroke-linecap="round" />
+        <ellipse cx="89" cy="110" rx="45" ry="5" fill="#8ba8bd" opacity=".12"></ellipse>
+        <path d="m58 25 61-8v80l-61 8z" fill="#d9e5ee" stroke="#9db7cc" stroke-width="1.2" stroke-linejoin="round"></path>
+        <path d="m53 18 61-8v80l-61 8z" fill="url(#theory-frost)" stroke="#9db7cc" stroke-width="1.2" stroke-linejoin="round"></path>
+        <rect x="60" y="23" width="61" height="82" rx="7" fill="url(#theory-porcelain)" stroke="#88a6bf" stroke-width="1.3"></rect>
+        <path d="M68 24v80" stroke="#c3d5e3" stroke-width="1.2"></path>
+        <rect x="80" y="15" width="24" height="14" rx="4" fill="url(#theory-slate)" stroke="#7797b1" stroke-width="1.2"></rect>
+        <path d="M87 22h10" stroke="#ecf4fa" stroke-width="1.5" stroke-linecap="round"></path>
         <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m77 45 3 3 5-6m-8 20 3 3 5-6m-8 20 3 3 5-6" stroke="#7296b3" stroke-width="1.8" />
-          <path d="M92 45h19m-19 14h19m-19 14h16" stroke="#bccedc" stroke-width="2.2" />
-          <path d="M77 89h33" stroke="#d1dee8" stroke-width="1.4" />
+          <path d="m77 45 3 3 5-6m-8 20 3 3 5-6m-8 20 3 3 5-6" stroke="#7296b3" stroke-width="1.8"></path>
+          <path d="M92 45h19m-19 14h19m-19 14h16" stroke="#bccedc" stroke-width="2.2"></path>
+          <path d="M77 89h33" stroke="#d1dee8" stroke-width="1.4"></path>
         </g>
-        <rect x="112" y="77" width="23" height="23" rx="6" fill="url(#theory-frost)" stroke="#a1bbd0" stroke-width="1.2" />
-        <path d="M118 88.5h11m-5.5-5.5v11" stroke="#7294af" stroke-width="1.5" stroke-linecap="round" />
+        <rect x="112" y="77" width="23" height="23" rx="6" fill="url(#theory-frost)" stroke="#a1bbd0" stroke-width="1.2"></rect>
+        <path d="M118 88.5h11m-5.5-5.5v11" stroke="#7294af" stroke-width="1.5" stroke-linecap="round"></path>
       </svg>
       <p class="theory-title">Skill</p><p class="theory-caption">封装业务 SOP</p></div>
 <div class="theory-cell theory-artifact"><svg class="theory-scene" viewBox="0 0 180 120" aria-hidden="true">
-        <ellipse cx="90" cy="109" rx="56" ry="5" fill="#8ba8bd" opacity=".12" />
-        <path d="M83 85v17H69v4h42v-4H97V85" fill="url(#theory-frost)" stroke="#9cb5c9" stroke-width="1.2" stroke-linejoin="round" />
-        <rect x="30" y="14" width="120" height="77" rx="8" fill="url(#theory-deep)" stroke="#496d8b" stroke-width="1.2" />
-        <rect x="34" y="18" width="112" height="64" rx="5" fill="#f8fbfd" />
-        <path d="M34 29h112" stroke="#dae5ed" stroke-width="1" />
-        <circle cx="41" cy="24" r="1.4" fill="#94b0c7" /><circle cx="46" cy="24" r="1.4" fill="#c0d2e0" /><circle cx="51" cy="24" r="1.4" fill="#d6e2eb" />
-        <path d="M57 30v52" stroke="#dfE8f0" stroke-width="1" />
-        <path d="M42 38h8m-8 8h6m-6 8h8m-8 8h5" stroke="#bdcfdd" stroke-width="2" stroke-linecap="round" />
-        <rect x="63" y="35" width="32" height="13" rx="3" fill="#e7f0f7" />
-        <rect x="102" y="35" width="37" height="13" rx="3" fill="#edf2f6" />
-        <path d="M69 41.5h12m27 0h18" stroke="#a5bdd0" stroke-width="2" stroke-linecap="round" />
-        <path d="M67 71V62h9v9m7 0V56h9v15m7 0V59h9v12m7 0V52h9v19" fill="url(#theory-slate)" />
-        <path d="M63 74h74" stroke="#d4e1eb" stroke-width="1" />
-        <circle cx="90" cy="86" r="1.6" fill="#c0d5e5" />
+        <ellipse cx="90" cy="109" rx="56" ry="5" fill="#8ba8bd" opacity=".12"></ellipse>
+        <path d="M83 85v17H69v4h42v-4H97V85" fill="url(#theory-frost)" stroke="#9cb5c9" stroke-width="1.2" stroke-linejoin="round"></path>
+        <rect x="30" y="14" width="120" height="77" rx="8" fill="url(#theory-deep)" stroke="#496d8b" stroke-width="1.2"></rect>
+        <rect x="34" y="18" width="112" height="64" rx="5" fill="#f8fbfd"></rect>
+        <path d="M34 29h112" stroke="#dae5ed" stroke-width="1"></path>
+        <circle cx="41" cy="24" r="1.4" fill="#94b0c7"></circle><circle cx="46" cy="24" r="1.4" fill="#c0d2e0"></circle><circle cx="51" cy="24" r="1.4" fill="#d6e2eb"></circle>
+        <path d="M57 30v52" stroke="#dfE8f0" stroke-width="1"></path>
+        <path d="M42 38h8m-8 8h6m-6 8h8m-8 8h5" stroke="#bdcfdd" stroke-width="2" stroke-linecap="round"></path>
+        <rect x="63" y="35" width="32" height="13" rx="3" fill="#e7f0f7"></rect>
+        <rect x="102" y="35" width="37" height="13" rx="3" fill="#edf2f6"></rect>
+        <path d="M69 41.5h12m27 0h18" stroke="#a5bdd0" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M67 71V62h9v9m7 0V56h9v15m7 0V59h9v12m7 0V52h9v19" fill="url(#theory-slate)"></path>
+        <path d="M63 74h74" stroke="#d4e1eb" stroke-width="1"></path>
+        <circle cx="90" cy="86" r="1.6" fill="#c0d5e5"></circle>
       </svg>
       <p class="theory-title">岗位工作台</p><p class="theory-caption">围绕岗位组织工作</p></div>
 <div class="theory-cell theory-artifact"><svg class="theory-scene" viewBox="0 0 180 120" aria-hidden="true">
-        <ellipse cx="91" cy="110" rx="47" ry="5" fill="#8ba8bd" opacity=".12" />
-        <path d="m60 17 57-7 8 8v81l-58 7-7-8z" fill="#dbe8f2" stroke="#a4bfd3" stroke-width="1.2" stroke-linejoin="round" />
-        <path d="m67 24 58-6v81l-58 7z" fill="url(#theory-frost)" stroke="#9bb8ce" stroke-width="1.3" stroke-linejoin="round" />
-        <path d="m72 28 48-5v70l-48 6z" fill="#f7fbfd" fill-opacity=".65" stroke="#fff" stroke-opacity=".85" stroke-width="1" />
-        <ellipse cx="96" cy="52" rx="16" ry="18" fill="#e3edf5" stroke="#afc8db" stroke-width="1.1" />
-        <circle cx="96" cy="47" r="6" fill="none" stroke="#7397b5" stroke-width="1.6" />
-        <path d="M85 64v-4c0-11 22-11 22 0v4" fill="none" stroke="#7397b5" stroke-width="1.6" />
-        <path d="M83 79h24m-20 7h16" stroke="#b3c9da" stroke-width="2" stroke-linecap="round" />
-        <rect x="32" y="43" width="34" height="25" rx="6" fill="url(#theory-porcelain)" stroke="#a8c1d5" stroke-width="1.2" />
-        <path d="M40 51h18m-18 7h12" stroke="#abc2d4" stroke-width="2" stroke-linecap="round" />
-        <rect x="117" y="66" width="25" height="25" rx="7" fill="url(#theory-porcelain)" stroke="#c0a67f" stroke-width="1.2" />
-        <path d="m124 78 4 4 7-8" fill="none" stroke="#a1855e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-        <circle cx="126" cy="30" r="4" fill="url(#theory-gold)" stroke="#e9dfce" stroke-width="2" />
+        <ellipse cx="91" cy="110" rx="47" ry="5" fill="#8ba8bd" opacity=".12"></ellipse>
+        <path d="m60 17 57-7 8 8v81l-58 7-7-8z" fill="#dbe8f2" stroke="#a4bfd3" stroke-width="1.2" stroke-linejoin="round"></path>
+        <path d="m67 24 58-6v81l-58 7z" fill="url(#theory-frost)" stroke="#9bb8ce" stroke-width="1.3" stroke-linejoin="round"></path>
+        <path d="m72 28 48-5v70l-48 6z" fill="#f7fbfd" fill-opacity=".65" stroke="#fff" stroke-opacity=".85" stroke-width="1"></path>
+        <ellipse cx="96" cy="52" rx="16" ry="18" fill="#e3edf5" stroke="#afc8db" stroke-width="1.1"></ellipse>
+        <circle cx="96" cy="47" r="6" fill="none" stroke="#7397b5" stroke-width="1.6"></circle>
+        <path d="M85 64v-4c0-11 22-11 22 0v4" fill="none" stroke="#7397b5" stroke-width="1.6"></path>
+        <path d="M83 79h24m-20 7h16" stroke="#b3c9da" stroke-width="2" stroke-linecap="round"></path>
+        <rect x="32" y="43" width="34" height="25" rx="6" fill="url(#theory-porcelain)" stroke="#a8c1d5" stroke-width="1.2"></rect>
+        <path d="M40 51h18m-18 7h12" stroke="#abc2d4" stroke-width="2" stroke-linecap="round"></path>
+        <rect x="117" y="66" width="25" height="25" rx="7" fill="url(#theory-porcelain)" stroke="#c0a67f" stroke-width="1.2"></rect>
+        <path d="m124 78 4 4 7-8" fill="none" stroke="#a1855e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+        <circle cx="126" cy="30" r="4" fill="url(#theory-gold)" stroke="#e9dfce" stroke-width="2"></circle>
       </svg>
       <p class="theory-title">数字员工</p><p class="theory-caption">数字孪生 / 数字人</p></div>
 </section>
