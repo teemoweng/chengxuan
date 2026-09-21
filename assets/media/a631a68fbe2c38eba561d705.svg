@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2340" height="1296" viewBox="0 0 2340 1296" role="img" aria-labelledby="title description">
+  <title id="title">到访确认与装修变更</title>
+  <desc id="description">到访确认后需要重新整理或录入：Q3，13/20 人，65.0%。装修变更时需要跨团队反复确认：Q6，15/16 人，93.8%。比例按各题有效答题人数分别计算。</desc>
+  <metadata>基于招商工作台问卷分析 question_stats.json 的 Q03_O04 与 Q06_O02，交叉核对 08-获客到签约痛点.png 与 09-交付与入驻痛点.png。仅重组两个现有指标，不合并不同问题的分母。</metadata>
+  <rect width="2340" height="1296" fill="#ffffff"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif">
+    <text x="128" y="140" font-size="62" fill="#273647" font-weight="500">到访确认与装修变更</text>
+    <text x="128" y="210" font-size="36" fill="#8391a4">两类流程中的重复整理与跨团队确认</text>
+
+    <g id="arrival-confirmation" data-question="Q03" data-option="Q03_O04" data-count="13" data-denominator="20">
+      <text x="128" y="372" font-size="44" fill="#273647">到访确认</text>
+      <text x="2212" y="372" font-size="34" fill="#8391a4" text-anchor="end">Q3 · 有效答题 20 人</text>
+      <text x="128" y="470" font-size="42" fill="#273647">需要重新整理或录入</text>
+      <text x="2212" y="470" font-size="44" fill="#273647" text-anchor="end">13/20 人　65.0%</text>
+      <rect x="128" y="516" width="2084" height="38" fill="#e9eef4"/>
+      <rect x="128" y="516" width="1354.6" height="38" fill="#3d76b3"/>
+    </g>
+
+    <path d="M128 666H2212" fill="none" stroke="#e8edf2" stroke-width="2"/>
+
+    <g id="renovation-change" data-question="Q06" data-option="Q06_O02" data-count="15" data-denominator="16">
+      <text x="128" y="806" font-size="44" fill="#273647">装修变更</text>
+      <text x="2212" y="806" font-size="34" fill="#8391a4" text-anchor="end">Q6 · 有效答题 16 人</text>
+      <text x="128" y="904" font-size="42" fill="#273647">需要跨团队反复确认</text>
+      <text x="2212" y="904" font-size="44" fill="#273647" text-anchor="end">15/16 人　93.8%</text>
+      <rect x="128" y="950" width="2084" height="38" fill="#e9eef4"/>
+      <rect x="128" y="950" width="1953.75" height="38" fill="#3d76b3"/>
+    </g>
+
+    <text x="128" y="1182" font-size="32" fill="#8391a4">比例按各题有效答题人数分别计算 · 多选</text>
+  </g>
+</svg>
