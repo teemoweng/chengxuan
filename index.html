@@ -563,7 +563,7 @@ html:not(.js) .mobile-menu{display:none}
 .bbs-build.bbs-ready .bbs-step:not(.bbs-current) .bbs-step-body{display:none}
 .bbs-build .bbs-step-body p{font-size:12px;line-height:1.85;margin:0 0 13px;min-height:0;color:var(--bbs-muted)}
 .bbs-build .bbs-duties,.bbs-build .bbs-labels,.bbs-build .bbs-directories{margin:0;padding:0}
-.bbs-build .bbs-duties>div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:4px;padding:7px 0;border-top:1px solid #eaf0f5;border-radius:3px}
+.bbs-build .bbs-duties>div{display:grid;grid-template-columns:80px minmax(0,1fr);gap:6px}
 .bbs-build .bbs-duties dt{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;line-height:1.8;letter-spacing:-.2px;color:#416387;padding-top:1px}
 .bbs-build .bbs-duties dd{font-size:12px;margin:0;line-height:1.8;color:#3a536c}
 .bbs-build .bbs-duties dd span{display:block;font-size:11px;color:#748698}
@@ -572,16 +572,28 @@ html:not(.js) .mobile-menu{display:none}
 .bbs-build .bbs-labels dt{width:57px;flex:none;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:#456b92}
 .bbs-build .bbs-labels dd{margin:0;font-size:12px;color:var(--bbs-muted)}
 .bbs-build .bbs-labels .bbs-highlight dt{color:#265c9d;font-weight:600}
-.bbs-build .bbs-directories>div{padding:9px 0 13px}
 .bbs-build .bbs-directories dt{font-size:13px;color:#3b6187;font-weight:500;margin-bottom:5px}
 .bbs-build .bbs-directories dd{font-size:12px;color:var(--bbs-muted);line-height:1.85;margin:0}
 .bbs-build .bbs-directories .bbs-highlight dt{color:#2666af}
+.bbs-build .bbs-source{position:relative;border:1px solid #e0e8f1;border-radius:6px;padding:9px 8px 9px 19px;margin-bottom:7px;background:#fff;cursor:grab;touch-action:pan-y;transition:border-color .18s,background .18s,box-shadow .18s}
+.bbs-build .bbs-source:hover{border-color:#b7cce3;background:#f7faff;box-shadow:0 2px 8px #3d6c9910}
+.bbs-build .bbs-source:active{cursor:grabbing}
+.bbs-build .bbs-source[aria-disabled="true"]{cursor:default}
+.bbs-build .bbs-source-grip{position:absolute;left:6px;top:13px;width:6px;height:14px;background:radial-gradient(circle,#91a6bd 1px,transparent 1.2px) 0 0/3px 4px;opacity:.7}
+.bbs-build .bbs-source.bbs-added{background:#f5f9f8;border-color:#dbe9e3;box-shadow:none;cursor:default}
+.bbs-build .bbs-source.bbs-added .bbs-source-grip{opacity:.28}
+.bbs-build .bbs-source.bbs-dragging{opacity:.42;border-color:#9cbadc;background:#edf4fd;cursor:grabbing}
+.bbs-build .bbs-source .bbs-source-state{display:block;font-size:10px;line-height:1.65;color:#4e8a72;margin:3px 0 0}
+.bbs-build .bbs-duties .bbs-source-state{position:absolute;left:19px;top:29px;margin:0}
+.bbs-build .bbs-directories .bbs-source-state{position:absolute;right:8px;top:10px;margin:0}
+.bbs-build .bbs-source .bbs-source-state:empty{display:none}
+.bbs-build .bbs-step-body .bbs-interaction-hint{font-size:11px;line-height:1.7;color:#6b87a3;margin:0 0 9px}
+.bbs-build .bbs-labels+.bbs-interaction-hint{margin-top:13px}
+.bbs-build:not(.bbs-ready) .bbs-source-grip,.bbs-build:not(.bbs-ready) .bbs-interaction-hint{display:none}
+.bbs-build:not(.bbs-ready) .bbs-source{cursor:default}
 .bbs-build .bbs-step-body .bbs-method-note{font-size:11px;line-height:1.8;color:#748496;margin-top:13px;margin-bottom:0}
-.bbs-build .bbs-playback{display:none;margin:25px 0 0 35px}
-.bbs-build.bbs-ready .bbs-playback{display:block}
-.bbs-build .bbs-playback-main{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.bbs-build .bbs-play{border:1px solid #b5cce5;background:#eef5fd;color:#356596;padding:6px 11px;border-radius:5px;font-size:12px;line-height:1.5}
-.bbs-build .bbs-play:disabled{color:#748496;background:#f3f6f9;border-color:#dce5ed}
+.bbs-build .bbs-manual-controls{display:none;margin:21px 0 0 35px}
+.bbs-build.bbs-ready .bbs-manual-controls{display:block}
 .bbs-build .bbs-small-button{font-size:11px;color:#617990;padding:5px 0;background:none;border:0;line-height:1.5}
 .bbs-build .bbs-small-button:disabled{color:#9ba7b4}
 .bbs-build .bbs-step-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
@@ -616,6 +628,9 @@ html:not(.js) .mobile-menu{display:none}
 .bbs-build .bbs-sidebar-folders{margin-top:14px;padding-top:9px;border-top:1px solid #e2e9f1}
 .bbs-build .bbs-sidebar-folders:empty{display:none}
 .bbs-build .bbs-workspace{position:relative;min-width:0;min-height:385px;overflow:hidden;background:linear-gradient(160deg,#fff 55%,#fafcfe)}
+.bbs-build .bbs-workspace.bbs-drop-ready{background:#f2f7ff;box-shadow:inset 0 0 0 2px #b5ceec}
+.bbs-build .bbs-workspace.bbs-drop-ready:after{content:"";position:absolute;inset:8px;border:1px dashed #aac5e4;border-radius:6px;pointer-events:none;z-index:3}
+.bbs-build .bbs-file.bbs-drop-ready,.bbs-build .bbs-sidebar button.bbs-drop-ready{background:#e7f1ff;border-color:#93b7e0;box-shadow:0 0 0 2px #c2d8f280}
 .bbs-build .bbs-file-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(102px,1fr));align-content:start;gap:9px 4px;padding:21px 13px;min-height:385px}
 .bbs-build .bbs-file{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:9px;border:1px solid transparent;background:transparent;border-radius:6px;padding:9px 3px 7px;min-width:0;font-size:11px;line-height:1.65;color:#4b627a;text-align:center}
 .bbs-build .bbs-file:hover{background:#f4f8fc}
@@ -638,6 +653,16 @@ html:not(.js) .mobile-menu{display:none}
 .bbs-build .bbs-preview-text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:11px;line-height:1.95;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:0;color:#5b7289;background:none;border:0;border-radius:0;max-width:100%}
 .bbs-build .bbs-frontmatter{padding:10px 12px;margin:0 0 17px;background:#edf4fc;border-left:2px solid #9bb9dc;border-radius:0 4px 4px 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;line-height:1.9;color:#4e749d;white-space:pre-wrap;overflow-wrap:anywhere}
 .bbs-build .bbs-frontmatter>div{display:block}.bbs-build .bbs-frontmatter .bbs-fresh-label{color:#2c5e99;font-weight:600}
+.bbs-build .bbs-frontmatter:has(.bbs-scratch-surface){padding:0;border:0;background:none;white-space:normal}
+.bbs-build .bbs-scratch-surface{padding:7px;background:#edf4fc;border:1px solid #d7e5f5;border-radius:6px;touch-action:none;white-space:normal}
+.bbs-build .bbs-scratch-row{--bbs-reveal:0%;position:relative;display:block;width:100%;border:1px solid #dbe7f4;border-radius:4px;margin:0 0 5px;padding:0;overflow:hidden;background:#f9fbff;color:#41678e;text-align:left;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang SC",monospace;font-size:12px;line-height:1.8;touch-action:none;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+.bbs-build .bbs-scratch-row:last-of-type{margin-bottom:0}
+.bbs-build .bbs-scratch-value{display:block;min-height:35px;padding:7px 9px;white-space:pre-wrap;overflow-wrap:anywhere;clip-path:inset(0 calc(100% - var(--bbs-reveal,0%)) 0 0);pointer-events:none}
+.bbs-build .bbs-scratch-placeholder{position:absolute;inset:0;display:flex;align-items:center;padding:7px 9px;background:linear-gradient(100deg,#e2ebf8,#edf3fb);color:#7a94af;clip-path:inset(0 0 0 var(--bbs-reveal,0%));pointer-events:none}
+.bbs-build .bbs-scratch-row:hover{border-color:#b9cee6}
+.bbs-build .bbs-scratch-row.bbs-revealed{--bbs-reveal:100%!important;border-color:#ccdeee;background:#f5f9ff;cursor:default}
+.bbs-build .bbs-scratch-row.bbs-revealed .bbs-scratch-placeholder{visibility:hidden}
+.bbs-build .bbs-mark-progress{display:block;font-size:10px;font-family:inherit;line-height:1.8;color:#7c91a6;margin:8px 2px 0;white-space:normal}
 .bbs-build .bbs-finder-status{display:flex;gap:8px;align-items:center;min-height:32px;padding:7px 13px;border-top:1px solid #e3eaf1;background:#f8fafc;font-size:10px;line-height:1.6;color:#7b90a4;flex-wrap:wrap}
 .bbs-build .bbs-items-count{white-space:nowrap}
 .bbs-build .bbs-finder-hint{margin-left:auto;text-align:right}
@@ -650,13 +675,18 @@ html:not(.js) .mobile-menu{display:none}
 .bbs-build .bbs-static details{margin:0 0 12px;border:1px solid var(--bbs-line);padding:12px 15px;border-radius:5px;break-inside:avoid}
 .bbs-build .bbs-static summary{font-size:13px;font-weight:500;color:#3e638a;cursor:pointer;line-height:1.8}
 .bbs-build .bbs-static pre{font-size:12px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;background:#f8fafc;border:0;padding:13px;margin:10px 0 0;color:#586e85;max-width:100%}
+.bbs-drag-ghost{position:fixed;z-index:10000;display:flex;align-items:center;gap:10px;max-width:250px;padding:11px 15px;border:1px solid #b9cee6;border-radius:9px;background:#ffffffed;box-shadow:0 12px 32px #335a8530,0 2px 7px #335a8515;color:#365b80;font-family:system-ui,-apple-system,"PingFang SC",sans-serif;font-size:12px;line-height:1.6;pointer-events:none;user-select:none;-webkit-user-select:none}
+.bbs-drag-ghost svg{display:block;width:31px;height:29px;flex:none;overflow:visible}
+.bbs-drag-ghost span{overflow-wrap:anywhere}
+html.bbs-is-dragging,html.bbs-is-dragging *{cursor:grabbing!important;user-select:none!important;-webkit-user-select:none!important}
 @keyframes bbs-file-arrive{from{opacity:0;transform:translateY(7px) scale(.97)}to{opacity:1;transform:none}}
-@media(max-width:760px){.bbs-build .bbs-layout{grid-template-columns:1fr;gap:22px}.bbs-build .bbs-title{font-size:19px;margin-bottom:20px}.bbs-build .bbs-step-body{margin-left:35px;max-width:460px}.bbs-build .bbs-duties>div{grid-template-columns:110px minmax(0,1fr)}.bbs-build .bbs-duties dt{font-size:12px}.bbs-build .bbs-duties dd span{display:inline;margin-left:13px}.bbs-build .bbs-playback{max-width:460px;margin-top:17px}.bbs-build .bbs-playback-main{gap:18px}.bbs-build .bbs-file-grid{grid-template-columns:repeat(auto-fill,minmax(105px,1fr))}.bbs-build .bbs-preview-text{font-size:12px}.bbs-build .bbs-frontmatter{font-size:12px}}
+@media(max-width:760px){.bbs-build .bbs-layout{grid-template-columns:1fr;gap:22px}.bbs-build .bbs-title{font-size:19px;margin-bottom:20px}.bbs-build .bbs-step-body{margin-left:35px;max-width:460px}.bbs-build .bbs-duties>div{grid-template-columns:110px minmax(0,1fr)}.bbs-build .bbs-duties dt{font-size:12px}.bbs-build .bbs-duties dd span{display:inline;margin-left:13px}.bbs-build .bbs-manual-controls{max-width:460px;margin-top:17px}.bbs-build .bbs-file-grid{grid-template-columns:repeat(auto-fill,minmax(105px,1fr))}.bbs-build .bbs-preview-text{font-size:12px}.bbs-build .bbs-frontmatter{font-size:12px}}
 @media(max-width:440px){.bbs-build .bbs-finder-body{grid-template-columns:1fr;min-height:368px}.bbs-build .bbs-sidebar{display:none}.bbs-build .bbs-workspace,.bbs-build .bbs-file-grid{min-height:368px}.bbs-build .bbs-file-grid{padding:16px 8px;gap:6px 3px;grid-template-columns:repeat(auto-fill,minmax(94px,1fr))}.bbs-build .bbs-file{font-size:11px}.bbs-build .bbs-preview-heading{padding:14px}.bbs-build .bbs-preview-scroll{padding:14px}.bbs-build .bbs-windowbar{padding:0 11px}.bbs-build .bbs-toolbar{padding:8px}.bbs-build .bbs-caption{font-size:11px!important}.bbs-build .bbs-step-body{margin-left:35px}.bbs-build .bbs-duties>div{grid-template-columns:95px minmax(0,1fr)}.bbs-build .bbs-duties dd span{display:block;margin-left:0}.bbs-build .bbs-static pre{padding:10px;font-size:11px}}
-@media(prefers-reduced-motion:reduce){.bbs-build .bbs-file.bbs-appearing{animation:none}}
+@media(prefers-reduced-motion:reduce){.bbs-build .bbs-file.bbs-appearing{animation:none}.bbs-build .bbs-source{transition:none}}
 .no-motion .bbs-build .bbs-file.bbs-appearing{animation:none}
+.no-motion .bbs-build .bbs-source{transition:none}
 .bbs-build[data-bbs-active="false"] .bbs-file.bbs-appearing{animation-play-state:paused}
-@media print{.bbs-build .bbs-layout{display:block}.bbs-build .bbs-title{font-size:18px}.bbs-build.bbs-ready .bbs-step .bbs-step-body{display:block!important}.bbs-build .bbs-step{break-inside:avoid}.bbs-build .bbs-step-button,.bbs-build.bbs-ready .bbs-step-button{color:#283b4e}.bbs-build .bbs-step-number{background:white!important;color:#466689!important;border-color:#c8d5e3!important}.bbs-build .bbs-step-body{margin-left:35px;max-width:none}.bbs-build .bbs-finder,.bbs-build.bbs-ready .bbs-finder,.bbs-build .bbs-playback{display:none!important}.bbs-build.bbs-ready .bbs-static{display:block!important}.bbs-build .bbs-static details::details-content{content-visibility:visible!important}.bbs-build .bbs-static details>pre{display:block!important}.bbs-build .bbs-duties .bbs-highlight{background:none;box-shadow:none}.bbs-build .bbs-static pre{font-size:11px;background:white}.bbs-build .bbs-static details{break-inside:avoid}}
+@media print{.bbs-drag-ghost,.bbs-build .bbs-source-grip,.bbs-build .bbs-source-state,.bbs-build .bbs-interaction-hint{display:none!important}.bbs-build .bbs-source{background:none!important;border-color:transparent;box-shadow:none;cursor:default}.bbs-build .bbs-layout{display:block}.bbs-build .bbs-title{font-size:18px}.bbs-build.bbs-ready .bbs-step .bbs-step-body{display:block!important}.bbs-build .bbs-step{break-inside:avoid}.bbs-build .bbs-step-button,.bbs-build.bbs-ready .bbs-step-button{color:#283b4e}.bbs-build .bbs-step-number{background:white!important;color:#466689!important;border-color:#c8d5e3!important}.bbs-build .bbs-step-body{margin-left:35px;max-width:none}.bbs-build .bbs-finder,.bbs-build.bbs-ready .bbs-finder,.bbs-build .bbs-manual-controls{display:none!important}.bbs-build.bbs-ready .bbs-static{display:block!important}.bbs-build .bbs-static details::details-content{content-visibility:visible!important}.bbs-build .bbs-static details>pre{display:block!important}.bbs-build .bbs-duties .bbs-highlight{background:none;box-shadow:none}.bbs-build .bbs-static pre{font-size:11px;background:white}.bbs-build .bbs-static details{break-inside:avoid}}
 
 .bus-demo{min-width:0;max-width:100%;container-type:inline-size;color:var(--text,#1f2329)}
 .bus-heading{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:8px}
@@ -1320,12 +1350,13 @@ html:not(.js) .mobile-menu{display:none}
           <button type="button" class="bbs-step-button" data-bbs-select="0" disabled><span class="bbs-step-number">1</span><span>Markdown 基础</span></button>
           <div class="bbs-step-body">
             <p>AI 便于直接读取的文本载体，写成工作手册，也记录工作过程</p>
+            <p class="bbs-interaction-hint">拖入右侧，也可点击放入</p>
             <dl class="bbs-duties">
-              <div data-bbs-duty="agents"><dt>AGENTS.md</dt><dd>工作守则<span>角色与执行规则</span></dd></div>
-              <div data-bbs-duty="readme"><dt>README.md</dt><dd>入口地图<span>目录和当前入口</span></dd></div>
-              <div data-bbs-duty="context"><dt>context.md</dt><dd>稳定背景<span>业务、目标与约束</span></dd></div>
-              <div data-bbs-duty="log"><dt>log.md</dt><dd>过程记录<span>变更与关键决定</span></dd></div>
-              <div data-bbs-duty="handoff"><dt>handoff.md</dt><dd>任务交接<span>当前进度与下一步</span></dd></div>
+              <div class="bbs-source" data-bbs-duty="agents" data-bbs-source="agents" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 AGENTS.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>AGENTS.md</dt><dd>工作守则<span>角色与执行规则</span><span class="bbs-source-state"></span></dd></div>
+              <div class="bbs-source" data-bbs-duty="readme" data-bbs-source="readme" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 README.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>README.md</dt><dd>入口地图<span>目录和当前入口</span><span class="bbs-source-state"></span></dd></div>
+              <div class="bbs-source" data-bbs-duty="context" data-bbs-source="context" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 context.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>context.md</dt><dd>稳定背景<span>业务、目标与约束</span><span class="bbs-source-state"></span></dd></div>
+              <div class="bbs-source" data-bbs-duty="log" data-bbs-source="log" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 log.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>log.md</dt><dd>过程记录<span>变更与关键决定</span><span class="bbs-source-state"></span></dd></div>
+              <div class="bbs-source" data-bbs-duty="handoff" data-bbs-source="handoff" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入 handoff.md"><dt><span class="bbs-source-grip" aria-hidden="true"></span>handoff.md</dt><dd>任务交接<span>当前进度与下一步</span><span class="bbs-source-state"></span></dd></div>
             </dl>
           </div>
         </li>
@@ -1337,30 +1368,29 @@ html:not(.js) .mobile-menu{display:none}
               <div data-bbs-label="type"><dt>type</dt><dd>这是什么资料</dd></div>
               <div data-bbs-label="status"><dt>status</dt><dd>是否为当前有效内容</dd></div>
               <div data-bbs-label="updated"><dt>updated</dt><dd>何时维护过</dd></div>
+              <div data-bbs-label="tags"><dt>tags</dt><dd>主题与关联关键词</dd></div>
             </dl>
+            <p class="bbs-interaction-hint">按住右侧文件头，划过每行标签</p>
             <p class="bbs-method-note">标签用于知识文件，不要求五类基础文件都使用同一套标签</p>
           </div>
         </li>
         <li class="bbs-step" data-bbs-step="2">
           <button type="button" class="bbs-step-button" data-bbs-select="2" disabled><span class="bbs-step-number">3</span><span>分类目录</span></button>
           <div class="bbs-step-body">
+            <p class="bbs-interaction-hint">拖入右侧，也可点击放入</p>
             <dl class="bbs-directories">
-              <div data-bbs-directory="knowledge"><dt>岗位与业务知识</dt><dd>岗位职责、业务流程、组织认知</dd></div>
-              <div data-bbs-directory="projects"><dt>项目与需求</dt><dd>目标、方案、产出、当前版本</dd></div>
-              <div data-bbs-directory="meetings"><dt>会议记录</dt><dd>原文、结论、待办</dd></div>
+              <div class="bbs-source" data-bbs-directory="knowledge" data-bbs-source="knowledge" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入岗位与业务知识"><dt><span class="bbs-source-grip" aria-hidden="true"></span>岗位与业务知识</dt><dd>岗位职责、业务流程、组织认知<span class="bbs-source-state"></span></dd></div>
+              <div class="bbs-source" data-bbs-directory="projects" data-bbs-source="projects" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入项目与需求"><dt><span class="bbs-source-grip" aria-hidden="true"></span>项目与需求</dt><dd>目标、方案、产出、当前版本<span class="bbs-source-state"></span></dd></div>
+              <div class="bbs-source" data-bbs-directory="meetings" data-bbs-source="meetings" role="button" tabindex="0" aria-disabled="false" aria-label="拖入或点击放入会议记录"><dt><span class="bbs-source-grip" aria-hidden="true"></span>会议记录</dt><dd>原文、结论、待办<span class="bbs-source-state"></span></dd></div>
             </dl>
             <p class="bbs-method-note">从这三个工作面起步，再按真实任务扩展</p>
           </div>
         </li>
       </ol>
-      <div class="bbs-playback" aria-label="搭建演示控制">
-        <div class="bbs-playback-main">
-          <button type="button" class="bbs-play" data-bbs-action="play">播放本节</button>
-          <button type="button" class="bbs-small-button" data-bbs-action="replay">重播本节</button>
-          <button type="button" class="bbs-small-button" data-bbs-action="finish">完成本节</button>
-        </div>
+      <div class="bbs-manual-controls" aria-label="搭建操作控制">
+        <button type="button" class="bbs-small-button" data-bbs-action="reset">重置本节</button>
         <div class="bbs-step-controls"><button type="button" data-bbs-action="previous">上一步</button><span class="bbs-step-count">1 / 3</span><button type="button" data-bbs-action="next">下一步 <span aria-hidden="true">→</span></button></div>
-        <div class="bbs-progress" role="progressbar" aria-label="本节演示进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+        <div class="bbs-progress" role="progressbar" aria-label="本节操作进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
       </div>
     </div>
     <div class="bbs-finder" aria-label="第二大脑模拟桌面">
@@ -1374,8 +1404,8 @@ html:not(.js) .mobile-menu{display:none}
           <section class="bbs-preview" aria-label="文件示例预览" hidden><div class="bbs-preview-heading"><div><span class="bbs-preview-name"></span><span class="bbs-preview-kind">Markdown · 示例</span></div><button type="button" class="bbs-preview-close" aria-label="关闭文件示例"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div><div class="bbs-preview-scroll" tabindex="0" role="region" aria-label="示例文件内容"><div class="bbs-frontmatter" hidden></div><pre class="bbs-preview-text"></pre></div></section>
         </div>
       </div>
-      <div class="bbs-finder-status"><span class="bbs-items-count">1 个项目</span><button type="button" class="bbs-open-folder" hidden>打开文件夹 <span aria-hidden="true">↵</span></button><span class="bbs-finder-hint">双击文件夹打开</span></div>
-      <p class="bbs-caption" aria-live="polite" aria-atomic="true">先从一个“第二大脑”文件夹开始；点击“播放本节”查看五类文件</p>
+      <div class="bbs-finder-status"><span class="bbs-items-count">1 个项目</span><button type="button" class="bbs-open-folder" hidden>打开文件夹 <span aria-hidden="true">↵</span></button><span class="bbs-finder-hint">从左侧拖入 · 点击查看示例</span></div>
+      <p class="bbs-caption" aria-live="polite" aria-atomic="true">将左侧 Markdown 拖入“第二大脑”文件夹，也可点击放入；添加后点击文件查看示例</p>
     </div>
   </div>
   <div class="bbs-static">
@@ -2415,284 +2445,358 @@ tags: [园区运营, 业务流程]
     if (root.dataset.bbsReady === 'true') return;
     const examples = Object.fromEntries([...root.querySelectorAll('[data-bbs-example]')].map(node => [node.dataset.bbsExample, node.textContent.trim()]));
     const basic = [
-      { id: 'agents', name: 'AGENTS.md', purpose: '工作守则' },
-      { id: 'readme', name: 'README.md', purpose: '入口地图' },
-      { id: 'context', name: 'context.md', purpose: '稳定背景' },
-      { id: 'log', name: 'log.md', purpose: '过程记录' },
-      { id: 'handoff', name: 'handoff.md', purpose: '任务交接' }
+      {id:'agents',name:'AGENTS.md',purpose:'工作守则'},
+      {id:'readme',name:'README.md',purpose:'入口地图'},
+      {id:'context',name:'context.md',purpose:'稳定背景'},
+      {id:'log',name:'log.md',purpose:'过程记录'},
+      {id:'handoff',name:'handoff.md',purpose:'任务交接'}
     ];
     const folders = [
-      { id: 'knowledge', name: '岗位与业务知识', file: '业务流程.md', purpose: '业务知识示例' },
-      { id: 'projects', name: '项目与需求', file: '需求说明.md', purpose: '项目模板示例' },
-      { id: 'meetings', name: '会议记录', file: '会议纪要.md', purpose: '会议模板示例' }
+      {id:'knowledge',name:'岗位与业务知识',file:'业务流程.md',purpose:'业务知识示例'},
+      {id:'projects',name:'项目与需求',file:'需求说明.md',purpose:'项目模板示例'},
+      {id:'meetings',name:'会议记录',file:'会议纪要.md',purpose:'会议模板示例'}
     ];
-    const captions = [
-      '从桌面上的一个“第二大脑”文件夹开始',
-      '先进入空文件夹，再逐个放入五类 Markdown 文件',
-      'AGENTS.md：先写清角色和执行规则',
-      'README.md：让人和 Agent 都能找到当前入口',
-      'context.md：留下业务、目标和约束',
-      'log.md：记录变更与关键决定',
-      'handoff.md：把当前进度和下一步交接清楚',
-      '打开一份业务知识，先看没有标签的 Markdown 正文',
-      '加上 type，说明这是一份什么资料',
-      '加上 status，识别当前有效内容',
-      '加上 updated，记录文件的维护时间',
-      '五类基础文件已就位，接着建立三个分类目录',
-      '岗位与业务知识：放入岗位职责、业务流程和组织认知',
-      '项目与需求：围绕目标、方案与产出组织工作',
-      '最小骨架已搭好，可以进入三个目录查看示例模板'
-    ];
-    const delays = [1520,1280,1840,1840,1840,1840,0,2320,1760,1760,0,1600,1920,1920,0];
-    const stageStarts = [0,7,11];
-    const stageEnds = [6,10,14];
-    const readyCaptions = [
-      '先从一个“第二大脑”文件夹开始；点击“播放本节”查看五类文件',
-      '先看没有标签的知识文件；点击“播放本节”逐项补充标签',
-      '五类基础文件已就位；点击“播放本节”建立三个分类目录'
-    ];
-    const doneCaptions = [
-      '五类基础文件已就位，本节已结束。可打开示例，或选择下一小节',
-      '知识标签已补齐，本节已结束。可继续阅读，或选择下一小节',
-      '三个工作面已建立，本节已结束。可进入目录查看示例模板'
-    ];
+    const fields = ['type','status','updated','tags'];
+    const knowledgeHeader = examples.knowledge.match(/^---\n([\s\S]*?)\n---/)[1].split('\n');
+    const fieldValues = Object.fromEntries(fields.map(key => [key,knowledgeHeader.find(line => line.startsWith(key + ':'))]));
+    const files = [...basic.map(item => ({...item,example:item.id})),...folders.map(item => ({id:item.id+'-doc',name:item.file,purpose:item.purpose,example:item.id}))];
+    const createdFiles = new Set(), createdFolders = new Set(), labels = new Set();
+    const coverage = Object.fromEntries(fields.map(key => [key,new Set()]));
+    const grid = root.querySelector('.bbs-file-grid'), workspace = root.querySelector('.bbs-workspace');
+    const preview = root.querySelector('.bbs-preview'), caption = root.querySelector('.bbs-caption');
+    const back = root.querySelector('.bbs-back'), openSelected = root.querySelector('.bbs-open-folder');
+    const frontmatter = root.querySelector('.bbs-frontmatter');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-    const grid = root.querySelector('.bbs-file-grid');
-    const preview = root.querySelector('.bbs-preview');
-    const caption = root.querySelector('.bbs-caption');
-    const back = root.querySelector('.bbs-back');
-    const play = root.querySelector('[data-bbs-action="play"]');
-    const openSelected = root.querySelector('.bbs-open-folder');
     const folderSvg = '<svg viewBox="0 0 64 52" aria-hidden="true"><path d="M5 13V9a3 3 0 0 1 3-3h17l6 6h25a3 3 0 0 1 3 3v30H5Z" fill="#8ec5ec" stroke="#79b4e0"/><path d="M5 17h54v27a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3Z" fill="#78b8e7" stroke="#67a8d8"/><path d="M8 18h48" stroke="#add7f3" stroke-linecap="round"/></svg>';
     const smallFolderSvg = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6V4.5A1.5 1.5 0 0 1 3.5 3H8l2 2h6.5A1.5 1.5 0 0 1 18 6.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 2 15.5V6Z"/><path d="M2 7h16"/></svg>';
     const fileSvg = '<svg viewBox="0 0 64 52" aria-hidden="true"><path d="M17 3h21l10 10v34a2 2 0 0 1-2 2H17a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" fill="#fdfefe" stroke="#c3d1df"/><path d="M38 3v10h10" fill="#edf3f9" stroke="#c3d1df"/><path d="M22 21h19M22 26h15M22 31h19" stroke="#bdccdc" stroke-linecap="round"/><rect x="20" y="36" width="23" height="9" rx="2" fill="#e5eef8"/><text x="31.5" y="42.5" text-anchor="middle" font-size="6.7" font-family="system-ui,sans-serif" font-weight="600" fill="#6484a7">MD</text></svg>';
-    let frame = 0, path = 'desktop', selected = null, opened = null;
-    let active = false, playing = false, timer = null;
-    const phase = () => frame < 7 ? 0 : frame < 11 ? 1 : 2;
-    const fileCount = () => Math.min(5, Math.max(0, frame - 1));
-    const folderCount = () => Math.max(0, frame - 11);
+    let stage = 0, path = 'desktop', selected = null, opened = null;
+    let drag = null, scratch = null, suppressClick = false, scrollFrame = null;
     const motionAllowed = () => !reduced.matches && !document.documentElement.classList.contains('no-motion');
-    const complete = () => frame === stageEnds[phase()];
+    const sourceById = id => [...basic,...folders].find(item => item.id === id);
+    const isAdded = id => createdFiles.has(id) || createdFolders.has(id);
+    const counts = () => [createdFiles.size,labels.size,createdFolders.size];
+    const totals = [5,4,3];
+    const stageHints = [
+      '把左侧 Markdown 拖进“第二大脑”；放入后点击文件可查看内容',
+      '打开“业务流程.md”，按住划过文件头，逐行补上知识标签',
+      '把左侧分类拖进“第二大脑”；进入文件夹可查看预置模板'
+    ];
 
     function controls() {
       root.querySelectorAll('[data-bbs-select]').forEach(button => {
-        const chosen = Number(button.dataset.bbsSelect) === phase();
+        const chosen = Number(button.dataset.bbsSelect) === stage;
         button.disabled = false;
-        if (chosen) button.setAttribute('aria-current', 'step'); else button.removeAttribute('aria-current');
-        button.closest('.bbs-step').classList.toggle('bbs-current', chosen);
+        button.toggleAttribute('aria-current',false);
+        if (chosen) button.setAttribute('aria-current','step');
+        button.closest('.bbs-step').classList.toggle('bbs-current',chosen);
       });
-      root.querySelectorAll('[data-bbs-duty]').forEach(node => node.classList.toggle('bbs-highlight', phase() === 0 && basic[Math.max(0, frame - 2)]?.id === node.dataset.bbsDuty && frame > 1));
-      root.querySelectorAll('[data-bbs-label]').forEach((node, i) => node.classList.toggle('bbs-highlight', phase() === 1 && frame === i + 8));
-      root.querySelectorAll('[data-bbs-directory]').forEach((node, i) => node.classList.toggle('bbs-highlight', phase() === 2 && frame === i + 12));
-      play.textContent = !motionAllowed() ? '本节静态' : complete() ? '本节完成' : playing ? '暂停本节' : frame === stageStarts[phase()] ? '播放本节' : '继续本节';
-      play.disabled = !motionAllowed() || complete();
-      root.querySelector('[data-bbs-action="replay"]').disabled = !motionAllowed();
-      root.querySelector('[data-bbs-action="finish"]').disabled = complete();
-      root.querySelector('[data-bbs-action="previous"]').disabled = phase() === 0;
-      root.querySelector('[data-bbs-action="next"]').disabled = phase() === 2;
-      root.querySelector('.bbs-step-count').textContent = `${phase() + 1} / 3`;
-      const progress = Math.round((frame - stageStarts[phase()]) / (stageEnds[phase()] - stageStarts[phase()]) * 100);
-      root.querySelector('.bbs-progress').setAttribute('aria-valuenow', String(progress));
-      root.querySelector('.bbs-progress > span').style.width = `${progress}%`;
-      root.dataset.bbsStep = String(phase());
-      root.dataset.bbsFrame = String(frame);
-      root.dataset.bbsPlaying = String(playing);
-    }
-
-    function stop() {
-      clearTimeout(timer); timer = null; playing = false;
-      controls();
+      root.querySelectorAll('[data-bbs-source]').forEach(node => {
+        const added = isAdded(node.dataset.bbsSource);
+        node.classList.toggle('bbs-added',added);
+        node.dataset.bbsAdded = String(added);
+        node.setAttribute('aria-disabled',String(added));
+        const state = node.querySelector('.bbs-source-state');
+        if (state) state.textContent = added ? '已放入' : '';
+      });
+      root.querySelectorAll('[data-bbs-label]').forEach(node => node.classList.toggle('bbs-highlight',labels.has(node.dataset.bbsLabel)));
+      root.querySelector('[data-bbs-action="previous"]').disabled = stage === 0;
+      root.querySelector('[data-bbs-action="next"]').disabled = stage === 2;
+      root.querySelector('.bbs-step-count').textContent = (stage + 1) + ' / 3';
+      const progress = Math.round(counts()[stage] / totals[stage] * 100);
+      const bar = root.querySelector('.bbs-progress');
+      bar.setAttribute('aria-valuenow',String(progress));
+      bar.setAttribute('aria-valuetext',counts()[stage] + ' / ' + totals[stage] + ' 已完成');
+      bar.querySelector('span').style.width = progress + '%';
+      root.dataset.bbsStep = String(stage);
+      root.dataset.bbsPlaying = 'false';
+      root.dataset.bbsMode = 'manual';
     }
 
     function listItems() {
-      if (path === 'desktop') return [{ id: 'root', name: '第二大脑', folder: true }];
-      if (path !== 'root') {
-        const directory = folders.find(item => item.id === path);
-        return directory ? [{ id: directory.id, name: directory.file, purpose: directory.purpose }] : [];
-      }
-      const items = basic.slice(0, fileCount()).map(item => ({ ...item }));
-      if (phase() === 1) items.push({ id: 'knowledge', name: '业务流程.md', purpose: '业务知识示例' });
-      items.push(...folders.slice(0, folderCount()).map(item => ({ id: item.id, name: item.name, folder: true })));
+      if (path === 'desktop') return [{id:'root',name:'第二大脑',folder:true}];
+      if (path !== 'root') return files.filter(file => file.id === path+'-doc');
+      const items = basic.filter(item => createdFiles.has(item.id));
+      if (stage === 1 && !createdFolders.has('knowledge')) items.push(files.find(file => file.id === 'knowledge-doc'));
+      items.push(...folders.filter(item => createdFolders.has(item.id)).map(item => ({id:item.id,name:item.name,folder:true})));
       return items;
     }
 
+    function revealAmount(key) { return labels.has(key) ? 100 : Math.min(99,Math.round(coverage[key].size / 15 * 100)); }
+    function updateMarks() {
+      frontmatter.querySelectorAll('[data-bbs-mark]').forEach(row => {
+        const key = row.dataset.bbsMark, done = labels.has(key);
+        row.style.setProperty('--bbs-reveal',revealAmount(key)+'%');
+        row.classList.toggle('bbs-revealed',done);
+        row.setAttribute('aria-label',done ? fieldValues[key] : '划过显示 '+key+'；也可点击或按回车显示');
+      });
+      const markProgress = frontmatter.querySelector('.bbs-mark-progress');
+      if (markProgress) markProgress.textContent = labels.size === 4 ? '知识标签已补齐' : '按住划过标签行 · ' + labels.size + ' / 4';
+      controls();
+    }
+
     function renderPreview() {
-      preview.hidden = !opened;
-      grid.hidden = Boolean(opened);
+      preview.hidden = !opened; grid.hidden = Boolean(opened);
       if (!opened) return;
-      const file = [...basic, ...folders.map(item => ({ ...item, name: item.file }))].find(item => item.id === opened);
+      const file = files.find(item => item.id === opened);
       root.querySelector('.bbs-preview-name').textContent = file.name;
-      root.querySelector('.bbs-preview-text').textContent = opened === 'knowledge' ? examples.knowledge.replace(/^---\n[\s\S]*?\n---\n\n/, '') : examples[opened];
-      const frontmatter = root.querySelector('.bbs-frontmatter');
-      const labelCount = phase() === 1 ? Math.max(0, frame - 7) : 3;
-      frontmatter.hidden = opened !== 'knowledge' || labelCount === 0;
+      root.querySelector('.bbs-preview-text').textContent = file.example === 'knowledge' ? examples.knowledge.replace(/^---\n[\s\S]*?\n---\n\n/,'') : examples[file.example];
       frontmatter.replaceChildren();
-      if (!frontmatter.hidden) {
-        const lines = ['---', ...['type: 消化','status: 当前','updated: 2026-09-20'].slice(0, labelCount), ...(labelCount === 3 ? ['tags: [园区运营, 业务流程]'] : []), '---'];
-        lines.forEach((line, i) => {
-          const node = document.createElement('div'); node.textContent = line;
-          if (phase() === 1 && i === labelCount) node.className = 'bbs-fresh-label';
-          frontmatter.append(node);
+      const tagging = file.example === 'knowledge' && stage === 1;
+      frontmatter.hidden = file.example !== 'knowledge' || (!tagging && labels.size === 0);
+      if (frontmatter.hidden) return;
+      if (tagging) {
+        const hint = document.createElement('div');hint.className = 'bbs-mark-progress';frontmatter.append(hint);
+        const surface = document.createElement('div');surface.className = 'bbs-scratch-surface';
+        surface.setAttribute('aria-label','划过补充知识标签');
+        fields.forEach(key => {
+          const row = document.createElement('button');row.type='button';row.className='bbs-scratch-row';row.dataset.bbsMark=key;
+          const value = document.createElement('span');value.className='bbs-scratch-value';value.textContent=fieldValues[key];value.setAttribute('aria-hidden','true');
+          const placeholder = document.createElement('span');placeholder.className='bbs-scratch-placeholder';placeholder.textContent=key+'   划过显现';placeholder.setAttribute('aria-hidden','true');
+          row.append(value,placeholder);surface.append(row);
+        });
+        frontmatter.append(surface);updateMarks();
+      } else {
+        ['---',...fields.filter(key => labels.has(key)).map(key => fieldValues[key]),'---'].forEach(line => {
+          const div=document.createElement('div');div.textContent=line;frontmatter.append(div);
         });
       }
     }
 
     function render(newId) {
       controls();
-      const breadcrumbs = root.querySelector('.bbs-breadcrumbs'); breadcrumbs.replaceChildren();
-      const segments = [{ id: 'desktop', name: '桌面' }];
-      if (path !== 'desktop') segments.push({ id: 'root', name: '第二大脑' });
-      if (path !== 'desktop' && path !== 'root') segments.push({ id: path, name: folders.find(item => item.id === path).name });
-      segments.forEach((part, i) => {
-        if (i) { const separator = document.createElement('span'); separator.textContent = '›'; separator.setAttribute('aria-hidden','true'); breadcrumbs.append(separator); }
-        const button = document.createElement('button'); button.type = 'button'; button.textContent = part.name; button.dataset.bbsPath = part.id;
-        if (i === segments.length - 1) button.setAttribute('aria-current','location');
+      const breadcrumbs=root.querySelector('.bbs-breadcrumbs');breadcrumbs.replaceChildren();
+      const segments=[{id:'desktop',name:'桌面'}];
+      if (path !== 'desktop') segments.push({id:'root',name:'第二大脑'});
+      if (path !== 'desktop' && path !== 'root') segments.push({id:path,name:folders.find(item => item.id === path).name});
+      segments.forEach((part,i) => {
+        if (i) {const separator=document.createElement('span');separator.textContent='›';separator.setAttribute('aria-hidden','true');breadcrumbs.append(separator);}
+        const button=document.createElement('button');button.type='button';button.textContent=part.name;button.dataset.bbsPath=part.id;
+        if (i===segments.length-1) button.setAttribute('aria-current','location');
         breadcrumbs.append(button);
       });
-      const sideFolders = root.querySelector('.bbs-sidebar-folders'); sideFolders.replaceChildren();
-      folders.slice(0, folderCount()).forEach(item => {
-        const button = document.createElement('button'); button.type = 'button'; button.dataset.bbsPath = item.id;
-        button.innerHTML = smallFolderSvg; const label = document.createElement('span'); label.textContent = item.name; button.append(label); sideFolders.append(button);
+      const sidebar=root.querySelector('.bbs-sidebar-folders');sidebar.replaceChildren();
+      folders.filter(item => createdFolders.has(item.id)).forEach(item => {
+        const button=document.createElement('button');button.type='button';button.dataset.bbsPath=item.id;button.innerHTML=smallFolderSvg;
+        const text=document.createElement('span');text.textContent=item.name;button.append(text);sidebar.append(button);
       });
       root.querySelectorAll('.bbs-sidebar [data-bbs-path]').forEach(button => {
-        if (button.dataset.bbsPath === path) button.setAttribute('aria-current','location'); else button.removeAttribute('aria-current');
+        button.removeAttribute('aria-current');if(button.dataset.bbsPath===path) button.setAttribute('aria-current','location');
       });
-      const items = listItems(); grid.replaceChildren();
+      grid.replaceChildren();
+      const items=listItems();
       items.forEach(item => {
-        const button = document.createElement('button'); button.type = 'button'; button.className = 'bbs-file';
-        button.dataset.bbsItem = item.id; button.dataset.bbsKind = item.folder ? 'folder' : 'file';
-        button.setAttribute('aria-label', `${item.name}，${item.folder ? '文件夹，双击或按 Enter 打开' : '查看示例'}`);
-        if (selected === item.id) button.classList.add('bbs-selected');
-        if (newId === item.id && motionAllowed()) button.classList.add('bbs-appearing');
-        button.innerHTML = item.folder ? folderSvg : fileSvg;
-        const name = document.createElement('span'); name.className = 'bbs-file-name'; name.textContent = item.name; button.append(name);
-        const type = document.createElement('span'); type.className = 'bbs-file-type'; type.textContent = item.folder ? '文件夹' : item.purpose; button.append(type);
-        grid.append(button);
+        const button=document.createElement('button');button.type='button';button.className='bbs-file';
+        button.dataset.bbsItem=item.id;button.dataset.bbsKind=item.folder?'folder':'file';
+        button.setAttribute('aria-label',item.name+'，'+(item.folder?'文件夹，双击或按 Enter 打开':'查看示例'));
+        if(selected===item.id) button.classList.add('bbs-selected');
+        if(newId===item.id && motionAllowed()) button.classList.add('bbs-appearing');
+        button.innerHTML=item.folder?folderSvg:fileSvg;
+        const name=document.createElement('span');name.className='bbs-file-name';name.textContent=item.name;
+        const type=document.createElement('span');type.className='bbs-file-type';type.textContent=item.folder?'文件夹':item.purpose;
+        button.append(name,type);grid.append(button);
       });
-      root.querySelector('.bbs-empty').hidden = items.length > 0 || Boolean(opened);
-      back.disabled = path === 'desktop' && !opened;
-      root.querySelector('.bbs-items-count').textContent = `${items.length} 个项目`;
-      root.querySelector('.bbs-finder-hint').textContent = opened ? '所有内容均为示例' : '双击文件夹 · 单击文件';
-      openSelected.hidden = !items.some(item => item.id === selected && item.folder) || Boolean(opened);
+      root.querySelector('.bbs-empty').hidden=items.length>0 || Boolean(opened);
+      root.querySelector('.bbs-empty strong').textContent='一个空的工作面';
+      root.querySelector('.bbs-empty span').textContent=stage===2?'把左侧分类拖到这里':'把左侧 Markdown 拖到这里';
+      root.querySelector('.bbs-items-count').textContent=items.length+' 个项目';
+      back.disabled=path==='desktop' && !opened;
+      openSelected.hidden=!selected || Boolean(opened) || !items.some(item => item.id===selected && item.folder);
+      root.querySelector('.bbs-finder-hint').textContent=opened?'示例内容':path==='desktop'?'拖到文件夹，或双击打开':'点击文件查看 · 双击文件夹进入';
       renderPreview();
     }
 
-    function applyFrame(value) {
-      frame = value; selected = null; opened = phase() === 1 ? 'knowledge' : null; path = value === 0 ? 'desktop' : 'root';
-      caption.textContent = complete() ? doneCaptions[phase()] : frame === stageStarts[phase()] && !playing ? readyCaptions[phase()] : captions[frame];
-      const newId = frame >= 2 && frame <= 6 ? basic[frame - 2].id : frame >= 12 ? folders[frame - 12].id : frame === 7 ? 'knowledge' : null;
-      render(newId);
+    function moveTo(next,focus=true) {
+      cancelGesture();
+      if(next!=='desktop' && next!=='root' && !createdFolders.has(next)) return;
+      path=next;opened=null;selected=null;caption.textContent=stageHints[stage];render();
+      if(focus) (grid.querySelector('button')||back).focus({preventScroll:true});
     }
-
-    function chooseStage(index) {
-      stop();
-      applyFrame(motionAllowed() ? stageStarts[index] : stageEnds[index]);
-    }
-
-    function schedule() {
-      clearTimeout(timer); timer = null;
-      if (!playing || !active || !motionAllowed() || complete()) return;
-      timer = setTimeout(() => {
-        timer = null;
-        if (!playing || !active || !motionAllowed()) return;
-        applyFrame(frame + 1);
-        if (complete()) { stop(); return; }
-        schedule();
-      }, delays[frame]);
-    }
-
-    function start() {
-      if (!active || !motionAllowed() || complete()) return;
-      playing = true;
-      // Playback returns to its current teaching frame instead of advancing over a user-opened file.
-      applyFrame(frame); controls(); schedule();
-    }
-
-    function moveTo(nextPath, focus = true) {
-      stop(); opened = null; selected = null; path = nextPath;
-      caption.textContent = path === 'desktop' ? '双击“第二大脑”文件夹，或选中后按 Enter 打开' : '可以打开文件查看示例；点击路径或返回按钮回到上一级';
-      render();
-      if (focus) (grid.querySelector('button') || back).focus({ preventScroll: true });
-    }
-
-    function openFolder(id) {
-      if (id === 'root' && path === 'desktop' && frame <= 1) {
-        stop(); applyFrame(1);
-        (grid.querySelector('button') || back).focus({ preventScroll: true });
-      } else moveTo(id);
-    }
-
     function openFile(id) {
-      stop(); opened = id; selected = id;
-      caption.textContent = '播放已暂停。这里是预置示例，可以慢慢阅读';
-      render(); root.querySelector('.bbs-preview-close').focus({ preventScroll: true });
+      if(!files.some(file => file.id===id)) return;
+      opened=id;selected=id;caption.textContent=id==='knowledge-doc' && stage===1?'按住划过上方标签区；标签会随着你的笔迹显现':'这是文件里的预置内容，可以慢慢阅读';
+      render();root.querySelector('.bbs-preview-close').focus({preventScroll:true});
     }
-
     function closeFile() {
-      const previousFile = opened; opened = null;
-      caption.textContent = complete() ? '可以继续浏览文件，或选择其他小节' : '可以继续浏览文件，或继续播放本节'; render();
-      [...grid.querySelectorAll('[data-bbs-item]')].find(button => button.dataset.bbsItem === previousFile)?.focus({ preventScroll: true });
+      cancelGesture();const previous=opened;opened=null;caption.textContent=stageHints[stage];render();
+      [...grid.querySelectorAll('[data-bbs-item]')].find(button => button.dataset.bbsItem===previous)?.focus({preventScroll:true});
+    }
+    function chooseStage(next) {
+      cancelGesture();stage=next;opened=null;selected=null;
+      path=stage===1 && createdFolders.has('knowledge')?'knowledge':'root';
+      caption.textContent=stageHints[stage];render();
+    }
+    function addSource(id) {
+      const source=sourceById(id);if(!source) return;
+      if(isAdded(id)) {caption.textContent=source.name+' 已放入，可以在右侧打开查看';return;}
+      (basic.some(item => item.id===id)?createdFiles:createdFolders).add(id);
+      path='root';opened=null;selected=id;
+      caption.textContent=source.name+' 已放入'+(createdFolders.has(id)?'，打开文件夹查看示例模板':'，点击文件查看内容');
+      render(id);
+    }
+    function resetStage() {
+      cancelGesture();
+      if(stage===0) createdFiles.clear();
+      if(stage===1) {labels.clear();fields.forEach(key => coverage[key].clear());}
+      if(stage===2) createdFolders.clear();
+      chooseStage(stage);
+      caption.textContent='本节已重置。'+stageHints[stage];
+    }
+    function markComplete(key) {
+      if(labels.has(key)) return;
+      labels.add(key);updateMarks();
+      caption.textContent=labels.size===4?'类型、状态、更新时间和主题标签已补齐；重新打开文件时仍会保留':key+' 已补充，继续划过其他标签行';
     }
 
-    root.addEventListener('click', event => {
-      const button = event.target.closest('button'); if (!button || !root.contains(button)) return;
-      if (button.dataset.bbsSelect !== undefined) {
-        chooseStage(Number(button.dataset.bbsSelect)); return;
-      }
-      if (button.dataset.bbsAction) {
-        const action = button.dataset.bbsAction;
-        if (action === 'play') { if (playing) stop(); else start(); }
-        else if (action === 'replay') { chooseStage(phase()); start(); }
-        else if (action === 'finish') { stop(); applyFrame(stageEnds[phase()]); }
-        else chooseStage(Math.max(0,Math.min(2,phase() + (action === 'next' ? 1 : -1))));
-        return;
-      }
-      if (button.classList.contains('bbs-back')) {
-        if (opened) { stop(); closeFile(); } else moveTo(path === 'root' ? 'desktop' : 'root');
-        return;
-      }
-      if (button.classList.contains('bbs-preview-close')) { stop(); closeFile(); return; }
-      if (button.dataset.bbsPath) { moveTo(button.dataset.bbsPath); return; }
-      if (button.classList.contains('bbs-open-folder')) { if (selected) openFolder(selected); return; }
-      if (!button.dataset.bbsItem) return;
-      const id = button.dataset.bbsItem;
-      if (button.dataset.bbsKind === 'file') { openFile(id); return; }
-      if (event.detail === 0 || event.pointerType === 'touch') { openFolder(id); return; }
-      selected = id;
-      grid.querySelectorAll('.bbs-file').forEach(item => item.classList.toggle('bbs-selected', item === button));
-      openSelected.hidden = false;
-    });
-    root.addEventListener('dblclick', event => {
-      const button = event.target.closest('[data-bbs-kind="folder"]');
-      if (button && root.contains(button)) { event.preventDefault(); openFolder(button.dataset.bbsItem); }
-    });
-    root.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && opened) { event.preventDefault(); event.stopPropagation(); stop(); closeFile(); }
-    });
-
-    let lastMotionAllowed = motionAllowed();
-    function motionChanged() {
-      const allowed = motionAllowed();
-      if (allowed === lastMotionAllowed) return;
-      lastMotionAllowed = allowed;
-      stop();
-      if (!allowed) applyFrame(stageEnds[phase()]);
+    function dropTarget(x,y) {
+      const element=document.elementFromPoint(x,y);
+      if(!element || !root.contains(element)) return null;
+      const folder=element.closest('[data-bbs-item="root"],[data-bbs-path="root"]');
+      if(folder) return folder;
+      if(workspace.contains(element) && !opened && (path==='root'||path==='desktop')) return workspace;
+      return null;
     }
-    document.addEventListener('brain:demo', event => {
-      const entering = event.detail?.active === true && event.detail?.view === 'build';
-      if (entering === active) return;
-      active = entering; root.dataset.bbsActive = String(active);
-      if (!active) stop();
-      else controls();
+    function clearDrop() {root.querySelectorAll('.bbs-drop-ready').forEach(node => node.classList.remove('bbs-drop-ready'));}
+    function dragScroll() {
+      if(!drag || !drag.started) return;
+      const edge=64, y=drag.y;
+      if(y<edge) window.scrollBy(0,-Math.min(14,(edge-y)/4));
+      else if(y>innerHeight-edge) window.scrollBy(0,Math.min(14,(y-innerHeight+edge)/4));
+      clearDrop();dropTarget(drag.x,drag.y)?.classList.add('bbs-drop-ready');
+      scrollFrame=requestAnimationFrame(dragScroll);
+    }
+    function cancelGesture() {
+      const previousDrag=drag,previousScratch=scratch;
+      drag=null;scratch=null;
+      if(previousDrag) {
+        previousDrag.source.classList.remove('bbs-dragging');
+        previousDrag.ghost?.remove();
+        if(previousDrag.source.hasPointerCapture(previousDrag.pointer)) previousDrag.source.releasePointerCapture(previousDrag.pointer);
+      }
+      if(previousScratch?.surface.hasPointerCapture(previousScratch.pointer)) previousScratch.surface.releasePointerCapture(previousScratch.pointer);
+      cancelAnimationFrame(scrollFrame);scrollFrame=null;
+      clearDrop();document.documentElement.classList.remove('bbs-is-dragging');
+    }
+    function beginDrag(event,source) {
+      if(event.button!==0 || isAdded(source.dataset.bbsSource)) return;
+      suppressClick=false;
+      drag={source,id:source.dataset.bbsSource,pointer:event.pointerId,startX:event.clientX,startY:event.clientY,x:event.clientX,y:event.clientY,started:false,ghost:null};
+      source.setPointerCapture(event.pointerId);
+    }
+    function moveDrag(event) {
+      if(!drag || drag.pointer!==event.pointerId) return;
+      drag.x=event.clientX;drag.y=event.clientY;
+      if(!drag.started && Math.hypot(drag.x-drag.startX,drag.y-drag.startY)>6) {
+        drag.started=true;suppressClick=true;drag.source.classList.add('bbs-dragging');document.documentElement.classList.add('bbs-is-dragging');
+        const ghost=document.createElement('div');ghost.className='bbs-drag-ghost';ghost.setAttribute('aria-hidden','true');
+        ghost.innerHTML=basic.some(item => item.id===drag.id)?fileSvg:folderSvg;
+        const label=document.createElement('span');label.textContent=sourceById(drag.id).name;ghost.append(label);document.body.append(ghost);drag.ghost=ghost;
+        scrollFrame=requestAnimationFrame(dragScroll);
+      }
+      if(!drag.started) return;
+      event.preventDefault();
+      drag.ghost.style.left=drag.x+14+'px';drag.ghost.style.top=drag.y+12+'px';
+      clearDrop();dropTarget(drag.x,drag.y)?.classList.add('bbs-drop-ready');
+    }
+    function beginScratch(event,surface) {
+      if(event.button!==0) return;
+      suppressClick=false;
+      scratch={surface,pointer:event.pointerId,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false,key:event.target.closest('[data-bbs-mark]')?.dataset.bbsMark};
+      surface.setPointerCapture(event.pointerId);
+    }
+    function moveScratch(event) {
+      if(!scratch || scratch.pointer!==event.pointerId) return;
+      const current={x:event.clientX,y:event.clientY};
+      if(!scratch.moved && Math.hypot(current.x-scratch.startX,current.y-scratch.startY)<4) return;
+      scratch.moved=true;suppressClick=true;event.preventDefault();
+      const distance=Math.hypot(current.x-scratch.x,current.y-scratch.y), samples=Math.max(1,Math.ceil(distance/3));
+      const rows=[...scratch.surface.querySelectorAll('[data-bbs-mark]')].map(row => ({key:row.dataset.bbsMark,box:row.getBoundingClientRect()}));
+      for(let i=0;i<=samples;i++) {
+        const x=scratch.x+(current.x-scratch.x)*i/samples,y=scratch.y+(current.y-scratch.y)*i/samples;
+        rows.forEach(({key,box}) => {
+          if(labels.has(key)||x<box.left||x>=box.right||y<box.top||y>box.bottom) return;
+          coverage[key].add(Math.min(23,Math.floor((x-box.left)/box.width*24)));
+          if(coverage[key].size>=15) markComplete(key);
+        });
+      }
+      scratch.x=current.x;scratch.y=current.y;updateMarks();
+    }
+
+    root.addEventListener('pointerdown',event => {
+      if(!event.isPrimary || drag || scratch) return;
+      suppressClick=false;
+      const source=event.target.closest('[data-bbs-source]');
+      if(source && root.contains(source)) {beginDrag(event,source);return;}
+      const surface=event.target.closest('.bbs-scratch-surface');
+      if(surface && root.contains(surface)) beginScratch(event,surface);
     });
-    reduced.addEventListener('change', motionChanged);
-    new MutationObserver(motionChanged).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) stop();
+    root.addEventListener('pointermove',event => {moveDrag(event);moveScratch(event);});
+    root.addEventListener('pointerup',event => {
+      if(drag?.pointer===event.pointerId) {
+        const id=drag.id,started=drag.started,target=started && dropTarget(event.clientX,event.clientY);
+        cancelGesture();
+        if(started) {
+          suppressClick=true;
+          if(target) addSource(id);
+          else caption.textContent='还未放入。把它拖到右侧“第二大脑”文件夹或空白工作面';
+        }
+      } else if(scratch?.pointer===event.pointerId) {
+        const moved=scratch.moved,key=scratch.key;cancelGesture();
+        if(!moved && key) markComplete(key);
+        suppressClick=true;
+      }
     });
-    window.addEventListener('beforeprint', () => { stop(); });
-    root.dataset.bbsReady = 'true'; root.dataset.bbsActive = 'false'; root.classList.add('bbs-ready');
-    applyFrame(motionAllowed() ? stageStarts[0] : stageEnds[0]);
+    root.addEventListener('pointercancel',() => {suppressClick=true;cancelGesture();});
+    root.addEventListener('lostpointercapture',() => {if(drag||scratch) cancelGesture();});
+    root.addEventListener('dragstart',event => {if(event.target.closest('[data-bbs-source]')) event.preventDefault();});
+
+    root.addEventListener('click',event => {
+      const source=event.target.closest('[data-bbs-source]');
+      const mark=event.target.closest('[data-bbs-mark]');
+      if(suppressClick && event.detail!==0) {suppressClick=false;event.preventDefault();return;}
+      suppressClick=false;
+      if(source) {addSource(source.dataset.bbsSource);return;}
+      if(mark) {markComplete(mark.dataset.bbsMark);return;}
+      const button=event.target.closest('button');if(!button || !root.contains(button)) return;
+      if(button.dataset.bbsSelect!==undefined) {chooseStage(Number(button.dataset.bbsSelect));return;}
+      if(button.dataset.bbsAction) {
+        const action=button.dataset.bbsAction;
+        if(action==='reset') resetStage();
+        else chooseStage(Math.max(0,Math.min(2,stage+(action==='next'?1:-1))));
+        return;
+      }
+      if(button.classList.contains('bbs-back')) {if(opened) closeFile();else moveTo(path==='root'?'desktop':'root');return;}
+      if(button.classList.contains('bbs-preview-close')) {closeFile();return;}
+      if(button.dataset.bbsPath) {moveTo(button.dataset.bbsPath);return;}
+      if(button.classList.contains('bbs-open-folder')) {if(selected) moveTo(selected);return;}
+      if(!button.dataset.bbsItem) return;
+      if(button.dataset.bbsKind==='file') {openFile(button.dataset.bbsItem);return;}
+      if(event.detail===0 || event.pointerType==='touch') {moveTo(button.dataset.bbsItem);return;}
+      selected=button.dataset.bbsItem;
+      grid.querySelectorAll('.bbs-file').forEach(item => item.classList.toggle('bbs-selected',item===button));
+      openSelected.hidden=false;
+    });
+    root.addEventListener('dblclick',event => {
+      const button=event.target.closest('[data-bbs-kind="folder"]');
+      if(button) {event.preventDefault();moveTo(button.dataset.bbsItem);}
+    });
+    root.addEventListener('keydown',event => {
+      if(event.key==='Escape') {
+        if(drag||scratch) {event.preventDefault();event.stopPropagation();cancelGesture();suppressClick=true;return;}
+        if(opened) {event.preventDefault();event.stopPropagation();closeFile();}return;
+      }
+      const source=event.target.closest('[data-bbs-source]');
+      if(source && (event.key==='Enter'||event.key===' ')) {event.preventDefault();suppressClick=false;addSource(source.dataset.bbsSource);}
+    });
+    document.addEventListener('brain:demo',event => {
+      const active=event.detail?.active===true && event.detail?.view==='build';
+      root.dataset.bbsActive=String(active);if(!active) cancelGesture();
+    });
+    document.addEventListener('visibilitychange',() => {if(document.hidden) cancelGesture();});
+    window.addEventListener('blur',cancelGesture);
+    window.addEventListener('beforeprint',cancelGesture);
+    root.dataset.bbsReady='true';root.dataset.bbsActive='false';root.classList.add('bbs-ready');
+    caption.textContent=stageHints[0];render();
   });
 })();
 
